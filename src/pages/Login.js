@@ -78,7 +78,7 @@ export default function Login() {
 
           <p>
             Még nincs felhaszálóneve?
-            <Link className="nav-link text-info" to="/regisztracio">
+            <Link className="nav-link text-info" to="/register">
               Regisztráció
             </Link>
           </p>
