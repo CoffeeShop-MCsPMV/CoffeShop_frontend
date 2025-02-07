@@ -18,8 +18,8 @@ function App() {
               {!user && (
                   <Route element={<GuestLayout />}>
                       <Route path="/" element={<Main />} />
-                      <Route path="bejelentkezes" element={<Login />} />
-                      <Route path="regisztracio" element={<Registration />} />
+                      <Route path="login" element={<Login />} />
+                      <Route path="registration" element={<Registration />} />
                   </Route>
               )}
 
@@ -28,7 +28,7 @@ function App() {
                   <Route
                       path="/"
                       element={
-                          user.role === 1 ? (
+                          user.role === "A" ? (
                               <AdminLayout />
                           ) : (
                               <UserLayout />
