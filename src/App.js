@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import useAuthContext from "./context/AuthContext";
+import Main from "./pages/Main";
+import Login from "./pages/Login";
+import Registration from "./pages/Registration";
+import GuestLayout from "./layouts/GuestLayout";
+import AdminLayout from "./layouts/AdminLayout";
+import UserLayout from "./layouts/UserLayout";
+
 
 function App() {
+  const { user } = useAuthContext();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+
+          <Routes>
+              {/* Vendég layout */}
+              {!user && (
+                  <Route element={<GuestLayout />}>
+                      <Route path="/" element={<Main />} />
+                      <Route path="bejelentkezes" element={<Login />} />
+                      <Route path="regisztracio" element={<Registration />} />
+                  </Route>
+              )}
+
+              {/* Admin és User ugyanazon útvonalon */}
+              {user && (
+                  <Route
+                      path="/"
+                      element={
+                          user.role === 1 ? (
+                              <AdminLayout />
+                          ) : (
+                              <UserLayout />
+                          )
+                      }
+                  >
+                      <Route index element={<Main />} />
+                  </Route>
+              )}
+          </Routes>
+      </>
   );
 }
 

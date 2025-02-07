@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { myAxios } from "./myAxios";
+import { MyAxios } from "./myAxios";
 
 export const ApiContext = createContext("");
 
@@ -7,7 +7,7 @@ export const ApiProvider = ({ children }) => {
   const [dataList, setDataList] = useState([]);
 
   function getData(endpoint) {
-    myAxios
+    MyAxios
       .get(endpoint)
       .then(function (response) {
         console.log("Get succesful: ", response.data);
@@ -20,7 +20,7 @@ export const ApiProvider = ({ children }) => {
   }
 
   function postData(endpoint, payload) {
-    myAxios
+    MyAxios
       .post(endpoint, payload)
       .then(function (response) {
         console.log("Post succesful: ", response.data);
@@ -31,7 +31,7 @@ export const ApiProvider = ({ children }) => {
   }
 
   function updateData(endpoint, payload) {
-    myAxios
+    MyAxios
       .put(endpoint, payload)
       .then(function (response) {
         console.log("Update successful:", response.data);
@@ -42,7 +42,7 @@ export const ApiProvider = ({ children }) => {
   }
 
   function deleteData(endpoint) {
-    myAxios
+    MyAxios
       .delete(endpoint)
       .then(function (response) {
         console.log("Delete successful:", response.data);
