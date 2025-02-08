@@ -17,9 +17,14 @@ export const AuthProvider = ({ children }) => {
 
   //bejelentkezett felhasználó payLoadainak lekérdezése
   const getUser = async () => {
-    const { data } = await MyAxios.get("/api/users");
-    console.log(data)
-    setUser(data);
+    await csrf(); // CSRF cookie lekérése
+    try {
+      const { data } = await MyAxios.get("/api/users");
+      console.log(data);
+      setUser(data);
+    } catch (error) {
+      console.error("Hiba történt a felhasználó lekérésekor:", error);
+    }
   };
 
   const logout = async () => {
