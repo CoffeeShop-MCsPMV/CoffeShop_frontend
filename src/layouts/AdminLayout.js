@@ -5,7 +5,7 @@ import NavAdmin from '../pages/NavAdmin';
 
 function AdminLayout() {
  const {user} = useAuthContext();
- return user && user.role === "A" ? <> <NavAdmin /> <Outlet /> </> : <Navigate to="/login" />;
+ return user && user.profile_type === "A" ? <> <NavAdmin /> <Outlet /> </> : <Navigate to="/login" />;
 }
 
 export default AdminLayout

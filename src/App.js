@@ -28,7 +28,7 @@ function App() {
                   <Route
                       path="/"
                       element={
-                          user.role === "A" ? (
+                          user.profile_type === "A" ? (
                               <AdminLayout />
                           ) : (
                               <UserLayout />

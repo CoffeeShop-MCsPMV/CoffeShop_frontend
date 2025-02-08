@@ -5,7 +5,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 function UserLayout() {
   const {user} = useAuthContext();
- return user && user.role === "U" ? <> <NavUser /> <Outlet /> </> : <Navigate to="/login" />;
+ return user && user.profile_type === "U" ? <> <NavUser /> <Outlet /> </> : <Navigate to="/login" />;
 }
 
 export default UserLayout
