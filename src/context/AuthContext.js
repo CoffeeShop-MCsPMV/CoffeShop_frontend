@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
   const getUser = async () => {
     await csrf(); // CSRF cookie lekérése
     try {
-      const { data } = await MyAxios.get("/api/users");
+      const { data } = await MyAxios.get("/api/user");
       console.log(data);
       setUser(data);
       console.log(user)
