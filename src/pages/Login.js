@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import useAuthContext from "../context/AuthContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
   const { loginReg, errors } = useAuthContext();
 
   const handleSubmit = async (e) => {
@@ -19,7 +19,11 @@ export default function Login() {
     };
     console.log(adat);
 
-    loginReg(adat, "/login");
+    loginReg(adat, "/login").then((response) => {
+      if (response && response.success) {
+        navigate("/"); // Ha a válasz sikeres, átirányítás
+      }
+    });
   };
 
   return (

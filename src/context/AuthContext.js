@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MyAxios } from "./myAxios";
 
@@ -7,6 +7,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
+  console.log(user)
   const [errors, setErrors] = useState({
     name: "",
     email: "",
@@ -22,6 +23,7 @@ export const AuthProvider = ({ children }) => {
       const { data } = await MyAxios.get("/api/users");
       console.log(data);
       setUser(data);
+      console.log(user)
     } catch (error) {
       console.error("Hiba történt a felhasználó lekérésekor:", error);
     }
@@ -36,11 +38,7 @@ export const AuthProvider = ({ children }) => {
     });
   };
 
-  // useEffect(() => {
-  //   if (!user) {
-  //     getUser()
-  //   }
-  // }, [])
+ 
   
   const loginReg = async ({ ...payLoad }, endpoint) => {
     //lekérjük a csrf tokent
@@ -54,7 +52,7 @@ export const AuthProvider = ({ children }) => {
       //Lekérdezzük a usert
       //await getUser();
       //elmegyünk a kezdőlapra
-      getUser()
+      await getUser()
       navigate("/");
 
     } catch (error) {
@@ -64,6 +62,10 @@ export const AuthProvider = ({ children }) => {
       }
     }
   };
+
+  // useEffect(() => {
+  //   console.log("User frissült:", user);
+  // }, [user]);
 
   return (
     <AuthContext.Provider value={{ logout, loginReg, errors, getUser, user }}>
