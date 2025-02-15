@@ -5,6 +5,7 @@ import useAuthContext from '../context/AuthContext';
 
 function GuestLayout() {
   const { user } = useAuthContext(); 
+  
   return !user ? <>    <NavGuest /> <Outlet /> </>  : <Navigate to="/" />;
 }
 

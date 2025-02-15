@@ -29,11 +29,11 @@ export default function Registration() {
 
   return (
     <div className=" m-auto" style={{ maxWidth: "400px" }}>
-      <h1 className="text-center">Regisztráció</h1>
+      <h1 className="text-center">Registration</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3 mt-3">
           <label htmlFor="name" className="form-label">
-            Név:
+            Name:
           </label>
           <input
             type="text"
@@ -43,7 +43,7 @@ export default function Registration() {
             }}
             className="form-control"
             id="name"
-            placeholder="Név"
+            placeholder="Name"
             name="name"
           />
           <div>
@@ -54,7 +54,7 @@ export default function Registration() {
         </div>
         <div className="mb-3 mt-3">
           <label htmlFor="email" className="form-label">
-            Email:
+            Email address:
           </label>
           <input
             type="email"
@@ -64,7 +64,7 @@ export default function Registration() {
             }}
             className="form-control"
             id="email"
-            placeholder="email"
+            placeholder="Email"
             name="email"
           />
           <div>
@@ -75,7 +75,7 @@ export default function Registration() {
         </div>
         <div className="mb-3">
           <label htmlFor="pwd" className="form-label">
-            Jelszó:
+            Password:
           </label>
           <input
             type="password"
@@ -85,7 +85,7 @@ export default function Registration() {
             }}
             className="form-control"
             id="pwd"
-            placeholder="jelszó"
+            placeholder="Password"
             name="pwd"
           />
           <div>
@@ -96,7 +96,7 @@ export default function Registration() {
         </div>
         <div className="mb-3">
           <label htmlFor="pwd2" className="form-label">
-            Jelszó újra:
+            Confirm password:
           </label>
           <input
             type="password"
@@ -106,7 +106,7 @@ export default function Registration() {
             }}
             className="form-control"
             id="pwd2"
-            placeholder="jelszó újra"
+            placeholder="Password"
             name="pwd2"
           />
           <div>
@@ -119,7 +119,7 @@ export default function Registration() {
         </div>
 
         <button type="submit" className="btn btn-primary w-100">
-          Regisztrálok
+          Register
         </button>
       </form>
     </div>

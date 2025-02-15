@@ -4,6 +4,11 @@ import useAuthContext from "../context/AuthContext";
 
 export default function Nav() {
     const { user, logout } = useAuthContext(); 
+
+      // Ha a felhasználó rákattint a Login linkre, megjelenítjük a modált
+//   const handleLoginClick = () => {
+//     setShowModal(true); // A modális ablakot megjelenítjük
+//   };
  
     return (
         <nav className="navbar navbar-expand-sm bg-light">
@@ -11,14 +16,14 @@ export default function Nav() {
                 <ul className="navbar-nav">
                     <li className="navbar-item">
                         <Link className="nav-link" to="/">
-                            Kezdőlap
+                            Main
                         </Link>
                     </li>
                     {user ? (
                         <>
                             <li className="navbar-item">
                                 <button className="nav-link" onClick={()=>{logout()}}>
-                                    Kijelentkezés
+                                    Sign Out
                                 </button>
                             </li>
                         </>
@@ -26,12 +31,12 @@ export default function Nav() {
                         <>
                             <li className="navbar-item">
                                 <Link className="nav-link" to="/login">
-                                    Bejelentkezés
+                                    Login
                                 </Link>
                             </li>
                             <li className="navbar-item">
                                 <Link className="nav-link" to="/register">
-                                    Regisztráció
+                                    Registration
                                 </Link>
                             </li>
                         </>

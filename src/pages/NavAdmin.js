@@ -11,13 +11,13 @@ export default function NavAdmin() {
                 <ul className="navbar-nav">
                     <li className="navbar-item">
                         <Link className="nav-link" to="/">
-                            Kezdőlap
+                            Main Admin
                         </Link>
                     </li>
 
                     <li className="navbar-item">
                         <button className="nav-link" onClick={() => { logout() }}>
-                            Kijelentkezés
+                            Sign Out
                         </button>
                     </li>
 

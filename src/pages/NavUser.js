@@ -17,7 +17,7 @@ export default function NavUser() {
 
                     <li className="navbar-item">
                         <button className="nav-link" onClick={() => { logout() }}>
-                            Kijelentkezés
+                            Sign Out
                         </button>
                     </li>
 
