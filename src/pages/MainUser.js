@@ -9,7 +9,7 @@ function MainUser() {
         <div>
             <h1>Kezdőlap user</h1>
             <p>Bejelentkezett felhasználó: { user==null?"Nincs bejelentkezett felhasználó!":user.name }</p>
-            <img src="public/logo.png" alt="" />
+            <img src="./logo.png" alt="" />
         </div>
     );
 }

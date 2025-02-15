@@ -35,7 +35,7 @@ function App() {
               path="/login"
               element={<Login show={showModal} onHide={handleCloseModal} />}
             />
-            <Route path="/register" element={<Registration />} />
+            <Route path="/registr" element={<Registration />} />
           </Route>
         )}
 
@@ -48,6 +48,7 @@ function App() {
             }
           >
             <Route index element={<MainUser />} />
+            <Route path="/registr" element={<Registration />} />
           </Route>
         )}
       </Routes>

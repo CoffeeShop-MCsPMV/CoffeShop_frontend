@@ -35,7 +35,7 @@ export default function Nav() {
                                 </Link>
                             </li>
                             <li className="navbar-item">
-                                <Link className="nav-link" to="/register">
+                                <Link className="nav-link" to="/registr">
                                     Registration
                                 </Link>
                             </li>
