@@ -17,7 +17,7 @@ export default function NavGuest({ setShowModal }) {
             </Link>
           </li>
           <li className="navbar-item">
-            <Link className="nav-link" to="/registr">
+            <Link className="nav-link" to="/register">
               Registration
             </Link>
           </li>

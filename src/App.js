@@ -7,7 +7,6 @@ import GuestLayout from "./layouts/GuestLayout";
 import AdminLayout from "./layouts/AdminLayout";
 import UserLayout from "./layouts/UserLayout";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Footer from "./components/Footer";
 import Products from "./pages/Products";
 
 
@@ -36,7 +35,7 @@ function App() {
           
             <Route path="products" element={<Products />} />
         
-            <Route path="registr" element={<Registration />} />
+            <Route path="register" element={<Registration />} />
           </Route>
         )}
 
@@ -50,7 +49,7 @@ function App() {
           >
              <Route path="products" element={<Products />} />
             <Route index element={<Main />} />
-            <Route path="registr" element={<Registration />} />
+            <Route path="register" element={<Registration />} />
             <Route
               path="login"
               element={<Login show={showModal} onHide={handleCloseModal} />}
