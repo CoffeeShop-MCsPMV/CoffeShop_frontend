@@ -18,8 +18,8 @@ function App() {
               {!user && (
                   <Route element={<GuestLayout />}>
                       <Route path="/" element={<Main />} />
-                      <Route path="login" element={<Login />} />
-                      <Route path="register" element={<Registration />} />
+                      <Route path="/login" element={<Login />} />
+                      <Route path="/register" element={<Registration />} />
                   </Route>
               )}
 
