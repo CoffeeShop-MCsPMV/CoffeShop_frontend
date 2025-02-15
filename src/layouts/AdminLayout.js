@@ -1,11 +1,18 @@
-import React from 'react'
-import useAuthContext from '../context/AuthContext'
-import { Navigate, Outlet } from 'react-router-dom';
-import NavAdmin from '../pages/NavAdmin';
+import React from "react";
+import useAuthContext from "../context/AuthContext";
+import { Navigate, Outlet } from "react-router-dom";
+import NavAdmin from "../pages/navigation/NavAdmin";
+import Footer from "../components/Footer";
 
 function AdminLayout() {
- const {user} = useAuthContext();
- return user && user.profile_type === "A" ? <> <NavAdmin /> <Outlet /> </> : <Navigate to="/login" />;
+  const { user } = useAuthContext();
+  return (
+    <>
+      <NavAdmin />
+      <Outlet />
+      <Footer />
+    </>
+  );
 }
 
-export default AdminLayout
+export default AdminLayout;

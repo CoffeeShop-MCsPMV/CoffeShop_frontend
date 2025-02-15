@@ -6,16 +6,15 @@ import Registration from "./pages/Registration";
 import GuestLayout from "./layouts/GuestLayout";
 import AdminLayout from "./layouts/AdminLayout";
 import UserLayout from "./layouts/UserLayout";
-import MainUser from "./pages/MainUser";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
-import NavGuest from "./pages/NavGuest";
+import Footer from "./components/Footer";
+import Products from "./pages/Products";
 
 
 function App() {
-  const { user } = useAuthContext();
+  const { user, setShowModal, showModal } = useAuthContext();
 
-  const [showModal, setShowModal] = useState(false); // Modális ablak állapota
+ // Modális ablak állapota
 
   // Modál bezárása
   const handleCloseModal = () => {
@@ -25,17 +24,19 @@ function App() {
 
   return (
     <>
-       <NavGuest setShowModal={setShowModal} />
       <Routes>
         {/* Vendég layout */}
         {!user && (
           <Route element={<GuestLayout />}>
             <Route path="/" element={<Main />} />
             <Route
-              path="/login"
+              path="login"
               element={<Login show={showModal} onHide={handleCloseModal} />}
             />
-            <Route path="/registr" element={<Registration />} />
+          
+            <Route path="products" element={<Products />} />
+        
+            <Route path="registr" element={<Registration />} />
           </Route>
         )}
 
@@ -47,8 +48,13 @@ function App() {
               user.profile_type === "A" ? <AdminLayout /> : <UserLayout />
             }
           >
-            <Route index element={<MainUser />} />
-            <Route path="/registr" element={<Registration />} />
+             <Route path="products" element={<Products />} />
+            <Route index element={<Main />} />
+            <Route path="registr" element={<Registration />} />
+            <Route
+              path="login"
+              element={<Login show={showModal} onHide={handleCloseModal} />}
+            />
           </Route>
         )}
       </Routes>

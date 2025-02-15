@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import useAuthContext from "../context/AuthContext";
+import useAuthContext from "../../context/AuthContext";
 
-export default function NavUser() {
+export default function NavAdmin() {
     const {  logout } = useAuthContext();
 
     return (
@@ -11,7 +11,12 @@ export default function NavUser() {
                 <ul className="navbar-nav">
                     <li className="navbar-item">
                         <Link className="nav-link" to="/">
-                            Kezdőlap User
+                            Main Admin
+                        </Link>
+                    </li>
+                    <li className="navbar-item">
+                        <Link className="nav-link" to="/products">
+                            Products
                         </Link>
                     </li>
 

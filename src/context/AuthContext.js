@@ -7,6 +7,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
+  const [showModal, setShowModal] = useState(false); 
   console.log(user)
   const [errors, setErrors] = useState({
     name: "",
@@ -63,12 +64,15 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // useEffect(() => {
-  //   console.log("User frissült:", user);
-  // }, [user]);
+   useEffect(() => {
+    console.log("User frissült:", user);
+    if(!user){
+      getUser();
+    }
+  }, [user]);
 
   return (
-    <AuthContext.Provider value={{ logout, loginReg, errors, getUser, user }}>
+    <AuthContext.Provider value={{ logout, loginReg, errors, getUser, user, showModal, setShowModal }}>
       {children}
     </AuthContext.Provider>
   );
