@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuthContext from "../context/AuthContext";
 import Modal from "react-bootstrap/Modal";
 
 export default function Login({ show, onHide }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const { loginReg, errors } = useAuthContext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+   
     //Összegyűjtjük egyetlen objektumban az űrlap adatokat
     const adat = {
       email: email,
@@ -26,9 +28,14 @@ export default function Login({ show, onHide }) {
     });
   };
 
+  const closeWindow = () => {
+    onHide();  // Modal bezárása
+    navigate("/");  // Navigálás a főoldalra
+  };
+  
   return (
     <>
-      <Modal show={show} onHide={onHide}>
+      <Modal show={show} onHide={closeWindow}>
         <Modal.Header closeButton>
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
