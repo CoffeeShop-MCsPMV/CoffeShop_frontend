@@ -1,0 +1,76 @@
+/* Alap navbar stílus */
+.navbar {
+    background: linear-gradient(135deg, #4b2c20, #6f4e37); /* Kávébarna színek */
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  /* A nav belső tartalma */
+  .container-fluid {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Navigációs lista */
+  .navbar-nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* Navigációs elemek */
+  .navbar-item {
+    list-style: none;
+  }
+  
+  /* Linkek stílusa */
+  .nav-link {
+    color: #f4e1d2 !important; /* Krémes latte szín */
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Linkek hover effektje */
+  .nav-link:hover {
+    color: #fff !important;
+    transform: scale(1.1); /* Növeli a szöveget hover esetén */
+  }
+  
+  /* Aláhúzás animáció */
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: -100%;
+    background: #c19a6b; /* Világosabb kávé árnyalat */
+    transition: left 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover::after {
+    left: 0;
+  }
+  
+  /* Reszponzív design */
+  @media (max-width: 768px) {
+    .navbar-nav {
+      flex-direction: column;
+      text-align: center;
+    }
+    .nav-link {
+      display: block;
+      width: 100%;
+    }
+  }
+  
