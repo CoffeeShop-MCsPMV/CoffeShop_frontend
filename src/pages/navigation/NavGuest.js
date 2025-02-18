@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import '../../style/nav.css';
+import '../../style/Nav.css';
 
 
 export default function NavGuest({ setShowModal }) {
