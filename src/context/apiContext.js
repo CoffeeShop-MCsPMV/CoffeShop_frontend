@@ -5,13 +5,14 @@ export const ApiContext = createContext("");
 
 export const ApiProvider = ({ children }) => {
   const [dataList, setDataList] = useState([]);
+  const [productList, setProductList]=useState([])
 
-  function getData(endpoint) {
+  function getData(endpoint, setlist) {
     MyAxios
       .get(endpoint)
       .then(function (response) {
         console.log("Get succesful: ", response.data);
-        setDataList(response.data);
+        setlist(response.data);
       })
       .catch(function (error) {
         console.log("Get error:", error);
@@ -53,12 +54,12 @@ export const ApiProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    getData(endpoint);
-  }, [endpoint]);
+    getData('/api/by-type?type=F', setProductList);
+  }, []);
 
   return (
     <ApiContext.Provider
-      value={{ dataList, getData, postData, updateData, deleteData }}
+      value={{ dataList,productList, getData, postData, updateData, deleteData }}
     >
       {children}
     </ApiContext.Provider>
