@@ -11,7 +11,7 @@ export default function NavUser() {
         <ul className="navbar-nav">
           <li className="navbar-item">
             <Link className="nav-link" to="/">
-              Kezdőlap User
+              Main
             </Link>
           </li>
 

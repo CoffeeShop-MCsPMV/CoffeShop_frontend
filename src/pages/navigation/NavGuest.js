@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import '../../style/Nav.css';
-
+import "../../style/Nav.css";
 
 export default function NavGuest({ setShowModal }) {
   // Ha a felhasználó rákattint a Login linkre, megjelenítjük a modált
@@ -14,18 +13,25 @@ export default function NavGuest({ setShowModal }) {
       <div className="container-fluid">
         <ul className="navbar-nav">
           <li className="navbar-item">
-            <Link className="nav-link" to="/login" onClick={handleLoginClick}>
-              Login
-            </Link>
-          </li>
-          <li className="navbar-item">
-            <Link className="nav-link" to="/register" onClick={handleLoginClick}>
-              Registration
+            <Link className="nav-link" to="/">
+              Main
             </Link>
           </li>
           <li className="navbar-item">
             <Link className="nav-link" to="/products">
               Products
+            </Link>
+          </li>
+          <li className="navbar-item nav-login-register">
+            <Link className="nav-link btn" to="/login" onClick={handleLoginClick}>
+              Login
+            </Link>
+            <Link
+              className="nav-link btn"
+              to="/register"
+              onClick={handleLoginClick}
+            >
+              Registration
             </Link>
           </li>
         </ul>

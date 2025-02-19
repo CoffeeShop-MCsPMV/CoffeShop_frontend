@@ -11,7 +11,7 @@ export default function NavAdmin() {
                 <ul className="navbar-nav">
                     <li className="navbar-item">
                         <Link className="nav-link" to="/">
-                            Main Admin
+                            Main
                         </Link>
                     </li>
                     <li className="navbar-item">

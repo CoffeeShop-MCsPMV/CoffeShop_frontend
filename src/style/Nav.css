@@ -1,4 +1,4 @@
-/* Alap navbar stílus */
+/* Navbar alap stílus */
 .navbar {
     background: linear-gradient(135deg, #4b2c20, #6f4e37); /* Kávébarna színek */
     padding: 15px 20px;
@@ -12,13 +12,15 @@
   /* A nav belső tartalma */
   .container-fluid {
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* A bal és jobb oldal közti térkitöltés */
   }
   
   /* Navigációs lista */
   .navbar-nav {
     display: flex;
     gap: 20px;
+    justify-content: flex-start; /* A bal oldali elemek balra igazítása */
+    margin-right: auto; /* Bal oldali navigációs elemek */
   }
   
   /* Navigációs elemek */
@@ -62,15 +64,35 @@
     left: 0;
   }
   
-  /* Reszponzív design */
-  @media (max-width: 768px) {
-    .navbar-nav {
-      flex-direction: column;
-      text-align: center;
-    }
-    .nav-link {
-      display: block;
-      width: 100%;
-    }
+  /* A login és regisztráció linkekhez */
+  .nav-login-register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px; /* Ovális alak */
+    overflow: hidden; /* Ne jelenjenek meg a kerekítésnél túllógó elemek */
+    border: 1px solid #ccc;
+  }
+  
+  .nav-login-register a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #f4e1d2; /* Krémes latte szín */
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  /* Az elválasztás csak akkor legyen látható, amikor az egyik link fölé visszük a kurzort */
+  .nav-login-register a:not(:last-child):hover {
+    border-right: 1px solid #ccc; /* Külön vonal jelenjen meg a két link között */
+  }
+  
+  .nav-login-register a:hover {
+    background-color: #f0f0f0;
+    color: #4b2c20 !important;
+  }
+  
+  /* A jobb oldali elhelyezéshez */
+  .navbar-nav .nav-link.btn {
+    margin-left: auto; /* A jobb oldalra toljuk a login és regisztráció linkeket */
   }
   

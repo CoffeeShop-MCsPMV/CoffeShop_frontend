@@ -9,17 +9,15 @@ import UserLayout from "./layouts/UserLayout";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Products from "./pages/Products";
 
-
 function App() {
   const { user, setShowModal, showModal } = useAuthContext();
 
- // Modális ablak állapota
+  // Modális ablak állapota
 
   // Modál bezárása
   const handleCloseModal = () => {
     setShowModal(false); // Bezárja a modált
   };
-
 
   return (
     <>
@@ -32,10 +30,15 @@ function App() {
               path="login"
               element={<Login show={showModal} onHide={handleCloseModal} />}
             />
-          
+
             <Route path="products" element={<Products />} />
-        
-            <Route path="register" element={<Registration show={showModal} onHide={handleCloseModal} />} />
+
+            <Route
+              path="register"
+              element={
+                <Registration show={showModal} onHide={handleCloseModal} />
+              }
+            />
           </Route>
         )}
 
@@ -47,9 +50,14 @@ function App() {
               user.profile_type === "A" ? <AdminLayout /> : <UserLayout />
             }
           >
-             <Route path="products" element={<Products />} />
+            <Route path="products" element={<Products />} />
             <Route index element={<Main />} />
-            <Route path="register" element={<Registration />} />
+            <Route
+              path="register"
+              element={
+                <Registration show={showModal} onHide={handleCloseModal} />
+              }
+            />
             <Route
               path="login"
               element={<Login show={showModal} onHide={handleCloseModal} />}
