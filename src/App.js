@@ -35,7 +35,7 @@ function App() {
           
             <Route path="products" element={<Products />} />
         
-            <Route path="register" element={<Registration />} />
+            <Route path="register" element={<Registration show={showModal} onHide={handleCloseModal} />} />
           </Route>
         )}
 
