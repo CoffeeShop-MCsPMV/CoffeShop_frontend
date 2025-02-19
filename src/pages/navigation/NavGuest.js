@@ -12,6 +12,9 @@ export default function NavGuest({ setShowModal }) {
     <nav className="navbar navbar-expand-sm bg-light">
       <div className="container-fluid">
         <ul className="navbar-nav">
+        <li className="navbar-item">
+        <img src="./logo.png" width="75px" alt="" />
+          </li>
           <li className="navbar-item">
             <Link className="nav-link" to="/">
               Main
