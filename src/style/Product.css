@@ -30,6 +30,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 30%);
+  mask-image: linear-gradient(to right, transparent, black 30%);
   }
   
   .info {
@@ -57,4 +59,5 @@
     transform: translateX(0);
     opacity: 1;
   }
+  
   
