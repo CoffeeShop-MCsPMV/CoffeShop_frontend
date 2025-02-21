@@ -3,20 +3,18 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 function ProductCard(props) {
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img
-        variant="top"
-        src={`http://localhost:8000/${props.product.src}`}
-      />
-      <Card.Body>
+    <div onClick={()=>{console.log(`kosárhoz adva:${props.product.name}`)}} className="product-card">
+      <div className="image-container">
+        <Card.Img
+          className="product-image"
+          src={`http://localhost:8000/${props.product.src}`}
+        />
+      </div>
+      <div className="info">
         <Card.Title>{props.product.name}</Card.Title>
-        {/* <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text> */}
-        {/* <Button variant="primary">Go somewhere</Button> */}
-      </Card.Body>
-    </Card>
+        <Card.Text>{props.product.current_price}€</Card.Text>
+      </div>
+    </div>
   );
 }
 

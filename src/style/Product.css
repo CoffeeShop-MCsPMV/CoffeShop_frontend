@@ -1,0 +1,63 @@
+.products {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px; /* Opcionális: távolság az elemek között */
+}
+
+.product-card {
+    position: relative;
+    width: 450px; /* Kicsit nagyobb méret */
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .image-container {
+    position: absolute;
+    width: 60%; 
+    height: 100%;
+    left:25%;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 30%);
+  mask-image: linear-gradient(to right, transparent, black 30%);
+  }
+  
+  .info {
+    position: absolute;
+    width: 40%; /* Szöveg helyet kap jobbra */
+    height: 100%;
+    right: 0;
+    background: white;
+    padding: 20px;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 18px;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  
+  .product-card:hover .image-container {
+    transform: translateX(-35%); /* A kép enyhén balra csúszik, de teljesen látszik */
+  }
+  
+  .product-card:hover .info {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  
