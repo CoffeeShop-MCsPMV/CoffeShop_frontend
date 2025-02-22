@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
+import "../style/Modal.css";
 
 //import { useNavigate } from "react-router-dom";
 import useAuthContext from "../context/AuthContext";

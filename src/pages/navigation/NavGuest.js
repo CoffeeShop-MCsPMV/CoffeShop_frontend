@@ -12,8 +12,11 @@ export default function NavGuest({ setShowModal }) {
     <nav className="navbar navbar-expand-sm bg-light">
       <div className="container-fluid">
         <ul className="navbar-nav">
-        <li className="navbar-item">
-        <img src="./images/logo.png" width="75px" alt="" />
+          <li className="navbar-item">
+            <a href="/">
+              {" "}
+              <img src="./images/logo.png" width="75px" alt="" />
+            </a>
           </li>
           <li className="navbar-item">
             <Link className="nav-link" to="/">
@@ -26,7 +29,11 @@ export default function NavGuest({ setShowModal }) {
             </Link>
           </li>
           <li className="navbar-item nav-login-register">
-            <Link className="nav-link btn" to="/login" onClick={handleLoginClick}>
+            <Link
+              className="nav-link btn"
+              to="/login"
+              onClick={handleLoginClick}
+            >
               Login
             </Link>
             <Link
