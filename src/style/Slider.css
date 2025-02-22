@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "coffee";
+  src: url("../../public/fonts/DancingScript-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "main-font";
+  src: url("../../public/fonts/ArsenalSC-Regular.ttf");
+}
+
+* {
+  font-family: main-font;
+}
+
+#first-slide {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../../public/images/6300.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#first-slide p {
+  font-size: 100px;
+  font-family: coffee;
+  color: #f3d5b5;
+}
+
+#first-slide a:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+#first-slide img {
+  transform: rotate(10deg);
+}
+
+#second-slide {
+  background-image: url(../../public/images/main2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#second-slide h3 {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+#third-slide {
+  background-image: url(../../public/images/4609.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 5%;
+}
+
+.carousel-item {
+  height: 450px;
+}
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  margin-left: auto;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  text-align: justify;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}

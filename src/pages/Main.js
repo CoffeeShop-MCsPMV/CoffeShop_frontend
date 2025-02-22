@@ -1,5 +1,7 @@
 import React from 'react'
 import useAuthContext from '../context/AuthContext';
+import Slider from '../components/Slider';
+import TopProducts from '../components/TopProducts';
 
 
 function Main() {
@@ -8,13 +10,14 @@ function Main() {
 
     return (
         <>
-        <div style={{backgroundColor: "blue"}}>
+        <section>
+            <Slider />
+            <TopProducts />
+        </section>
+        {/* <div style={{backgroundColor: "blue"}}>
             <h1>Kezdőlap</h1>
-            <p>Bejelentkezett felhasználó: { user==null?"Nincs bejelentkezett felhasználó!":user.name }</p>
-            
-          
-        </div>
-       
+            <p>Bejelentkezett felhasználó: { user==null?"Nincs bejelentkezett felhasználó!":user.name }</p>     
+        </div> */}
         </>
     );
 }
