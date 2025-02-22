@@ -4,7 +4,9 @@ import "../style/Product.css";
 
 function Products() {
   return (
-    <ProductsList className="prod"/>
+    <div  className="product-page">
+    <ProductsList/>
+    </div>
   )
 }
 

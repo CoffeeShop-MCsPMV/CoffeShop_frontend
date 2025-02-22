@@ -1,5 +1,10 @@
 @import url(variables.css);
 
+.product-page{
+    display: flex;
+    justify-content: center;
+}
+
 .products {
     margin: 10px;
     display: flex;
