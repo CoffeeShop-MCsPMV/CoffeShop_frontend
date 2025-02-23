@@ -1,0 +1,8 @@
+@import url(variables.css);
+
+.modal-backdrop {
+    background-image: url(../../public/images/main5.jpg); 
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8; 
+  }

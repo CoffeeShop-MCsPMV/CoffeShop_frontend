@@ -1,0 +1,8 @@
+@import url(variables.css);
+
+.topic{
+    padding-inline: 50px;
+    padding-block: 25px;
+    text-align: justify;
+    font-size: large;
+}

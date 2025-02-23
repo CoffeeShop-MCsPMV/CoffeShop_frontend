@@ -1,48 +1,33 @@
-.navbar {
-  background: linear-gradient(135deg, #4b2c20, #6f4e37);
-  padding: 15px 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  display: flex; /* Flexbox használata a tartalom középre igazításához */
-  justify-content: center; /* Horizontálisan középre igazítás */
-  align-items: center; /* Vertikálisan középre igazítás */
+@import url(variables.css);
+
+.navbar.navbar-expand-sm.bg-light {
+  background: var(--nav) !important;
 }
 
-/* A nav belső tartalma */
-.container-fluid {
+.navbar-nav,
+.nav-login-register {
   display: flex;
-  justify-content: flex-start; /* A bal és jobb oldal közötti térkitöltés */
-  width: 100%;
-  max-width: 1200px; /* Ha szükséges, a max szélesség beállítása */
-  align-items: center; /* A tartalom középre igazítása */
+  flex-direction: row;
+  align-items: center;
 }
 
-/* Navigációs lista */
 .navbar-nav {
-  display: flex;
-  gap: 20px;
-  justify-content: flex-start; /* A bal oldali elemek balra igazítása */
-  margin-right: auto; /* Bal oldali navigációs elemek */
-  align-items: center; /* A listaelemek középre igazítása */
+  gap: 10px;
 }
 
-/* Navigációs elemek */
+.navbar-nav ul:last-child{
+  margin-left: auto;
+}
+
 .navbar-item {
   list-style: none;
 }
 
-/* Linkek stílusa */
 .nav-link {
-  color: #f4e1d2 !important;
-  font-size: 18px;
+  color: #f4b562 !important;
+  font-size: 20px;
   font-weight: bold;
-  text-transform: uppercase;
   text-decoration: none;
-  padding: 8px 15px;
-  border-radius: 8px;
   transition: all 0.3s ease-in-out;
   position: relative;
   overflow: hidden;
@@ -50,10 +35,9 @@
 
 .nav-link:hover {
   color: #fff !important;
-  transform: scale(1.1); 
+  transform: scale(1.1);
 }
 
-/* Aláhúzás animáció */
 .nav-link::after {
   content: "";
   position: absolute;
@@ -61,7 +45,7 @@
   height: 3px;
   bottom: 0;
   left: -100%;
-  background: #c19a6b; 
+  background: #c19a6b;
   transition: left 0.3s ease-in-out;
 }
 
@@ -69,12 +53,27 @@
   left: 0;
 }
 
+.nav-link.btn::after {
+  background: none;
+}
+
+.navbar-item.nav-login-register {
+  border: 1px solid #f4b562;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.nav-link.btn:hover {
+  background-color: #f4b562;
+}
+/* 
+
 .nav-login-register {
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50px; 
-  overflow: hidden; /* Ne jelenjenek meg a kerekítésnél túllógó elemek */
+  overflow: hidden; 
   border: 1px solid #ccc;
 }
 
@@ -84,12 +83,11 @@
   color: #f4e1d2; 
   height: 36px; 
   display: flex;
-  align-items: center; /* Középre igazítjuk a szöveget */
-  justify-content: center; /* Középre igazítjuk a szöveget */
+  align-items: center; 
+  justify-content: center; 
   transition: background-color 0.3s, border-color 0.3s;
 }
 
-/* Az elválasztás csak akkor legyen látható, amikor az egyik link fölé visszük a kurzort */
 .nav-login-register a:not(:last-child):hover {
   border-right: 1px solid #ccc; 
 }
@@ -103,15 +101,4 @@
 .navbar-nav .nav-link.btn {
   margin-left: auto; 
 }
-
-@media (min-width: 768px) {
-  .nav-bar {
-    gap: 8px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .nav-bar {
-    gap: 20px;
-  }
-}
+} */

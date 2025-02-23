@@ -1,12 +1,4 @@
-@font-face {
-  font-family: "coffee";
-  src: url("../../public/fonts/DancingScript-VariableFont_wght.ttf");
-}
-
-@font-face {
-  font-family: "main-font";
-  src: url("../../public/fonts/ArsenalSC-Regular.ttf");
-}
+@import url(variables.css);
 
 * {
   font-family: main-font;
@@ -17,15 +9,14 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-image: url(../../public/images/6300.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(../../public/images/coffee-beans-top-view-background.jpg);
+  background-size: contain;
 }
 
 #first-slide p {
   font-size: 100px;
   font-family: coffee;
-  color: #f3d5b5;
+  color: #fff;
 }
 
 #first-slide a:hover {
@@ -57,7 +48,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 5%;
+  padding-right: 10%;
 }
 
 .carousel-item {
@@ -74,6 +65,6 @@
   height: 100%;
   text-align: justify;
   color: white;
-  font-size: 20px;
+  font-size: 35px;
   font-weight: bold;
 }

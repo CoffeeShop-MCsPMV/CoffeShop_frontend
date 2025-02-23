@@ -10,7 +10,10 @@ export default function NavUser() {
       <div className="container-fluid">
         <ul className="navbar-nav">
           <li className="navbar-item">
-            <img src="./images/logo.png" width="75px" alt="" />
+          <a href="/">
+              {" "}
+              <img src="./images/logo.png" width="75px" alt="" />
+            </a>
           </li>
           <li className="navbar-item">
             <Link className="nav-link" to="/">
