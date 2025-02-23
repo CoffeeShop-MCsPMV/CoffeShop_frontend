@@ -59,7 +59,7 @@ export const ApiProvider = ({ children }) => {
 
   return (
     <ApiContext.Provider
-      value={{ dataList,productList, getData, postData, updateData, deleteData }}
+      value={{ dataList,productList,setProductList, getData, postData, updateData, deleteData }}
     >
       {children}
     </ApiContext.Provider>
