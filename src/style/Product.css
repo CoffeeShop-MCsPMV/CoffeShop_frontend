@@ -67,4 +67,11 @@
     opacity: 1;
   }
   
+  .cart-button{
+    padding: 0;
+    border: none;
+  }
   
+  .cart-button img{
+    /* height: 60px; */
+  }
