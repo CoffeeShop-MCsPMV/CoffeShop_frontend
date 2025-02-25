@@ -6,7 +6,6 @@ import ProductCartIcon from '../components/ProductCartIcon';
 
 function Products() {
   return (<>
-  <ProductCartIcon/>
     <ProductFilter/>
     <div  className="product-page">
     <ProductsList/>

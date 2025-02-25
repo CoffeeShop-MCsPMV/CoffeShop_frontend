@@ -11,11 +11,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px; /* Opcionális: távolság az elemek között */
+    justify-content: center;
 }
 
 .product-card {
     position: relative;
-    width: 450px; /* Kicsit nagyobb méret */
+    width: 380px; /* Kicsit nagyobb méret */
     height: 250px;
     overflow: hidden;
     display: flex;
@@ -70,8 +71,46 @@
   .cart-button{
     padding: 0;
     border: none;
+    background: none;
   }
   
-  .cart-button img{
-    /* height: 60px; */
+
+  .filter-and-cart {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--nav);
+    height: 18vh;
+    align-items: center; 
+    padding: 0 10px; 
+    justify-content: center;
+  }
+  
+  .filter-and-cart .card {
+    border: none;
+    background: none;
+    color: white;
+    flex: 0 0 auto; /* A kártyák ne nyúljanak túl */
+    width: 10vw; /* Kisebb szélesség */
+    min-width: 120px; /* Minimum szélesség */
+    height: 15vh; /* Magasság beállítása */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .filter-and-cart .card-body {
+    padding: 5px; /* Csökkentsd az alapértelmezett paddinget */
+    text-align: center; /* Középre igazítás */
+  }
+  
+  
+  .filter-and-cart .card img {
+    max-height: 80%; 
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  .filter-and-cart .card:hover{
+    color: var(--gold);
   }
