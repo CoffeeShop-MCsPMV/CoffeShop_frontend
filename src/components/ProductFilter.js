@@ -34,7 +34,9 @@ function ProductFilter() {
       {filterOptions.map((category, i) => (
         <ProductFilterCard category={category} onClick={() => getFilteredData(category.id)} key={i} />
       ))}
+      <div className="cart">
       <ProductCartIcon/>
+      </div>
     </div>
   );
   
