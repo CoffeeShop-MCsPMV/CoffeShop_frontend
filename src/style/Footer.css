@@ -1,0 +1,35 @@
+@import url(variables.css);
+
+.footer {
+  background-color: var(--nav);
+  display: flex;
+  flex-direction: row;
+  padding-inline: 10px;
+  padding-block: 25px;
+}
+
+table {
+  margin-left: 50px;
+  border: none;
+  width: 60%;
+  table-layout: fixed;
+}
+
+th,
+td,
+td a {
+  color: white;
+  text-decoration: none;
+}
+
+td a:hover {
+  color: var(--gold);
+}
+
+td {
+  padding-block: 5px;
+}
+
+th{
+    padding-block: 10px;
+}

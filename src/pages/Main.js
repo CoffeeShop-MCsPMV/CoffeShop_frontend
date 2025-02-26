@@ -1,11 +1,10 @@
 import React from "react";
-import useAuthContext from "../context/AuthContext";
 import Slider from "../components/Slider";
 import TopProducts from "../components/TopProducts";
 import "../style/Main.css";
 
 function Main() {
-  const { user } = useAuthContext();
+ // const { user } = useAuthContext();
   //   console.log(user)
 
   return (

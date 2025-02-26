@@ -1,10 +1,14 @@
 import React from 'react'
-import useAuthContext from '../context/AuthContext';
 import NavUser from '../pages/navigation/NavUser';
 import { Outlet } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 function UserLayout() {
- return <> <NavUser /> <Outlet /> </> ;
+ return <> 
+ <NavUser /> 
+ <Outlet /> 
+ <Footer />
+ </> ;
 }
 
 export default UserLayout
