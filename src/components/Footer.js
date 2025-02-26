@@ -17,16 +17,16 @@ function Footer() {
         </tr>
         <tr>
           <td>
-            <a href="">About us</a>
+            <a href="/coming-soon">About us</a>
           </td>
           <td>
-            <a href="">Contact us</a>
+            <a href="/coming-soon">Contact us</a>
           </td>
           <td>
-            <a href="">Resposibility</a>
+            <a href="/coming-soon">Resposibility</a>
           </td>
           <td>
-            <a href="">Allergens</a>
+            <a href="/coming-soon">Allergens</a>
           </td>
         </tr>
         <tr>
@@ -36,7 +36,7 @@ function Footer() {
         </tr>
         <tr>
           <td>
-            <a href="">Stories & News</a>
+            <a href="/coming-soon">Stories & News</a>
           </td>
         </tr>
       </table>

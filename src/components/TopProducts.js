@@ -4,11 +4,11 @@ import "../style/TopProducts.css";
 
 const TopProducts = () => {
   const initialData = [
-    { id: '1', src: 'http://fakeimg.pl/300/?text=1' },
-    { id: '2', src: 'http://fakeimg.pl/300/?text=2' },
-    { id: '3', src: 'http://fakeimg.pl/300/?text=3' },
-    { id: '4', src: 'http://fakeimg.pl/300/?text=4' },
-    { id: '5', src: 'http://fakeimg.pl/300/?text=5' },
+    { id: '1', src: './images/cappuccino.png' },
+    { id: '2', src: './images/caramel_macchiato.png' },
+    { id: '3', src: './images/classic_lemonade.png' },
+    { id: '4', src: './images/espresso.png' },
+    { id: '5', src: './images/iced_flat_white.png' },
   ];
 
   const [carouselData, setCarouselData] = useState(initialData);
@@ -39,13 +39,6 @@ const TopProducts = () => {
     });
   };
 
-  const add = () => {
-    setCarouselData((prev) => {
-      const newItem = { id: `${prev.length + 1}`, src: `http://fakeimg.pl/300/?text=${prev.length + 1}` };
-      return [...prev, newItem];
-    });
-  };
-
   const play = () => {
     setPlaying((prev) => !prev);
   };
@@ -64,7 +57,6 @@ const TopProducts = () => {
       </div>
       <div className="slider-controls">
         <button onClick={previous}>Previous</button>
-        <button onClick={add}>Add</button>
         <button onClick={play}>{playing ? 'Pause' : 'Play'}</button>
         <button onClick={next}>Next</button>
       </div>

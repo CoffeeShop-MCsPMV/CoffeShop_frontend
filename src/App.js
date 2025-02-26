@@ -8,6 +8,7 @@ import AdminLayout from "./layouts/AdminLayout";
 import UserLayout from "./layouts/UserLayout";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Products from "./pages/Products";
+import ComingSoon from "./pages/ComingSoon";
 
 function App() {
   const { user, setShowModal, showModal } = useAuthContext();
@@ -26,6 +27,7 @@ function App() {
         {!user && (
           <Route element={<GuestLayout />}>
             <Route path="/" element={<Main />} />
+            <Route path="/coming-soon" element={<ComingSoon />} />
             <Route
               path="login"
               element={<Login show={showModal} onHide={handleCloseModal} />}
@@ -51,6 +53,7 @@ function App() {
             }
           >
             <Route path="products" element={<Products />} />
+            <Route path="/coming-soon" element={<ComingSoon />} />
             <Route index element={<Main />} />
             <Route
               path="register"

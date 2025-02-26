@@ -53,11 +53,11 @@
   left: 0;
 }
 
-.nav-link.btn::after {
+.nav-link.btn::after, .nav-link.logout::after {
   background: none;
 }
 
-.navbar-item.nav-login-register {
+.navbar-item.nav-login-register, .nav-link.logout {
   border: 1px solid #f4b562;
   border-radius: 50px;
   overflow: hidden;

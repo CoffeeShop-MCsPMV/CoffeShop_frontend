@@ -29,7 +29,7 @@ export default function NavUser() {
 
           <li className="navbar-item">
             <button
-              className="nav-link"
+              className="nav-link logout"
               onClick={() => {
                 logout();
               }}

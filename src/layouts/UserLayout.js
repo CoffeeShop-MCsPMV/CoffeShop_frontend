@@ -1,14 +1,16 @@
-import React from 'react'
-import NavUser from '../pages/navigation/NavUser';
-import { Outlet } from 'react-router-dom';
-import Footer from '../components/Footer';
+import React from "react";
+import NavUser from "../pages/navigation/NavUser";
+import { Outlet } from "react-router-dom";
+import Footer from "../components/Footer";
 
 function UserLayout() {
- return <> 
- <NavUser /> 
- <Outlet /> 
- <Footer />
- </> ;
+  return (
+    <>
+      <NavUser />
+      <Outlet />
+      <Footer />
+    </>
+  );
 }
 
-export default UserLayout
+export default UserLayout;
