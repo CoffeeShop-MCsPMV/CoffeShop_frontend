@@ -58,6 +58,8 @@ export const ApiProvider = ({ children }) => {
     getData('/api/by-type?type=F', setProductList);
   }, []);
 
+
+
   return (
     <ApiContext.Provider
       value={{ dataList,productList,cartList, setCartList, setProductList, getData, postData, updateData, deleteData }}
