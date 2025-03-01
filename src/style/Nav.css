@@ -66,39 +66,11 @@
 .nav-link.btn:hover {
   background-color: #f4b562;
 }
-/* 
 
-.nav-login-register {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50px; 
-  overflow: hidden; 
-  border: 1px solid #ccc;
+.custom-dropdown::after {
+  display: none;
 }
 
-.nav-login-register a {
-  padding: 10px 20px;
-  text-decoration: none;
-  color: #f4e1d2; 
-  height: 36px; 
-  display: flex;
-  align-items: center; 
-  justify-content: center; 
-  transition: background-color 0.3s, border-color 0.3s;
+#user-btn.custon-dropdown.btn.btn-primary{
+  background: none;
 }
-
-.nav-login-register a:not(:last-child):hover {
-  border-right: 1px solid #ccc; 
-}
-
-.nav-login-register a:hover {
-  background-color: #f0f0f0;
-  color: #6f4e37 !important;
-}
-
-
-.navbar-nav .nav-link.btn {
-  margin-left: auto; 
-}
-} */
