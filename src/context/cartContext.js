@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const CartContext = createContext("");
 
@@ -9,34 +9,23 @@ export const CartProvider = ({ children }) => {
   
 
   function addToCart(product) {
-    //const list = [...cartList];
-    console.log(product)
-    console.log("cartList:", cartList);
-    const thisTermekInCart = cartList.find((data) => data.name === product.name);
-    
-   
+    const list = [...cartList];
+    const thisTermekInCart = list.find((data) => data.name === product.name);
+
     if (thisTermekInCart === undefined) {
       product.pcs = 1;
-    //   list.push(product);
-    //   console.log("list:" ,list)
-
-    //   setCartList([...list]);
-
-      setCartList(prev => [...prev, product]);
-      console.log("cartList:", cartList);
+      list.push(product);
     } else {
       thisTermekInCart.pcs++;
-    //   setCartList([...list]);
-    setCartList(prev => [...prev, product]);
-      console.log("cartList:", cartList);
     }
 
-    
+    setCartList([...list]);
     console.log("termék a kosárhoz adva")
+    
    
-    countTotal()
-    sumProductPcs()
   }
+  useEffect(()=>{ countTotal()
+    sumProductPcs()},[cartList])
 
   function pcsEdit(product, pcs) {
     const list = [...cartList];
