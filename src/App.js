@@ -13,8 +13,6 @@ import ComingSoon from "./pages/ComingSoon";
 function App() {
   const { user, setShowModal, showModal } = useAuthContext();
 
-  // Modális ablak állapota
-
   // Modál bezárása
   const handleCloseModal = () => {
     setShowModal(false); // Bezárja a modált
