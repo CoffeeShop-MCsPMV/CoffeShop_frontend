@@ -28,6 +28,11 @@ export default function NavGuest({ setShowModal }) {
               Products
             </Link>
           </li>
+          <li className="navbar-item">
+            <Link className="nav-link" to="/cart">
+              Cart
+            </Link>
+          </li>
           <li className="navbar-item nav-login-register">
             <Link
               className="nav-link btn"

@@ -9,6 +9,7 @@ import UserLayout from "./layouts/UserLayout";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Products from "./pages/Products";
 import ComingSoon from "./pages/ComingSoon";
+import Cart from "./pages/Cart";
 
 function App() {
   const { user, setShowModal, showModal } = useAuthContext();
@@ -34,6 +35,7 @@ function App() {
             />
 
             <Route path="products" element={<Products />} />
+            <Route path="cart" element={<Cart />} />
 
             <Route
               path="register"
@@ -53,6 +55,7 @@ function App() {
             }
           >
             <Route path="products" element={<Products />} />
+            <Route path="cart" element={<Cart />} />
             <Route path="/coming-soon" element={<ComingSoon />} />
             <Route index element={<Main />} />
             <Route

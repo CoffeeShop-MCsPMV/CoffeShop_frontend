@@ -25,6 +25,11 @@ export default function NavAdmin() {
               Products
             </Link>
           </li>
+          <li className="navbar-item">
+            <Link className="nav-link" to="/cart">
+              Cart
+            </Link>
+          </li>
 
           <li className="navbar-item">
             <button

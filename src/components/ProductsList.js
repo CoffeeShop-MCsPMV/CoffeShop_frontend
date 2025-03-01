@@ -3,7 +3,8 @@ import ProductCard from './ProductCard'
 import { ApiContext, productList } from '../context/apiContext'
 
 function ProductsList() {
-    const {productList}=useContext(ApiContext)
+    const {productList, setProductList, getData}=useContext(ApiContext);
+    getData('/api/by-type?type=F', setProductList);
     
   return (
     <div className='products'>{

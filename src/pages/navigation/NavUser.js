@@ -10,7 +10,7 @@ export default function NavUser() {
       <div className="container-fluid">
         <ul className="navbar-nav">
           <li className="navbar-item">
-          <a href="/">
+            <a href="/">
               {" "}
               <img src="./images/logo.png" width="75px" alt="" />
             </a>
@@ -24,6 +24,11 @@ export default function NavUser() {
           <li className="navbar-item">
             <Link className="nav-link" to="/products">
               Products
+            </Link>
+          </li>
+          <li className="navbar-item">
+            <Link className="nav-link" to="/cart">
+              Cart
             </Link>
           </li>
 
