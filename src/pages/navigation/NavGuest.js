@@ -5,7 +5,7 @@ import "../../style/Nav.css";
 export default function NavGuest({ setShowModal }) {
   // Ha a felhasználó rákattint a Login linkre, megjelenítjük a modált
   const handleLoginClick = () => {
-    setShowModal(true); // A modális ablakot megjelenítjük
+    setShowModal(true) // A modális ablakot megjelenítjük
   };
 
   return (

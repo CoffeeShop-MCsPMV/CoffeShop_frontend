@@ -38,8 +38,6 @@ export const AuthProvider = ({ children }) => {
       console.log(resp);
     });
   };
-
- 
   
   const loginReg = async ({ ...payLoad }, endpoint) => {
     //lekérjük a csrf tokent

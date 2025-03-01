@@ -9,13 +9,16 @@ function Footer() {
         <img src="./images/logo.png" width="75px" alt="" />
       </a>
       <table>
+        <thead>
         <tr>
           <th>About us</th>
           <th>Contact us</th>
           <th>Social impact</th>
           <th>Allergens</th>
         </tr>
-        <tr>
+        </thead>
+       <tbody>
+       <tr>
           <td>
             <a href="/coming-soon">About us</a>
           </td>
@@ -39,6 +42,7 @@ function Footer() {
             <a href="/coming-soon">Stories & News</a>
           </td>
         </tr>
+       </tbody>
       </table>
     </div>
   );

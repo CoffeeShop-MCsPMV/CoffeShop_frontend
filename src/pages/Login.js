@@ -24,14 +24,14 @@ export default function Login({ show, onHide }) {
 
     loginReg(adat, "/login").then((response) => {
       if (response && response.success) {
-        onHide();
+        onHide(); //modál bezárása
       }
     });
   };
 
   const closeWindow = () => {
     onHide();  // Modal bezárása
-    navigate("/");  // Navigálás a főoldalra
+    navigate("/") // Navigálás a főoldalra
   };
   
   return (
