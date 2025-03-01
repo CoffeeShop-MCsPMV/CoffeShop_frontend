@@ -5,14 +5,11 @@ import { ApiContext } from "../context/apiContext";
 function ProductCard(props) {
 
   const {setCartList, cartList}=useContext(ApiContext);
-  const list = []
 
   function addToCart(data){
-    
-    list.push(data)
-    setCartList(...list)
-    console.log(cartList)
-
+    const clonedList=[...cartList]
+    clonedList.push(data)
+    setCartList(clonedList)
 
 }
   return (
