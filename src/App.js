@@ -34,8 +34,8 @@ function App() {
               element={<Login show={showModal} onHide={handleCloseModal} />}
             />
 
-            <Route path="products" element={<Products />} />
-            <Route path="cart" element={<Cart />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/cart" element={<Cart />} />
 
             <Route
               path="register"
@@ -54,8 +54,8 @@ function App() {
               user.profile_type === "A" ? <AdminLayout /> : <UserLayout />
             }
           >
-            <Route path="products" element={<Products />} />
-            <Route path="cart" element={<Cart />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/coming-soon" element={<ComingSoon />} />
             <Route path="/profil" element={<Profil />} />
             <Route path="/orders" element={<Orders />} />

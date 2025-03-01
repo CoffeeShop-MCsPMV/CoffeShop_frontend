@@ -37,7 +37,7 @@ function CartItem(props) {
               </div>
             </div>
             <p>{itemCost}</p>
-            <button type="button" class="btn-close" aria-label="Close" onClick={()=>deleteFromCart(props.item)}></button>
+            <button type="button" className="btn-close" aria-label="Close" onClick={()=>deleteFromCart(props.item)}></button>
           </div>
         </div>
       </div>

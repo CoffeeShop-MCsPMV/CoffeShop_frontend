@@ -7,7 +7,7 @@ function ProductCard(props) {
 
 const {addToCart}=useContext(CartContext);
   return (
-    <div onClick={()=>{addToCart(props.product); console.log(`kosárhoz adva:${props.product.name}`)}} className="product-card">
+    <div onClick={()=>{addToCart(props.product)}} className="product-card">
       <div className="image-container">
         <Card.Img
           className="product-image"
