@@ -6,7 +6,6 @@ export const ApiContext = createContext("");
 export const ApiProvider = ({ children }) => {
   const [dataList, setDataList] = useState([]);
   const [productList, setProductList]=useState([]);
-  const [cartList, setCartList]=useState([]);
 
   function getData(endpoint, setlist) {
     MyAxios
@@ -62,7 +61,7 @@ export const ApiProvider = ({ children }) => {
 
   return (
     <ApiContext.Provider
-      value={{ dataList,productList,cartList, setCartList, setProductList, getData, postData, updateData, deleteData }}
+      value={{ dataList,productList, setProductList, getData, postData, updateData, deleteData }}
     >
       {children}
     </ApiContext.Provider>

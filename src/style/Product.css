@@ -78,8 +78,9 @@
   height: 18vh;
   align-items: center; 
   padding: 0 10px; 
-  justify-content: center; 
+  justify-content: space-between; 
   width: 100%;
+  
 }
 
 .filter-and-cart .card {
@@ -95,6 +96,12 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.filter-cards{
+  display: flex;
+  justify-content: center;
+  flex: 0 0 calc(100vw - 140px)
 }
 
 .filter-and-cart .card-body {
@@ -115,7 +122,8 @@
 }
 
 .cart {
-  margin-left: auto; /* A kosár ikont a jobb szélre tolja */
+  flex: 0 0 70px;
+
   margin-right: 10px;
 }
 

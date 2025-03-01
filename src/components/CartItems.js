@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import CartItem from './CartItem';
-import { ApiContext } from '../context/apiContext';
+import { CartContext } from '../context/cartContext';
 
 
 function CartItems() {
-  const { setCartList, cartList } = useContext(ApiContext);
+  const {  cartList, total } = useContext(CartContext);
+  
+
+ 
 
  
 
@@ -13,6 +16,7 @@ function CartItems() {
       {cartList?.map((product, i) => (
         <CartItem item={product} key={i}  />
       ))}
+      <p>{total}</p>
     </div>
   );
 }
