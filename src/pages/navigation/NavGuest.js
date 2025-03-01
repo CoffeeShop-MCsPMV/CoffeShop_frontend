@@ -5,7 +5,7 @@ import "../../style/Nav.css";
 export default function NavGuest({ setShowModal }) {
   // Ha a felhasználó rákattint a Login linkre, megjelenítjük a modált
   const handleLoginClick = () => {
-    setShowModal(true) // A modális ablakot megjelenítjük
+    setShowModal(true); // A modális ablakot megjelenítjük
   };
 
   return (
@@ -33,7 +33,9 @@ export default function NavGuest({ setShowModal }) {
               Cart
             </Link>
           </li>
-          <li className="navbar-item nav-login-register">
+        </ul>
+        <ul className="navbar-nav">
+        <li className="navbar-item nav-login-register">
             <Link
               className="nav-link btn"
               to="/login"

@@ -18,12 +18,12 @@ table {
 th,
 td,
 td a {
-  color: white;
+  color: var(--gold);
   text-decoration: none;
 }
 
 td a:hover {
-  color: var(--gold);
+  color: white;
 }
 
 td {
@@ -32,4 +32,5 @@ td {
 
 th{
     padding-block: 10px;
+    text-transform: uppercase;
 }
