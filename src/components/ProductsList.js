@@ -1,10 +1,13 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import ProductCard from './ProductCard'
 import { ApiContext, productList } from '../context/apiContext'
 
 function ProductsList() {
     const {productList, setProductList, getData}=useContext(ApiContext);
-    // getData('/api/by-type?type=F', setProductList);
+    useEffect(() => {
+        getData('/api/by-type?type=F', setProductList);
+      }, []);
+    
     
   return (
     <div className='products'>{

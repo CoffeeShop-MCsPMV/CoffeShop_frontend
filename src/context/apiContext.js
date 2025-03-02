@@ -27,7 +27,7 @@ export const ApiProvider = ({ children }) => {
         console.log("Post succesful: ", response.data);
       })
       .catch(function (error) {
-        console.log("Post error:", error);
+        console.log("Post error:", error.response?.data || error.message);
       });
   }
 

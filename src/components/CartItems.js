@@ -3,7 +3,8 @@ import CartItem from "./CartItem";
 import { CartContext } from "../context/cartContext";
 
 function CartItems() {
-  const { cartList, total } = useContext(CartContext);
+  const { cartList, total, postOrder } = useContext(CartContext);
+  
 
   return (
     <div className="cart-page">
@@ -14,7 +15,7 @@ function CartItems() {
          </div>
          <div>
         <h4>Total: {total}€</h4>
-        <button>Order</button>
+        <button onClick={postOrder}>Order</button>
         </div>
      
     </div>
