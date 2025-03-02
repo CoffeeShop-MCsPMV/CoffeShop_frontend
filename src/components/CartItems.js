@@ -1,22 +1,22 @@
-import React, { useContext } from 'react';
-import CartItem from './CartItem';
-import { CartContext } from '../context/cartContext';
-
+import React, { useContext } from "react";
+import CartItem from "./CartItem";
+import { CartContext } from "../context/cartContext";
 
 function CartItems() {
-  const {  cartList, total } = useContext(CartContext);
-  
-
- 
-
- 
+  const { cartList, total } = useContext(CartContext);
 
   return (
-    <div>
-      {cartList?.map((product, i) => (
-        <CartItem item={product} key={i}  />
-      ))}
-      <p>{total}</p>
+    <div className="cart-page">
+      <div>
+        {cartList?.map((product, i) => (
+          <CartItem item={product} key={i} />
+        ))}
+         </div>
+         <div>
+        <h4>Total: {total}€</h4>
+        <button>Order</button>
+        </div>
+     
     </div>
   );
 }

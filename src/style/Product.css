@@ -105,8 +105,8 @@
 }
 
 .filter-and-cart .card-body {
-  padding: 5px; /* Csökkentett padding */
-  text-align: center; /* Középre igazítás */
+  padding: 5px;
+  text-align: center; 
 }
 
 .filter-and-cart .card img {

@@ -67,9 +67,24 @@ export const CartProvider = ({ children }) => {
     let sum = cartList.reduce((runningTotal, product) => {
       return runningTotal + product.current_price * product.pcs;
     }, 0);
-    setTotal(sum);
+    setTotal(sum.toFixed(2));
     console.log("végösszeg frissítve")
   }
+
+  function makeOrderDataList() {
+    const orderData = [];
+    cartList.forEach(product => { 
+        for (let i = 0; i < product.pcs; i++) {
+            orderData.push(product);
+        }
+    });
+    return orderData;
+}
+
+function pushOrder(){
+    
+}
+
 
   return (
     <CartContext.Provider value={{ cartList, addToCart, pcsEdit, total, deleteFromCart, cartItemPcs }}>
