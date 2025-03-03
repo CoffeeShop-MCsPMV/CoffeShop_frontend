@@ -9,10 +9,10 @@ function ProductFilter() {
 
 
   const filterOptions = [
-    { id: 1, code: "COF", title: "Coffees", src:"./images/filter/COF.png" },
-    { id: 2, code: "ICF", title: "Iced Coffees", src:"./images/filter/ICF.png" },
-    { id: 3, code: "TEA", title: "Teas", src:"./images/filter/TEA.png" },
-    { id: 4, code: "ICT", title: "Iced Teas", src:"./images/filter/ICT.png" },
+    { id: 1, code: "COF", title: "Coffee", src:"./images/filter/COF.png" },
+    { id: 2, code: "ICF", title: "Iced Coffee", src:"./images/filter/ICF.png" },
+    { id: 3, code: "TEA", title: "Tea", src:"./images/filter/TEA.png" },
+    { id: 4, code: "ICT", title: "Iced Tea", src:"./images/filter/ICT.png" },
     { id: 5, code: "HOD", title: "Hot Drinks", src:"./images/filter/HDR.png" },
     { id: 6, code: "IDR", title: "Iced Drinks", src:"./images/filter/IDR.png" },
   ];

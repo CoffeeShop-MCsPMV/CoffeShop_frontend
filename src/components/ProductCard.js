@@ -15,7 +15,7 @@ const {addToCart}=useContext(CartContext);
         />
       </div>
       <div className="info">
-        <Card.Title>{props.product.name}</Card.Title>
+        <Card.Title className="product-name">{props.product.name}</Card.Title>
         <Card.Text>{props.product.current_price}€</Card.Text>
       </div>
     </div>
