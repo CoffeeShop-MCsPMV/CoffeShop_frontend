@@ -7,15 +7,19 @@ function CartItems() {
   
 
   return (
-    <div className="cart-page">
+    <div className="cart-items">
       <div>
         {cartList?.map((product, i) => (
           <CartItem item={product} key={i} />
         ))}
          </div>
-         <div>
+         <div className="total"> 
+          <div>
         <h4>Total: {total}€</h4>
-        <button onClick={postOrder}>Order</button>
+        </div>
+        <div>
+        <button  onClick={postOrder}>Order</button>
+        </div>
         </div>
      
     </div>

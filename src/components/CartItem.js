@@ -17,11 +17,11 @@ function CartItem(props) {
       <h5>{props.item.name}</h5>
       <div className="counter">
         <button onClick={() => pcsEdit(props.item, props.item.pcs + 1)}>
-          +
+          <img src="/images/plus.png" alt="" />
         </button>
-        <h2 className="text-xl font-semibold">{props.item.pcs}</h2>
+        <h4 className="">{props.item.pcs}</h4>
         <button onClick={() => pcsEdit(props.item, props.item.pcs - 1)}>
-          -
+        <img src="/images/minus.png" alt="" />
         </button>
       </div>
       <p>{itemCost.toFixed(2)}€</p>
