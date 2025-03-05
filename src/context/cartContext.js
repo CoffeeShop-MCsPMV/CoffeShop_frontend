@@ -30,7 +30,7 @@ export const CartProvider = ({ children }) => {
     console.log("termék a kosárhoz adva");
   }
   useEffect(() => {
-    countTotal();
+    countTotal(cartList, setTotal);
     sumProductPcs();
   }, [cartList]);
 
@@ -50,7 +50,7 @@ export const CartProvider = ({ children }) => {
 
       setCartList([...list]);
 
-      countTotal();
+      countTotal(cartList, setTotal);
       sumProductPcs();
     }
   }
@@ -68,14 +68,22 @@ export const CartProvider = ({ children }) => {
     console.log("dbszám frissítve");
   }
 
-  function countTotal() {
-    console.log("cartList:", cartList);
-    let sum = cartList.reduce((runningTotal, product) => {
-      return runningTotal + product.current_price * product.pcs;
-    }, 0);
-    setTotal(sum.toFixed(2));
-    console.log("végösszeg frissítve");
+  function countTotal(list, setData ) {
+    console.log("usedList:", list);
+  
+    // Ellenőrizd, hogy a list nem undefined vagy null, és nem üres
+    if (Array.isArray(list) && list.length > 0) {
+      let sum = list.reduce((runningTotal, product) => {
+        return runningTotal + product.current_price * product.pcs;
+      }, 0);
+      setData(sum.toFixed(2));
+      console.log("összeg frissítve");
+    } else {
+      console.log("A lista üres vagy nem érvényes");
+      setData('0.00'); // Ha a lista nem érvényes, állítsd 0-ra
+    }
   }
+  
 
   function makeOrderProductList() {
     const orderProductList = [];
@@ -95,7 +103,7 @@ export const CartProvider = ({ children }) => {
   
     postData("/api/orders", orderData)
 
-    
+
   }
   
   
