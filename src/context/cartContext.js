@@ -11,9 +11,7 @@ export const CartProvider = ({ children }) => {
   const [cartItemPcs, setCartItemPcs] = useState(0);
   const { user } = useAuthContext();
   const { postData, getData } = useContext(ApiContext);
-  const [orderId, setOrderId] = useState(null);
-  const [cupId, setCupId] = useState(-1);
-  const orderUser = user;
+  const {isOrdered, setIsOrdered}=useState(false)
 
   function addToCart(product) {
     const list = [...cartList];
@@ -89,14 +87,18 @@ export const CartProvider = ({ children }) => {
     console.log(orderProductList);
     return orderProductList;
   }
-
   function postOrder() {
     let orderData = {
       userId: user ? user.id : null,
       products: makeOrderProductList(),
     };
-    postData("/api/orders", orderData);
+  
+    postData("/api/orders", orderData)
+
+    
   }
+  
+  
 
   return (
     <CartContext.Provider

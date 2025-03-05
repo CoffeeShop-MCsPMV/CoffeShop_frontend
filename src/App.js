@@ -12,6 +12,7 @@ import ComingSoon from "./pages/ComingSoon";
 import Cart from "./pages/Cart";
 import Orders from "./pages/Orders";
 import Profil from "./pages/Profil";
+import Mixer from "./pages/Mixer";
 
 function App() {
   const { user, setShowModal, showModal } = useAuthContext();
@@ -35,6 +36,7 @@ function App() {
             />
 
             <Route path="/products" element={<Products />} />
+            <Route path="/mixer" element={<Mixer />} />
             <Route path="/cart" element={<Cart />} />
 
             <Route
@@ -55,6 +57,7 @@ function App() {
             }
           >
             <Route path="/products" element={<Products />} />
+            <Route path="/mixer" element={<Mixer />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/coming-soon" element={<ComingSoon />} />
             <Route path="/profil" element={<Profil />} />

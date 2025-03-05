@@ -25,9 +25,11 @@ export const ApiProvider = ({ children }) => {
       .post(endpoint, payload)
       .then(function (response) {
         console.log("Post succesful: ", response.data);
+        return response.data
       })
       .catch(function (error) {
         console.log("Post error:", error.response?.data || error.message);
+        return null
       });
   }
 
