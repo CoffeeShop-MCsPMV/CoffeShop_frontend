@@ -86,20 +86,17 @@ export const CartProvider = ({ children }) => {
         orderProductList.push(product.product_id);
       }
     });
-    console.log(orderProductList)
+    console.log(orderProductList);
     return orderProductList;
   }
 
-  function postOrder(){
-    const orderData={
-        userId: user.id,
-        products: makeOrderProductList()
-    }
-
-    postData('/api/orders', orderData)
+  function postOrder() {
+    let orderData = {
+      userId: user ? user.id : null,
+      products: makeOrderProductList(),
+    };
+    postData("/api/orders", orderData);
   }
-
- 
 
   return (
     <CartContext.Provider
