@@ -1,28 +1,29 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { MixerContext } from "../context/mixerContext";
 import IngredientCard from "./IngredientCard";
 
 function Chooser() {
-  const { baseList, milkList, syrupList, toppingList, ice } =
+  const { baseList, milkList, syrupList, toppingList, setIce, ice } =
     useContext(MixerContext);
+   
+
   return (
     <>
-      <IngredientCard list={baseList} />
+      <IngredientCard list={baseList} id={0}/>
+      <IngredientCard list={milkList} id={1} />
+      <IngredientCard list={syrupList} id={2} />
+      <IngredientCard list={toppingList} id={3} />
 
-      <IngredientCard list={milkList} />
-
-      <IngredientCard list={syrupList} />
-
-      <IngredientCard list={toppingList} />
-
-      <div class="form-check form-switch">
+      <div className="form-check form-switch">
         <input
-          class="form-check-input"
+          className="form-check-input"
           type="checkbox"
           role="switch"
           id="flexSwitchCheckDefault"
+          checked={ice} 
+          onChange={(e) => {setIce(!ice); }}
         />
-        <label class="form-check-label" for="flexSwitchCheckDefault">
+        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
           Ice
         </label>
       </div>

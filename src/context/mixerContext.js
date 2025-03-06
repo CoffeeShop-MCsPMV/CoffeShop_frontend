@@ -9,7 +9,8 @@ export const MixerProvider = ({ children }) => {
   const [milkList, setMilkList] = useState([]);
   const [syrupList, setSyrupList] = useState([]);
   const [toppingList, setToppingList] = useState([]);
-  const [ice, setIce] = useState(false);
+  const [ice, setIce] = useState(true);
+  const [addedIngredientList, setAddedIngredientList]=useState([])
   
 
 
@@ -25,7 +26,7 @@ export const MixerProvider = ({ children }) => {
   }, [baseList]); 
   return (
     <MixerContext.Provider
-      value={{ baseList, milkList, syrupList, toppingList, ice }}
+      value={{ baseList, milkList, syrupList, toppingList, ice, setIce, addedIngredientList, setAddedIngredientList }}
     >
       {children}
     </MixerContext.Provider>

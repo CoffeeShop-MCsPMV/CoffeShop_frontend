@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { MixerContext } from "../context/mixerContext";
 
 function IngredientCard(props) {
+    const {setAddedIngredientList, addedIngredientList}=useContext(MixerContext)
     const [index, setIndex] = useState(0);
-  if (!props.list || props.list.length === 0) {
-    return <p>No products available</p>; // Ha nincs adat, jeleníts meg üzenetet
-  }
+    useEffect(()=>{
+        addIngredient()
+        
+    
+      }, [index])
+    
+    
+      useEffect(()=>{
+        console.log(addedIngredientList)
+        
+    
+      }, [addedIngredientList])
+
+    if (!props.list || props.list.length === 0) {
+        return <p>Nincs elérhető összetevő.</p>;
+      }
   
   const product = props.list[index];
 
@@ -20,10 +35,23 @@ function IngredientCard(props) {
     );
   };
 
+ 
+
+
+  function addIngredient(){
+    setAddedIngredientList(prev => {
+        const newAddedingredientList = [...prev]; 
+        newAddedingredientList[props.id] = product.product_id; 
+        console.log(props.id, product.product_id )
+        return newAddedingredientList; })
+  }
+
+
+
   return (
     <>
      
-      <div className="Ingredient-card" key={product.product_id}>
+      <div className="Ingredient-card" key={product.product_id} id={props.id}>
         <div>
       <p>{product.name}</p>
       </div>
@@ -41,3 +69,4 @@ function IngredientCard(props) {
 }
 
 export default IngredientCard;
+
