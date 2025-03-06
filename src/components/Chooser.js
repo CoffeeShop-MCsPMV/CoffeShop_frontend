@@ -7,30 +7,24 @@ function Chooser() {
     useContext(MixerContext);
   return (
     <>
-      <div className="Base">
-        <IngredientCard list={baseList} />
-      </div>
-      <div className="Milk">
-        <IngredientCard list={milkList} />
-      </div>
-      <div className="Syrup">
-        <IngredientCard list={syrupList} />
-      </div>
-      <div className="Topping">
-        <IngredientCard list={toppingList} />
-      </div>
-      <div className="Ice">
-        <div class="form-check form-switch">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            role="switch"
-            id="flexSwitchCheckDefault"
-          />
-          <label class="form-check-label" for="flexSwitchCheckDefault">
-            Ice
-          </label>
-        </div>
+      <IngredientCard list={baseList} />
+
+      <IngredientCard list={milkList} />
+
+      <IngredientCard list={syrupList} />
+
+      <IngredientCard list={toppingList} />
+
+      <div class="form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckDefault"
+        />
+        <label class="form-check-label" for="flexSwitchCheckDefault">
+          Ice
+        </label>
       </div>
     </>
   );

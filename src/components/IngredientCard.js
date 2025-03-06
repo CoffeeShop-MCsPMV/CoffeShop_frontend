@@ -22,14 +22,19 @@ function IngredientCard(props) {
 
   return (
     <>
-      <div key={product.product_id}>
-        <button onClick={handlePrev}>prev</button>
-        <p>{product.name}</p>
+     
+      <div className="Ingredient-card" key={product.product_id}>
+        <div>
+      <p>{product.name}</p>
+      </div>
+      <div className="ingredient-photo">
+        <button onClick={handlePrev}>ᐊ</button>
         <img
           src={`http://localhost:8000/${product.src}`}
           alt={`${product.name}`}
         />
-        <button onClick={handleNext}>next</button>
+        <button onClick={handleNext}>ᐅ</button>
+      </div>
       </div>
     </>
   );
