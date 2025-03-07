@@ -36,7 +36,7 @@ export const ApiProvider = ({ children }) => {
 
   function updateData(endpoint, payload) {
     MyAxios
-      .put(endpoint, payload)
+      .patch(endpoint, payload)
       .then(function (response) {
         console.log("Update successful:", response.data);
       })
