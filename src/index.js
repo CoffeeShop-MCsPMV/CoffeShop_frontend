@@ -6,6 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import { AuthProvider } from "./context/AuthContext";
 import { BrowserRouter } from "react-router-dom";
 import { ApiProvider } from "./context/apiContext";
+import { CartProvider } from "./context/cartContext";
+import { MixerProvider } from "./context/mixerContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,7 +15,11 @@ root.render(
     <BrowserRouter>
       <AuthProvider>
         <ApiProvider>
+          <CartProvider>
+            <MixerProvider>
           <App />
+          </MixerProvider>
+          </CartProvider>
         </ApiProvider>
       </AuthProvider>
     </BrowserRouter>

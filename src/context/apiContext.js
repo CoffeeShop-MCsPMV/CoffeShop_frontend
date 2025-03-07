@@ -6,7 +6,7 @@ export const ApiContext = createContext("");
 export const ApiProvider = ({ children }) => {
   const [dataList, setDataList] = useState([]);
   const [productList, setProductList] = useState([]);
-  const [cartList, setCartList] = useState([]);
+
 
   function getData(endpoint, setlist) {
     MyAxios
@@ -26,9 +26,11 @@ export const ApiProvider = ({ children }) => {
       .post(endpoint, payload)
       .then(function (response) {
         console.log("Post succesful: ", response.data);
+        return response.data
       })
       .catch(function (error) {
-        console.log("Post error:", error);
+        console.log("Post error:", error.response?.data || error.message);
+        return null
       });
   }
 
@@ -62,7 +64,7 @@ export const ApiProvider = ({ children }) => {
 
   return (
     <ApiContext.Provider
-      value={{ dataList,productList,cartList, setCartList, setProductList, getData, postData, updateData, deleteData }}
+      value={{ dataList,productList, setProductList, getData, postData, updateData, deleteData }}
     >
       {children}
     </ApiContext.Provider>

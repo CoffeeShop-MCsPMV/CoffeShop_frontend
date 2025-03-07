@@ -27,6 +27,11 @@ export default function NavAdmin() {
             </Link>
           </li>
           <li className="navbar-item">
+            <Link className="nav-link" to="/mixer">
+              Mixer
+            </Link>
+          </li>
+          <li className="navbar-item">
             <Link className="nav-link" to="/cart">
               Cart
             </Link>

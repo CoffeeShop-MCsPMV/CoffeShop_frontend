@@ -2,18 +2,12 @@ import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { ApiContext } from "../context/apiContext";
+import { CartContext } from "../context/cartContext";
 function ProductCard(props) {
 
-  const {setCartList, cartList}=useContext(ApiContext);
-
-  function addToCart(data){
-    const clonedList=[...cartList]
-    clonedList.push(data)
-    setCartList(clonedList)
-
-}
+const {addToCart}=useContext(CartContext);
   return (
-    <div onClick={()=>{addToCart(props.product); console.log(`kosárhoz adva:${props.product.name}`)}} className="product-card">
+    <div onClick={()=>{addToCart(props.product)}} className="product-card">
       <div className="image-container">
         <Card.Img
           className="product-image"
@@ -21,7 +15,7 @@ function ProductCard(props) {
         />
       </div>
       <div className="info">
-        <Card.Title>{props.product.name}</Card.Title>
+        <Card.Title className="product-name">{props.product.name}</Card.Title>
         <Card.Text>{props.product.current_price}€</Card.Text>
       </div>
     </div>

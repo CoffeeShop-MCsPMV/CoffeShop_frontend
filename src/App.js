@@ -12,6 +12,8 @@ import ComingSoon from "./pages/ComingSoon";
 import Cart from "./pages/Cart";
 import Orders from "./pages/Orders";
 import Profile from "./pages/Profile";
+import Mixer from "./pages/Mixer";
+
 
 function App() {
   const { user, setShowModal, showModal } = useAuthContext();
@@ -34,8 +36,9 @@ function App() {
               element={<Login show={showModal} onHide={handleCloseModal} />}
             />
 
-            <Route path="products" element={<Products />} />
-            <Route path="cart" element={<Cart />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/mixer" element={<Mixer />} />
+            <Route path="/cart" element={<Cart />} />
 
             <Route
               path="register"
@@ -54,8 +57,9 @@ function App() {
               user.profile_type === "A" ? <AdminLayout /> : <UserLayout />
             }
           >
-            <Route path="products" element={<Products />} />
-            <Route path="cart" element={<Cart />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/mixer" element={<Mixer />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="/coming-soon" element={<ComingSoon />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/orders" element={<Orders />} />
