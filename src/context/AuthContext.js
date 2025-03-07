@@ -7,8 +7,12 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
-  const [showModal, setShowModal] = useState(false); 
-  console.log(user)
+  const [showModal, setShowModal] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [password_confirmation, setPasswordConfirmation] = useState("");
+  console.log(user);
   const [errors, setErrors] = useState({
     name: "",
     email: "",
@@ -24,7 +28,7 @@ export const AuthProvider = ({ children }) => {
       const { data } = await MyAxios.get("/api/user");
       console.log(data);
       setUser(data);
-      console.log(user)
+      console.log(user);
     } catch (error) {
       console.error("Hiba történt a felhasználó lekérésekor:", error);
     }
@@ -36,9 +40,10 @@ export const AuthProvider = ({ children }) => {
     MyAxios.post("/logout").then((resp) => {
       setUser(null);
       console.log(resp);
+      navigate("/");
     });
   };
-  
+
   const loginReg = async ({ ...payLoad }, endpoint) => {
     //lekérjük a csrf tokent
     await csrf();
@@ -51,9 +56,8 @@ export const AuthProvider = ({ children }) => {
       //Lekérdezzük a usert
       //await getUser();
       //elmegyünk a kezdőlapra
-      await getUser()
+      await getUser();
       navigate("/");
-
     } catch (error) {
       console.log(error);
       if (error.response.status === 422) {
@@ -62,15 +66,33 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-   useEffect(() => {
+  useEffect(() => {
     console.log("User frissült:", user);
-    if(!user){
+    if (!user) {
       getUser();
     }
-  }, [user]);
+  }, []);
 
   return (
-    <AuthContext.Provider value={{ logout, loginReg, errors, getUser, user, showModal, setShowModal }}>
+    <AuthContext.Provider
+      value={{
+        logout,
+        loginReg,
+        errors,
+        getUser,
+        user,
+        showModal,
+        setShowModal,
+        name,
+        setName,
+        email,
+        setEmail,
+        password,
+        setPassword,
+        password_confirmation,
+        setPasswordConfirmation,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

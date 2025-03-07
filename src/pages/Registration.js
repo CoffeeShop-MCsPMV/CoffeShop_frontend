@@ -7,12 +7,18 @@ import "../style/Modal.css";
 import useAuthContext from "../context/AuthContext";
 
 export default function Registration({ show, onHide }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [password_confirmation, setPasswordConfirmation] = useState("");
-
-  const { loginReg, errors } = useAuthContext();
+  const {
+    loginReg,
+    errors,
+    name,
+    setName,
+    email,
+    setEmail,
+    password,
+    setPassword,
+    password_confirmation,
+    setPasswordConfirmation,
+  } = useAuthContext();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -28,15 +34,15 @@ export default function Registration({ show, onHide }) {
     console.log(adat);
 
     loginReg(adat, "/register").then((response) => {
-      if(response && response.success){
+      if (response && response.success) {
         onHide();
       }
     });
   };
 
   const closeWindow = () => {
-    onHide();  // Modal bezárása
-    navigate("/");  // Navigálás a főoldalra
+    onHide(); // Modal bezárása
+    navigate("/"); // Navigálás a főoldalra
   };
 
   return (

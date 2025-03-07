@@ -11,7 +11,7 @@ import Products from "./pages/Products";
 import ComingSoon from "./pages/ComingSoon";
 import Cart from "./pages/Cart";
 import Orders from "./pages/Orders";
-import Profil from "./pages/Profil";
+import Profile from "./pages/Profile";
 
 function App() {
   const { user, setShowModal, showModal } = useAuthContext();
@@ -57,7 +57,7 @@ function App() {
             <Route path="products" element={<Products />} />
             <Route path="cart" element={<Cart />} />
             <Route path="/coming-soon" element={<ComingSoon />} />
-            <Route path="/profil" element={<Profil />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/orders" element={<Orders />} />
             <Route index element={<Main />} />
             <Route

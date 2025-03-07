@@ -41,7 +41,7 @@ export default function NavUser() {
           />
         </Dropdown.Toggle>
         <Dropdown.Menu>
-          <Dropdown.Item href="/profil">Profil</Dropdown.Item>
+          <Dropdown.Item href="/profile">Profile</Dropdown.Item>
           <Dropdown.Item href="/orders">Orders</Dropdown.Item>
           <Dropdown.Divider />
           <Dropdown.Item

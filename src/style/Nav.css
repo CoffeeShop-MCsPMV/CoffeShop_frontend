@@ -71,6 +71,6 @@
   display: none;
 }
 
-#user-btn.custon-dropdown.btn.btn-primary{
-  background: none;
+#user-btn.dropdown-toggle:hover{
+  transform: scale(1.1);
 }

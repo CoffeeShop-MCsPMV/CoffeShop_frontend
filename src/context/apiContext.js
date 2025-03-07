@@ -5,8 +5,8 @@ export const ApiContext = createContext("");
 
 export const ApiProvider = ({ children }) => {
   const [dataList, setDataList] = useState([]);
-  const [productList, setProductList]=useState([]);
-  const [cartList, setCartList]=useState([]);
+  const [productList, setProductList] = useState([]);
+  const [cartList, setCartList] = useState([]);
 
   function getData(endpoint, setlist) {
     MyAxios
