@@ -6,7 +6,7 @@ export const ApiContext = createContext("");
 export const ApiProvider = ({ children }) => {
   const [dataList, setDataList] = useState([]);
   const [productList, setProductList] = useState([]);
-
+  const [postedList, setPostedList]=useState([]);
 
   function getData(endpoint, setlist) {
     MyAxios
@@ -26,6 +26,7 @@ export const ApiProvider = ({ children }) => {
       .post(endpoint, payload)
       .then(function (response) {
         console.log("Post succesful: ", response.data);
+        setPostedList(response.data)
         return response.data
       })
       .catch(function (error) {
@@ -64,7 +65,7 @@ export const ApiProvider = ({ children }) => {
 
   return (
     <ApiContext.Provider
-      value={{ dataList,productList, setProductList, getData, postData, updateData, deleteData }}
+      value={{ dataList,productList, setProductList, getData, postData, updateData, deleteData, postedList }}
     >
       {children}
     </ApiContext.Provider>

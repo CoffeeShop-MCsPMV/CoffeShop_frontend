@@ -1,5 +1,6 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, use, useContext, useEffect, useState } from "react";
 import { ApiContext } from "./apiContext";
+import { CartContext } from "./cartContext";
 
 export const MixerContext = createContext("");
 
@@ -10,8 +11,11 @@ export const MixerProvider = ({ children }) => {
   const [syrupList, setSyrupList] = useState([]);
   const [toppingList, setToppingList] = useState([]);
   const [ice, setIce] = useState(true);
-  const [addedIngredientList, setAddedIngredientList]=useState([])
+  const [addedIngredientList, setAddedIngredientList]=useState([20013,20002,20055,20056]);
+  const [mixerTotal, setMixerTotal]=useState(0);
+ 
   
+
 
 
 
@@ -26,7 +30,7 @@ export const MixerProvider = ({ children }) => {
   }, [baseList]); 
   return (
     <MixerContext.Provider
-      value={{ baseList, milkList, syrupList, toppingList, ice, setIce, addedIngredientList, setAddedIngredientList }}
+      value={{ baseList, milkList, syrupList, toppingList, ice, setIce, addedIngredientList, setAddedIngredientList, mixerTotal, setMixerTotal }}
     >
       {children}
     </MixerContext.Provider>

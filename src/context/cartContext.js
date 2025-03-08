@@ -11,19 +11,23 @@ export const CartProvider = ({ children }) => {
   const [cartItemPcs, setCartItemPcs] = useState(0);
   const { user } = useAuthContext();
   const { postData, getData } = useContext(ApiContext);
-  const {isOrdered, setIsOrdered}=useState(false)
+  const { isOrdered, setIsOrdered } = useState(false);
 
   function addToCart(product) {
     const list = [...cartList];
-    const thisTermekInCart = list.find(
-      (data) => data.product_id === product.product_id
-    );
-
-    if (thisTermekInCart === undefined) {
-      product.pcs = 1;
+    if (Array.isArray(product)) {
       list.push(product);
     } else {
-      thisTermekInCart.pcs++;
+      const thisTermekInCart = list.find(
+        (data) => data.product_id === product.product_id
+      );
+
+      if (thisTermekInCart === undefined) {
+        product.pcs = 1;
+        list.push(product);
+      } else {
+        thisTermekInCart.pcs++;
+      }
     }
 
     setCartList([...list]);
@@ -68,26 +72,42 @@ export const CartProvider = ({ children }) => {
     console.log("dbszám frissítve");
   }
 
-  function countTotal(list, setData ) {
+  function countTotal(list, setData) {
     console.log("usedList:", list);
-  
-    // Ellenőrizd, hogy a list nem undefined vagy null, és nem üres
+
     if (Array.isArray(list) && list.length > 0) {
-      let sum = list.reduce((runningTotal, product) => {
-        return runningTotal + product.current_price * product.pcs;
-      }, 0);
+      let sum = 0.00;
+      list.forEach((item) => {
+        if (Array.isArray(item)) {
+          item.forEach((ingredient) => {
+            sum += parseFloat(ingredient.current_price);
+          });
+        } else {
+          sum += parseFloat(item.current_price);
+        }
+      });
       setData(sum.toFixed(2));
-      console.log("összeg frissítve");
+
+      console.log("összeg frissítve:", sum);
     } else {
       console.log("A lista üres vagy nem érvényes");
-      setData('0.00'); // Ha a lista nem érvényes, állítsd 0-ra
+      setData("0.00");
     }
   }
-  
 
   function makeOrderProductList() {
     const orderProductList = [];
     cartList.forEach((product) => {
+      console.log(product);
+
+      if (Array.isArray(product)) {
+        const mixedProductIdList = [];
+        product.forEach((element) => {
+          mixedProductIdList.push(element.product_id);
+        });
+        orderProductList.push(mixedProductIdList);
+      }
+
       for (let i = 0; i < product.pcs; i++) {
         orderProductList.push(product.product_id);
       }
@@ -100,13 +120,9 @@ export const CartProvider = ({ children }) => {
       userId: user ? user.id : null,
       products: makeOrderProductList(),
     };
-  
-    postData("/api/orders", orderData)
 
-
+    postData("/api/orders", orderData);
   }
-  
-  
 
   return (
     <CartContext.Provider
@@ -118,6 +134,7 @@ export const CartProvider = ({ children }) => {
         deleteFromCart,
         cartItemPcs,
         postOrder,
+        countTotal,
       }}
     >
       {children}
