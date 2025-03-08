@@ -1,13 +1,13 @@
-import React from 'react'
-import useAuthContext from '../context/AuthContext'
+import React from 'react';
+import Accordion from 'react-bootstrap/Accordion';
+import OrderItem from '../components/OrderItem';
 
 function Orders() {
-  const {user} = useAuthContext();
-  console.log(user)
-
   return (
-    <div>Orders</div>
-  )
+    <Accordion>
+      <OrderItem />
+    </Accordion>
+  );
 }
 
 export default Orders
