@@ -5,27 +5,34 @@ import { ApiContext } from "../context/apiContext";
 
 const TopProducts = () => {
   const { getData } = useContext(ApiContext);
-  const [list, setList] = useState([]);
+  const [topProducts, setTopProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
+
   useEffect(() => {
-    console.log("data");
-    getData("/api/top-products", setList);
+    // console.log("Fetching data...");
+    getData("/api/top-products", (data) => {
+      console.log("Top products:", data);
+      setTopProducts(data);
+    });
   }, []);
 
-  // const initialData = [
-  //   { id: '1', src: './images/cappuccino.png' },
-  //   { id: '2', src: './images/caramel_macchiato.png' },
-  //   { id: '3', src: './images/classic_lemonade.png' },
-  //   { id: '4', src: './images/espresso.png' },
-  //   { id: '5', src: './images/iced_flat_white.png' },
-  // ];
+  useEffect(() => {
+    console.log("Fetching products...");
+    getData("/api/products", (data) => {
+      console.log("Fetched products:", data); 
+      setAllProducts(data);
+    });
+  }, []);
+  
 
-  const [carouselData, setCarouselData] = useState([]);
+  const [carouselData, setCarouselData] = useState(topProducts);
   //carouselData frissül, ha megjönnek az API adatok
   useEffect(() => {
-    if (list.length > 0) {
-      setCarouselData(list);
+    console.log("Updated topProducts:", topProducts);
+    if (topProducts.length > 0) {
+      setCarouselData(topProducts);
     }
-  }, [list]);
+  }, [topProducts]);
 
   //automatikus lejátszás kezelése
   const [playing, setPlaying] = useState(false);
@@ -42,21 +49,18 @@ const TopProducts = () => {
 
   const previous = () => {
     setCarouselData((prev) => {
-      const newData = [
-        prev[prev.length - 1],
-        ...prev.slice(0, prev.length - 1),
-      ];
-      return newData;
+      if (prev.length === 0) return prev;
+      return [prev[prev.length - 1], ...prev.slice(0, prev.length - 1)];
     });
   };
-
+  
   const next = () => {
     setCarouselData((prev) => {
-      const newData = [...prev.slice(1), prev[0]];
-      return newData;
+      if (prev.length === 0) return prev;
+      return [...prev.slice(1), prev[0]];
     });
   };
-
+  
   const play = () => {
     setPlaying((prev) => !prev);
   };
@@ -64,14 +68,18 @@ const TopProducts = () => {
   return (
     <div className="slider">
       <div className="slider-container">
-        {carouselData.slice(0, 5).map((item, index) => (
-          <img
-            key={index}
-            src={item.src}
-            alt={`Slide ${item.id}`}
-            className={`slider-item slider-item-${index + 1}`}
-          />
-        ))}
+        {carouselData.slice(0, 5).map((item, index) => {
+          const product = allProducts.find(p => p.product_id === item.product_id);
+  
+          return (
+            <img
+              key={index}
+              src={product?.src}
+              alt={`Slide ${item.product_id}`}
+              className={`slider-item slider-item-${index + 1}`}
+            />
+          );
+        })}
       </div>
       <div className="slider-controls">
         <button onClick={previous}>Previous</button>
@@ -80,6 +88,7 @@ const TopProducts = () => {
       </div>
     </div>
   );
+  
 };
 
 export default TopProducts;
