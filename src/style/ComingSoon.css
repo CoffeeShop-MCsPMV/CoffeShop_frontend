@@ -1,11 +1,11 @@
 @import url(variables.css);
 
-/* html, body, #root, .layout{
+html, body, #root, .layout{
     height: 100%;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-} */
+    /* display: flex;
+    flex-direction: column; */
+}
 
 .content{
     flex-grow: 1;
@@ -21,8 +21,8 @@
 }
 
 .content h2{
-    color: white;
     font-weight: bold;
     padding: 25px;
     font-style: italic;
+    color: white;
 }

@@ -42,6 +42,7 @@ export default function NavAdmin() {
             <img
               src="./images/user.png" 
               alt="User"
+              width="45px"
               style={{ borderRadius: "50%", width: "30px", height: "30px" }}
             />
           </Dropdown.Toggle>

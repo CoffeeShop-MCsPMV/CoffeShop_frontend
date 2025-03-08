@@ -1,13 +1,18 @@
-import React from 'react'
-import useAuthContext from '../context/AuthContext'
+import React, { useState } from 'react';
+import Accordion from 'react-bootstrap/Accordion';
+import OrderItem from '../components/OrderItem';
 
 function Orders() {
-  const {user} = useAuthContext();
-  console.log(user)
+  // const [orderlist, setOrderlist] = useState([]);
+  //  useEffect(() => {
+  //     getData("/api/order-items", setOrderlist);
+  //   }, []);
 
   return (
-    <div>Orders</div>
-  )
+    <Accordion>
+      <OrderItem />
+    </Accordion>
+  );
 }
 
 export default Orders
