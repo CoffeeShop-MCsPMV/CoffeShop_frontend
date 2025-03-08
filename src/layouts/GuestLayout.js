@@ -11,7 +11,7 @@ function GuestLayout() {
     <div className="layout">
       <NavGuest setShowModal={setShowModal} />
       {/* <main className="content"> */}
-        <Outlet />
+      <Outlet />
       {/* </main> */}
       <Footer />
     </div>

@@ -24,4 +24,5 @@ html, body, #root, .layout{
     font-weight: bold;
     padding: 25px;
     font-style: italic;
+    color: white;
 }

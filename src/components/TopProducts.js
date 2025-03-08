@@ -6,7 +6,6 @@ import { ApiContext } from "../context/apiContext";
 const TopProducts = () => {
   const { getData } = useContext(ApiContext);
   const [topProducts, setTopProducts] = useState([]);
-  const [allProducts, setAllProducts] = useState([]);
 
   useEffect(() => {
     // console.log("Fetching data...");
@@ -15,15 +14,6 @@ const TopProducts = () => {
       setTopProducts(data);
     });
   }, []);
-
-  useEffect(() => {
-    console.log("Fetching products...");
-    getData("/api/products", (data) => {
-      console.log("Fetched products:", data); 
-      setAllProducts(data);
-    });
-  }, []);
-  
 
   const [carouselData, setCarouselData] = useState(topProducts);
   //carouselData frissül, ha megjönnek az API adatok
@@ -68,13 +58,11 @@ const TopProducts = () => {
   return (
     <div className="slider">
       <div className="slider-container">
-        {carouselData.slice(0, 5).map((item, index) => {
-          const product = allProducts.find(p => p.product_id === item.product_id);
-  
+        {carouselData.slice(0, 5).map((item, index) => {  
           return (
             <img
               key={index}
-              src={product?.src}
+              src={`http://localhost:8000/${item.src}`}
               alt={`Slide ${item.product_id}`}
               className={`slider-item slider-item-${index + 1}`}
             />
