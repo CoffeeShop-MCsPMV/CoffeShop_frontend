@@ -3,14 +3,15 @@ import { CartContext } from '../context/cartContext'
 import { MixerContext } from '../context/mixerContext'
 
 function MixerPrice() {
-    const {addToCart}=useContext(CartContext)
-    const{addedIngredientList}=useContext(MixerContext)
+    const {addToCart}=useContext(CartContext);
+    const{addedIngredientList, mixerTotal}=useContext(MixerContext)
+
 
 
   return (
     <div>MixerPrice
-    <h1>Összeg</h1>
-    <button>Order</button>
+    <h1>{mixerTotal}</h1>
+    <button onClick={()=>addToCart(addedIngredientList)}>Order</button>
     </div>
   )
 }

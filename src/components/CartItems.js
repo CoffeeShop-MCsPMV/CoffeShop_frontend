@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import CartItem from "./CartItem";
 import { CartContext } from "../context/cartContext";
 
+
 function CartItems() {
   const { cartList, total, postOrder } = useContext(CartContext);
   

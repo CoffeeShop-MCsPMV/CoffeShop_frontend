@@ -1,27 +1,27 @@
 import React, { useContext, useEffect, useState } from "react";
 import { MixerContext } from "../context/mixerContext";
+import { CartContext } from "../context/cartContext";
 
 function IngredientCard(props) {
-    const {setAddedIngredientList, addedIngredientList}=useContext(MixerContext)
-    const [index, setIndex] = useState(0);
-    useEffect(()=>{
-        addIngredient()
-        
-    
-      }, [index])
-    
-    
-      useEffect(()=>{
-        console.log(addedIngredientList)
-        
-    
-      }, [addedIngredientList])
+  const { setAddedIngredientList, addedIngredientList, setMixerTotal } = useContext(MixerContext);
+  const [index, setIndex] = useState(0);
+  const {countTotal}=useContext(CartContext)
 
-    if (!props.list || props.list.length === 0) {
-        return <p>Nincs elérhető összetevő.</p>;
-      }
-  
-  const product = props.list[index];
+  const product = props.list && props.list[index];
+
+  useEffect(() => {
+    if (product) {
+      addIngredient();
+    }
+  }, [product]); 
+
+  useEffect(() => {
+    countTotal(addedIngredientList, setMixerTotal)
+  }, [addedIngredientList]);
+
+  if (!props.list || props.list.length === 0) {
+    return <p>Nincs elérhető összetevő.</p>;
+  }
 
   const handlePrev = () => {
     setIndex((prevIndex) =>
@@ -35,38 +35,32 @@ function IngredientCard(props) {
     );
   };
 
- 
-
-
-  function addIngredient(){
-    setAddedIngredientList(prev => {
-        const newAddedingredientList = [...prev]; 
-        newAddedingredientList[props.id] = product.product_id; 
-        console.log(props.id, product.product_id )
-        return newAddedingredientList; })
+  function addIngredient() {
+    setAddedIngredientList((prev) => {
+      const newAddedIngredientList = [...prev];
+      newAddedIngredientList[props.id] = product;
+      console.log(props.id, product.product_id);
+      return newAddedIngredientList;
+    });
   }
-
-
 
   return (
     <>
-     
-      <div className="Ingredient-card" key={product.product_id} id={props.id}>
+      <div className="Ingredient-card" key={product?.product_id} id={props.id}>
         <div>
-      <p>{product.name}</p>
-      </div>
-      <div className="ingredient-photo">
-        <button onClick={handlePrev}>ᐊ</button>
-        <img
-          src={`http://localhost:8000/${product.src}`}
-          alt={`${product.name}`}
-        />
-        <button onClick={handleNext}>ᐅ</button>
-      </div>
+          <p>{product?.name}</p>
+        </div>
+        <div className="ingredient-photo">
+          <button onClick={handlePrev}>ᐊ</button>
+          <img
+            src={`http://localhost:8000/${product?.src}`}
+            alt={product?.name}
+          />
+          <button onClick={handleNext}>ᐅ</button>
+        </div>
       </div>
     </>
   );
 }
 
 export default IngredientCard;
-
