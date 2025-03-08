@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useAuthContext from "../../context/AuthContext";
 import Dropdown from "react-bootstrap/Dropdown";
+import ProductCartIcon from "../../components/ProductCartIcon";
 
 export default function NavAdmin() {
   const { logout } = useAuthContext();
@@ -37,28 +38,34 @@ export default function NavAdmin() {
             </Link>
           </li>
         </ul>
-        <Dropdown>
-          <Dropdown.Toggle as="div" id="user-btn" style={{ cursor: "pointer" }}>
-            <img
-              src="./images/user.png" 
-              alt="User"
-              width="45px"
-              style={{ borderRadius: "50%", width: "30px", height: "30px" }}
-            />
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Item href="/profile">Profile</Dropdown.Item>
-            <Dropdown.Item href="/orders">Orders</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item
-              onClick={() => {
-                logout();
-              }}
+        <div className="navCartAndUser">
+          <ProductCartIcon/>
+          <Dropdown>
+            <Dropdown.Toggle
+              as="div"
+              id="user-btn"
+              style={{ cursor: "pointer" }}
             >
-              Sign out
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+              <img
+                src="./images/user.png"
+                alt="User"
+                style={{ borderRadius: "50%", width: "45px", height: "45px" }}
+              />
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="/profile">Profile</Dropdown.Item>
+              <Dropdown.Item href="/orders">Orders</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item
+                onClick={() => {
+                  logout();
+                }}
+              >
+                Sign out
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
       </div>
     </nav>
   );

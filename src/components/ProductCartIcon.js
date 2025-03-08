@@ -6,9 +6,9 @@ function ProductCartIcon() {
   const { cartItemPcs} = useContext(CartContext);
 
   return (
-    <button type="button" className="cart-button position-relative">
+    <button type="button" className="cart-button position-relative" id="cart-btn">
       <Link to="/cart">
-      <img src="./images/cart.png" alt="" />
+      <img src="./images/cart.png" alt="" width="45px" height="45px"/>
       <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning">
         {cartItemPcs}
       </span>

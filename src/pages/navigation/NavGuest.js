@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../style/Nav.css";
+import ProductCartIcon from "../../components/ProductCartIcon";
 
 export default function NavGuest({ setShowModal }) {
   // Ha a felhasználó rákattint a Login linkre, megjelenítjük a modált
@@ -33,30 +34,28 @@ export default function NavGuest({ setShowModal }) {
               Mixer
             </Link>
           </li>
-          <li className="navbar-item">
-            <Link className="nav-link" to="/cart">
-              Cart
-            </Link>
-          </li>
         </ul>
-        <ul className="navbar-nav">
-          <li className="navbar-item nav-login-register">
-            <Link
-              className="nav-link btn"
-              to="/login"
-              onClick={handleLoginClick}
-            >
-              Login
-            </Link>
-            <Link
-              className="nav-link btn"
-              to="/register"
-              onClick={handleLoginClick}
-            >
-              Registration
-            </Link>
-          </li>
-        </ul>
+        <div className="navCartAndUser">
+        <ProductCartIcon/>
+          <ul className="navbar-nav">
+            <li className="navbar-item nav-login-register">
+              <Link
+                className="nav-link btn"
+                to="/login"
+                onClick={handleLoginClick}
+              >
+                Login
+              </Link>
+              <Link
+                className="nav-link btn"
+                to="/register"
+                onClick={handleLoginClick}
+              >
+                Registration
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );

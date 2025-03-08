@@ -71,6 +71,12 @@
   display: none;
 }
 
-#user-btn.dropdown-toggle:hover{
+#user-btn:hover, #cart-btn:hover{
   transform: scale(1.1);
+}
+
+.navCartAndUser{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
