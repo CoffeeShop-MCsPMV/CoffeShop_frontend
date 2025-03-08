@@ -6,11 +6,13 @@ import "../style/ComingSoon.css";
 
 function AdminLayout() {
   return (
-    <>
-      <NavAdmin />
-      <Outlet />
-      <Footer />
-    </>
+       <div className="layout">
+         <NavAdmin />
+         <main className="content">
+           <Outlet />
+         </main>
+         <Footer />
+       </div>
   );
 }
 

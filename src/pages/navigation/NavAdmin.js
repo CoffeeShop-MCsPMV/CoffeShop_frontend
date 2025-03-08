@@ -32,11 +32,6 @@ export default function NavAdmin() {
               Mixer
             </Link>
           </li>
-          <li className="navbar-item">
-            <Link className="nav-link" to="/cart">
-              Cart
-            </Link>
-          </li>
         </ul>
         <div className="navCartAndUser">
           <ProductCartIcon/>

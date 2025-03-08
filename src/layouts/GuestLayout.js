@@ -8,11 +8,13 @@ import "../style/ComingSoon.css";
 function GuestLayout() {
   const { setShowModal } = useAuthContext();
   return (
-    <>
-      <NavGuest setShowModal={setShowModal} />
+    <div className="layout">
+    <NavGuest setShowModal = {setShowModal}/>
+    <main className="content">
       <Outlet />
-      <Footer />{" "}
-    </>
+    </main>
+    <Footer />
+  </div>
   );
 }
 

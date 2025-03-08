@@ -4,10 +4,12 @@
     --brown3: #432C23;
     --brown4: #5F493B;
     --brown5: #7A6552;
+    --filter: #0d0907;
     --green1: #253027;
     --green2: #152620;
     --green3: #22332C;
     --gold: #F4B562;
+    --glass-text: rgba(255, 255, 255, 0.7);
  }
 
  @font-face {

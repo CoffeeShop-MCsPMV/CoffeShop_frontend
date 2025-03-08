@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import useAuthContext from "../context/AuthContext";
 import { ApiContext } from "../context/apiContext";
+import "../style/Profile.css";
 
 function Profile() {
   const { user } = useAuthContext();
@@ -47,8 +48,9 @@ function Profile() {
   }
 
   return (
-    <div>
-       <button type="button" className="btn btn-secondary mb-3" onClick={handleFormToggle}>
+    <div className="profile">
+      <div className="profileForm">
+      <button type="button" className="btn btn-secondary mb-3" onClick={handleFormToggle}>
         {isFormDisabled ? "Enable Editing" : "Disable Editing"}
       </button>
       <form onSubmit={handleSubmit}>
@@ -125,6 +127,7 @@ function Profile() {
         </button>
       </form>
       {successMessage && <div className="alert alert-success mt-3">{successMessage}</div>}
+      </div>
     </div>
   );
 }

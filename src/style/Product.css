@@ -74,7 +74,7 @@
 .filter-and-cart {
   display: flex;
   flex-direction: row;
-  background-color: #0d0907;
+  background-color: var(--filter);
   height: 21vh;
   align-items: flex-end; /* Ez hozza le a kártyákat az aljára */
   padding: 10px 10px 10px 10px;
