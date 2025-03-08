@@ -7,20 +7,20 @@ import "../style/ComingSoon.css";
 function AdminLayout() {
 
   return (
-    <div className="layout">
-      <NavAdmin />
-      <main className="content">
-            <Outlet />
-      </main>
-      <Footer />
-    </div>
-    // <>
+    // <div className="layout">
     //   <NavAdmin />
-
-    //   <Outlet />
-
+    //   <main className="content">
+    //         <Outlet />
+    //   </main>
     //   <Footer />
-    // </>
+    // </div>
+    <>
+      <NavAdmin />
+
+      <Outlet />
+
+      <Footer />
+    </>
   );
 }
 

@@ -6,19 +6,19 @@ import "../style/ComingSoon.css";
 
 function UserLayout() {
   return (
-    // <>
-    //   <NavUser />
-    //   <Outlet />
-    //   <Footer />
-    // </>
-
-    <div className="layout">
+    <>
       <NavUser />
-      <main className="content">
-        <Outlet />
-      </main>
+      <Outlet />
       <Footer />
-    </div>
+    </>
+
+    // <div className="layout">
+    //   <NavUser />
+    //   <main className="content">
+    //     <Outlet />
+    //   </main>
+    //   <Footer />
+    // </div>
   );
 }
 
