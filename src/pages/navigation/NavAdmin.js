@@ -2,11 +2,8 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import useAuthContext from "../../context/AuthContext";
 import Dropdown from "react-bootstrap/Dropdown";
-<<<<<<< HEAD
 import { CartContext } from "../../context/cartContext";
-=======
 import ProductCartIcon from "../../components/ProductCartIcon";
->>>>>>> 46302b075409a73ddfb0603a58e6d1d9fbc6aaa7
 
 export default function NavAdmin() {
   const { logout } = useAuthContext();
@@ -38,7 +35,6 @@ export default function NavAdmin() {
             </Link>
           </li>
         </ul>
-=======
         <div className="navCartAndUser">
           <ProductCartIcon/>
           <Dropdown>
