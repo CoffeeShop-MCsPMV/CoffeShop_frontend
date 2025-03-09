@@ -37,7 +37,7 @@ function ProductFilter() {
       ))}
       </div>
       <div className="cart">
-      <ProductCartIcon/>
+      {/* <ProductCartIcon/> */}
       </div>
     </div>
   );

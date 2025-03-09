@@ -13,6 +13,7 @@ import Cart from "./pages/Cart";
 import Orders from "./pages/Orders";
 import Profile from "./pages/Profile";
 import Mixer from "./pages/Mixer";
+import "./App.css";
 
 
 function App() {

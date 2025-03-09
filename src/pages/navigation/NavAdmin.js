@@ -2,7 +2,11 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import useAuthContext from "../../context/AuthContext";
 import Dropdown from "react-bootstrap/Dropdown";
+<<<<<<< HEAD
 import { CartContext } from "../../context/cartContext";
+=======
+import ProductCartIcon from "../../components/ProductCartIcon";
+>>>>>>> 46302b075409a73ddfb0603a58e6d1d9fbc6aaa7
 
 export default function NavAdmin() {
   const { logout } = useAuthContext();
@@ -33,36 +37,38 @@ export default function NavAdmin() {
               Mixer
             </Link>
           </li>
-          <li className="navbar-item">
-            <Link className="nav-link" to="/cart">
-              Cart
-            </Link>
-          </li>
         </ul>
-        <Dropdown>
-          <Dropdown.Toggle as="div" id="user-btn" style={{ cursor: "pointer" }}>
-            <img
-              src="./images/user.png" 
-              alt="User"
-              width="45px"
-              style={{ borderRadius: "50%", width: "30px", height: "30px" }}
-            />
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Item href="/profile">Profile</Dropdown.Item>
-            <Dropdown.Item href="/orders">Orders</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item
-              onClick={() => {
-                logout();
-                setCartListEmpty()
-                
-              }}
+=======
+        <div className="navCartAndUser">
+          <ProductCartIcon/>
+          <Dropdown>
+            <Dropdown.Toggle
+              as="div"
+              id="user-btn"
+              style={{ cursor: "pointer" }}
+
             >
-              Sign out
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+              <img
+                src="./images/user.png"
+                alt="User"
+                style={{ borderRadius: "50%", width: "45px", height: "45px" }}
+              />
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item href="/profile">Profile</Dropdown.Item>
+              <Dropdown.Item href="/orders">Orders</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item
+                onClick={() => {
+                  logout();
+                  setCartListEmpty()
+                }}
+              >
+                Sign out
+              </Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </div>
       </div>
     </nav>
   );

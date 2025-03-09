@@ -1,19 +1,16 @@
 @import url(variables.css);
 
-html, body, #root, .layout{
-    height: 100%;
-    margin: 0;
-    /* display: flex;
-    flex-direction: column; */
-}
-
 .content{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.comingSoon{
     background-color: black;
+    width: 100%;
 }
 
 .content img{
@@ -22,7 +19,13 @@ html, body, #root, .layout{
 
 .content h2{
     font-weight: bold;
-    padding: 25px;
     font-style: italic;
     color: white;
 }
+
+html, body, #root, .layout{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+} 

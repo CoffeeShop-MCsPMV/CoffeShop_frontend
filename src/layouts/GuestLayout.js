@@ -9,19 +9,12 @@ function GuestLayout() {
   const { setShowModal } = useAuthContext();
   return (
     <div className="layout">
-      <NavGuest setShowModal={setShowModal} />
-      {/* <main className="content"> */}
+    <NavGuest setShowModal = {setShowModal}/>
+    <main className="content">
       <Outlet />
-      {/* </main> */}
-      <Footer />
-    </div>
-    // <>
-    //   <NavGuest setShowModal={setShowModal} />
-
-    //   <Outlet />
-
-    //   <Footer />
-    // </>
+    </main>
+    <Footer />
+  </div>
   );
 }
 

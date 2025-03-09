@@ -58,6 +58,7 @@ const TopProducts = () => {
 
   return (
     <div className="slider">
+      <h3>Our top selling products</h3>
       <div className="slider-container">
         {carouselData.slice(0, 5).map((item, index) => {  
           return (
