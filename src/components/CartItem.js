@@ -8,7 +8,14 @@ function CartItem(props) {
   if (Array.isArray(props.item)) {
     return (
       <div className="cart-item">
-        <h5>Egyedi termék</h5>
+        <div className="cart-image">
+        <img
+          src={"./images/food.png"}
+          className="img-fluid rounded-start"
+          alt={props.item.name}
+        />
+        </div>
+        <h5>Your own creation</h5>
         <button
           type="button"
           className="btn-close"

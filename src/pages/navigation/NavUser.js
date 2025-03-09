@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import useAuthContext from "../../context/AuthContext";
 import Dropdown from "react-bootstrap/Dropdown";
+import { CartContext } from "../../context/cartContext";
 
 export default function NavUser() {
   const { logout } = useAuthContext();
+  const {setCartListEmpty}=useContext(CartContext);
 
   return (
     <nav className="navbar navbar-expand-sm bg-light">
@@ -53,6 +55,7 @@ export default function NavUser() {
             <Dropdown.Item
               onClick={() => {
                 logout();
+                setCartListEmpty()
               }}
             >
               Sign out

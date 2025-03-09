@@ -11,7 +11,7 @@ function MixerPrice() {
   return (
     <div>MixerPrice
     <h1>{mixerTotal}</h1>
-    <button onClick={()=>addToCart(addedIngredientList)}>Order</button>
+    <button onClick={()=>addToCart(addedIngredientList)}>Add to cart</button>
     </div>
   )
 }
