@@ -6,6 +6,7 @@
 
 .cart-page{
   width: 100%;
+  background-color: var(--filter);
 }
 
 .cart-page h1{
@@ -30,6 +31,14 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.1); /* Üveghatás */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7); /* Halványabb fehér szöveg */
+  cursor: not-allowed;
 }
 
 
