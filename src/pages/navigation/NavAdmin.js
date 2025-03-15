@@ -7,7 +7,7 @@ import ProductCartIcon from "../../components/ProductCartIcon";
 
 export default function NavAdmin() {
   const { logout } = useAuthContext();
-  const {setCartListEmpty}=useContext(CartContext)
+  const {setCartListEmpty, setIsOrdered}=useContext(CartContext)
 
   return (
     <nav className="navbar navbar-expand-sm bg-light">
@@ -58,6 +58,7 @@ export default function NavAdmin() {
                 onClick={() => {
                   logout();
                   setCartListEmpty()
+                  setIsOrdered(false)
                 }}
               >
                 Sign out

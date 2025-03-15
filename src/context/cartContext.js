@@ -186,6 +186,7 @@ export const CartProvider = ({ children }) => {
         isOrdered,
         orderId,
         orderData,
+        setIsOrdered
       }}
     >
       {children}

@@ -8,7 +8,7 @@ import ProductCartIcon from "../../components/ProductCartIcon";
 
 export default function NavUser() {
   const { logout } = useAuthContext();
-  const {setCartListEmpty}=useContext(CartContext);
+  const {setCartListEmpty, setIsOrdered}=useContext(CartContext);
 
   return (
     <nav className="navbar navbar-expand-sm bg-light">
@@ -36,26 +36,6 @@ export default function NavUser() {
             </Link>
           </li>
         </ul>
-<<<<<<< HEAD
-        <Dropdown>
-          <Dropdown.Toggle as="div" id="user-btn" style={{ cursor: "pointer" }}>
-            <img
-              src="./images/user.png"
-              alt="User"
-              width="45px"
-              style={{ borderRadius: "50%", width: "30px", height: "30px" }}
-            />
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Item href="/profile">Profile</Dropdown.Item>
-            <Dropdown.Item href="/orders">Orders</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item
-              onClick={() => {
-                logout();
-                setCartListEmpty()
-              }}
-=======
         <div className="navCartAndUser">
           <ProductCartIcon/>
           <Dropdown>
@@ -63,7 +43,6 @@ export default function NavUser() {
               as="div"
               id="user-btn"
               style={{ cursor: "pointer" }}
->>>>>>> 46302b075409a73ddfb0603a58e6d1d9fbc6aaa7
             >
               <img
                 src="./images/user.png"
@@ -78,6 +57,8 @@ export default function NavUser() {
               <Dropdown.Item
                 onClick={() => {
                   logout();
+                  setCartListEmpty()
+                  setIsOrdered(false)
                 }}
               >
                 Sign out

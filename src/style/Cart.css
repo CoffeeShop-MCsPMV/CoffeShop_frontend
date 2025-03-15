@@ -8,6 +8,10 @@
   padding:50px 70px;
 }
 
+.cart-page h2{
+  color:black
+}
+
 .cart-item {
   display: flex;
   border: 1px solid #ddd;
