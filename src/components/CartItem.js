@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../context/cartContext";
 
-
 function CartItem(props) {
   const { pcsEdit, deleteFromCart } = useContext(CartContext);
   const itemCost = props.item.pcs * props.item.current_price;
@@ -9,13 +8,19 @@ function CartItem(props) {
     return (
       <div className="cart-item">
         <div className="cart-image">
-        <img
-          src={"./images/food.png"}
-          className="img-fluid rounded-start"
-          alt={props.item.name}
-        />
+          <img
+            src={"./images/food.png"}
+            className="img-fluid rounded-start"
+            alt={props.item.name}
+          />
         </div>
         <h5>Your own creation</h5>
+        <ul>
+          {props.item?.map((ingredient, index) => (
+            <li key={index}>{ingredient.name}</li>
+          ))}
+        </ul>
+
         <button
           type="button"
           className="btn-close"
