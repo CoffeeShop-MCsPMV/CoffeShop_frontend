@@ -1,14 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { ApiContext } from "../context/apiContext";
 import { CartContext } from "../context/cartContext";
+import AddedToast from "./AddedToast";
 
 function ProductCard(props) {
+  const [show, setShow] = useState(false);
 
-const {addToCart}=useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
   return (
-    <div onClick={()=>{addToCart(props.product)}} className="product-card">
+    <div
+      onClick={() => {
+        addToCart(props.product);setShow(true);
+      }}
+      className="product-card"
+    >
+      <AddedToast show={show} setShow={setShow} />
       <div className="image-container">
         <Card.Img
           className="product-image"
