@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import useAuthContext from "../../context/AuthContext";
 import Dropdown from "react-bootstrap/Dropdown";
+import { CartContext } from "../../context/cartContext";
 import ProductCartIcon from "../../components/ProductCartIcon";
 
 export default function NavAdmin() {
   const { logout } = useAuthContext();
+  const {setCartListEmpty, setIsOrdered}=useContext(CartContext)
 
   return (
     <nav className="navbar navbar-expand-sm bg-light">
@@ -40,6 +42,7 @@ export default function NavAdmin() {
               as="div"
               id="user-btn"
               style={{ cursor: "pointer" }}
+
             >
               <img
                 src="./images/user.png"
@@ -54,6 +57,8 @@ export default function NavAdmin() {
               <Dropdown.Item
                 onClick={() => {
                   logout();
+                  setCartListEmpty()
+                  setIsOrdered(false)
                 }}
               >
                 Sign out

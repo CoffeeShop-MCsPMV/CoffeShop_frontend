@@ -11,7 +11,9 @@ export const CartProvider = ({ children }) => {
   const [cartItemPcs, setCartItemPcs] = useState(0);
   const { user } = useAuthContext();
   const { postData, getData } = useContext(ApiContext);
-  const { isOrdered, setIsOrdered } = useState(false);
+  const [isOrdered, setIsOrdered] = useState(false);
+  const [orderId, setOrderId] = useState([]);
+  const [orderData, setOrderData] = useState([]);
 
   function addToCart(product) {
     const list = [...cartList];
@@ -37,6 +39,27 @@ export const CartProvider = ({ children }) => {
     countTotal(cartList, setTotal);
     sumProductPcs();
   }, [cartList]);
+
+  useEffect(() => {
+    if (isOrdered) {
+
+      const interval = setInterval(() => {
+        getOrderDatas();
+      }, 30000);
+
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, [isOrdered, orderId]); 
+
+  
+  useEffect(() => {
+    if (orderData) {
+      console.log("Updated orderData:", orderData);
+      checkOrderStatus();
+    }
+  }, [orderData]); 
 
   function pcsEdit(product, pcs) {
     const list = [...cartList];
@@ -64,10 +87,16 @@ export const CartProvider = ({ children }) => {
   }
 
   function sumProductPcs() {
-    console.log("cartList:", cartList);
-    const sumPcs = cartList.reduce((total, product) => {
-      return total + product.pcs;
-    }, 0);
+    let sumPcs = 0;
+
+    cartList.forEach((product) => {
+      if (Array.isArray(product)) {
+        sumPcs++;
+      } else {
+        sumPcs += product.pcs;
+      }
+    });
+
     setCartItemPcs(sumPcs);
     console.log("dbszám frissítve");
   }
@@ -76,7 +105,7 @@ export const CartProvider = ({ children }) => {
     console.log("usedList:", list);
 
     if (Array.isArray(list) && list.length > 0) {
-      let sum = 0.00;
+      let sum = 0.0;
       list.forEach((item) => {
         if (Array.isArray(item)) {
           item.forEach((ingredient) => {
@@ -121,7 +150,25 @@ export const CartProvider = ({ children }) => {
       products: makeOrderProductList(),
     };
 
-    postData("/api/orders", orderData);
+    postData("/api/orders", orderData, setOrderId);
+    setIsOrdered(true);
+    setCartListEmpty();
+  }
+
+  function setCartListEmpty() {
+    setCartList([]);
+  }
+
+  function getOrderDatas() {
+    getData(`api/orders/${orderId.order_id}`, setOrderData);
+  }
+
+  function checkOrderStatus() {
+    if (orderData.order_status === "PUP") {
+      setIsOrdered(false);
+      setOrderId([]);
+      setOrderData([]);
+    }
   }
 
   return (
@@ -135,6 +182,11 @@ export const CartProvider = ({ children }) => {
         cartItemPcs,
         postOrder,
         countTotal,
+        setCartListEmpty,
+        isOrdered,
+        orderId,
+        orderData,
+        setIsOrdered
       }}
     >
       {children}

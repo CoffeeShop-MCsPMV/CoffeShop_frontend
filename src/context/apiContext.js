@@ -21,12 +21,12 @@ export const ApiProvider = ({ children }) => {
       .finally(function () {});
   }
 
-  function postData(endpoint, payload) {
+  function postData(endpoint, payload, setlist) {
     MyAxios
       .post(endpoint, payload)
       .then(function (response) {
         console.log("Post succesful: ", response.data);
-        setPostedList(response.data)
+        setlist(response.data)
         return response.data
       })
       .catch(function (error) {

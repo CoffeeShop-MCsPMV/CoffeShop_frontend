@@ -1,14 +1,26 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../context/cartContext";
 
-
 function CartItem(props) {
   const { pcsEdit, deleteFromCart } = useContext(CartContext);
   const itemCost = props.item.pcs * props.item.current_price;
   if (Array.isArray(props.item)) {
     return (
       <div className="cart-item">
-        <h5>Egyedi termék</h5>
+        <div className="cart-image">
+          <img
+            src={"./images/food.png"}
+            className="img-fluid rounded-start"
+            alt={props.item.name}
+          />
+        </div>
+        <h5>Your own creation</h5>
+        <ul>
+          {props.item?.map((ingredient, index) => (
+            <li key={index}>{ingredient.name}</li>
+          ))}
+        </ul>
+
         <button
           type="button"
           className="btn-close"

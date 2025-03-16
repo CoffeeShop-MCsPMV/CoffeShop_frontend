@@ -11,7 +11,7 @@ export const MixerProvider = ({ children }) => {
   const [syrupList, setSyrupList] = useState([]);
   const [toppingList, setToppingList] = useState([]);
   const [ice, setIce] = useState(true);
-  const [addedIngredientList, setAddedIngredientList]=useState([20013,20002,20055,20056]);
+  const [addedIngredientList, setAddedIngredientList]=useState([20013,20068,20055,20056]);
   const [mixerTotal, setMixerTotal]=useState(0);
  
   
