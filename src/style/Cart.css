@@ -1,3 +1,7 @@
+.cart-page{
+  width: 100%;
+}
+
 .cart-items{
   display: flex;
   flex-direction: column;
@@ -48,6 +52,8 @@
 
 .counter {
   display: flex;
+  flex-direction: row;
+  justify-items: center;
   align-items: center;
   gap: 7px;
 }
