@@ -38,7 +38,7 @@
   transform: scale(1.1);
 }
 
-.nav-link::after {
+.nav-link.links::after {
   content: "";
   position: absolute;
   width: 100%;

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { MixerContext } from "../context/mixerContext";
 import IngredientCard from "./IngredientCard";
+import "../style/Mixer.css";
 
 function Chooser() {
   const { baseList, milkList, syrupList, toppingList, setIce, ice } =

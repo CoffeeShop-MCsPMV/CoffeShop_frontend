@@ -20,17 +20,17 @@ export default function NavAdmin() {
             </a>
           </li>
           <li className="navbar-item">
-            <Link className="nav-link" to="/">
+            <Link className="nav-link links" to="/">
               Main
             </Link>
           </li>
           <li className="navbar-item">
-            <Link className="nav-link" to="/products">
+            <Link className="nav-link links" to="/products">
               Products
             </Link>
           </li>
           <li className="navbar-item">
-            <Link className="nav-link" to="/mixer">
+            <Link className="nav-link links" to="/mixer">
               Mixer
             </Link>
           </li>

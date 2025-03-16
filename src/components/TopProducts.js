@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import "../style/TopProducts.css";
 import { ApiContext } from "../context/apiContext";
 
-
 const TopProducts = () => {
   const { getData } = useContext(ApiContext);
   const [topProducts, setTopProducts] = useState([]);
@@ -44,41 +43,46 @@ const TopProducts = () => {
       return [prev[prev.length - 1], ...prev.slice(0, prev.length - 1)];
     });
   };
-  
+
   const next = () => {
     setCarouselData((prev) => {
       if (prev.length === 0) return prev;
       return [...prev.slice(1), prev[0]];
     });
   };
-  
+
   const play = () => {
     setPlaying((prev) => !prev);
   };
 
   return (
     <div className="slider">
-      <h3>Our top selling products</h3>
+      <h3 id="top-title">
+        Our top selling products
+        <br />
+        <a id="drink-link" href="/products">
+          Check out all of our drinks ☕
+        </a>
+      </h3>
       <div className="slider-container">
-        {carouselData.slice(0, 5).map((item, index) => {  
+        {carouselData.slice(0, 5).map((item, index) => {
           return (
-            <img
-              key={index}
-              src={`http://localhost:8000/${item.src}`}
-              alt={`Slide ${item.product_id}`}
-              className={`slider-item slider-item-${index + 1}`}
-            />
+              <img
+                key={index}
+                src={`http://localhost:8000/${item.src}`}
+                alt={`Slide ${item.product_id}`}
+                className={`slider-item slider-item-${index + 1}`} 
+              />
           );
         })}
       </div>
       <div className="slider-controls">
-        <button onClick={previous}>Previous</button>
-        <button onClick={play}>{playing ? "Pause" : "Play"}</button>
-        <button onClick={next}>Next</button>
+        <button className="tpBtn" onClick={previous}>Previous</button>
+        <button className="tpBtn" onClick={play}>{playing ? "Pause" : "Play"}</button>
+        <button className="tpBtn" onClick={next}>Next</button>
       </div>
     </div>
   );
-  
 };
 
 export default TopProducts;

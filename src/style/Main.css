@@ -1,9 +1,27 @@
 @import url(variables.css);
 
-.topic{
-    padding-inline: 50px;
-    padding-block: 25px;
-    text-align: justify;
-    font-size: large;
-    font-weight: 400;
+.topic {
+  margin-inline: 10px;
+  margin-block: auto;
+  padding: 25px;
+  /* height: fit-content; */
+  justify-content: center;
+  text-align: justify;
+  border-radius: 10px;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.15
+  ); /* Kicsit erősebb fehér, hogy jobban látszódjon */
+  backdrop-filter: blur(15px) saturate(180%); /* Erősebb elmosás + színtelítettség */
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  /* border: 1px solid rgba(255, 255, 255, 0.3); */
+  color: rgba(255, 255, 255, 0.7); /* Halványabb fehér szöveg */
+}
+
+.info-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background-color: var(--filter);
 }

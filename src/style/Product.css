@@ -10,8 +10,7 @@
   flex-wrap: wrap;
   gap: 10px; /* Opcionális: távolság az elemek között */
   justify-content: center;
-  background-color: var(--filter);
-  
+  background-image: url(../../public/images/coffee-beans-top-view-background.jpg);
 }
 
 .product-card {

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import CartItem from "./CartItem";
 import { CartContext } from "../context/cartContext";
+import "../style/Cart.css";
 
 function CartItems() {
   const { cartList, total, postOrder, isOrdered, orderData } =

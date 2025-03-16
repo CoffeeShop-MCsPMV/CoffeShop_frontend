@@ -1,11 +1,13 @@
 .cart-page{
   width: 100%;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.7);
+  background-image: url(../../public/images/coffee-beans-top-view-background.jpg);
 }
 
 .cart-items{
   display: flex;
   flex-direction: column;
-
 }
 
 .cart-page{
@@ -15,11 +17,12 @@
 
 .cart-page h1{
   padding:50px 70px;
-  
 }
 
 .cart-page h2{
-  color:black
+  text-align: center;
+  margin: 20px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .cart-item {
@@ -108,10 +111,10 @@
   
 }
 
-/* Hover effekt */
-
-
-
 .total button:hover{
   color: white;
+}
+
+button.btn-close{
+  --bs-btn-close-bg: url(../../public/images/x-button.png);
 }

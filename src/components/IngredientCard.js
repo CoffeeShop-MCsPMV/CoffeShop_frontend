@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { MixerContext } from "../context/mixerContext";
 import { CartContext } from "../context/cartContext";
+import "../style/Mixer.css";
 
 function IngredientCard(props) {
   const { setAddedIngredientList, addedIngredientList, setMixerTotal } = useContext(MixerContext);
@@ -51,12 +52,13 @@ function IngredientCard(props) {
           <p>{product?.name}</p>
         </div>
         <div className="ingredient-photo">
-          <button onClick={handlePrev}>ᐊ</button>
+          <button className="chooseBtn" onClick={handlePrev}>ᐊ</button>
           <img
             src={`http://localhost:8000/${product?.src}`}
             alt={product?.name}
           />
-          <button onClick={handleNext}>ᐅ</button>
+          <button 
+         className="chooseBtn" onClick={handleNext}>ᐅ</button>
         </div>
       </div>
     </>

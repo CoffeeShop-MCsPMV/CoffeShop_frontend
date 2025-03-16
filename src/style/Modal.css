@@ -1,9 +1,86 @@
 @import url(variables.css);
 
-.modal-backdrop-custom {
-    background-image: url(../../public/images/main5.jpg); 
-    background-size: cover;
-    background-position: center;
-    opacity: 0.8; 
-    z-index: 1040;
-  }
+/* Modal háttér */
+.modal-content {
+  background: rgba(255, 255, 255, 0.15) !important; /* Üveges hatás */
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Modal fejléc */
+.modal-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.modal-body {
+  padding: 20px;
+  color: white;
+}
+
+.modal-body input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background: rgba(255, 255, 255, 0.15); /* Üveghatás */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  color: black;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.modal-body input:focus {
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.modal-body button {
+  padding: 10px;
+  margin-top: 10px;
+  background: var(--gold);
+  border: none;
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.modal-body button:hover {
+  background: var(--filter);
+  color: white;
+}
+
+.modal-body p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: white;
+}
+
+.modal-body .nav-link {
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Hibaüzenetek */
+.text-danger {
+  font-size: 13px;
+  font-weight: bold;
+}

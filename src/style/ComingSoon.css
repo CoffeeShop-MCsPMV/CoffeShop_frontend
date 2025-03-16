@@ -6,11 +6,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image: url(../../public/images/coffee-beans-top-view-background.jpg);
 }
 
 .comingSoon{
     background-color: black;
     width: 100%;
+    padding: 20px;
 }
 
 .content h2{
