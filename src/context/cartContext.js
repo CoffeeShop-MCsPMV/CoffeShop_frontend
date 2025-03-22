@@ -42,7 +42,6 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     if (isOrdered) {
-
       const interval = setInterval(() => {
         getOrderDatas();
       }, 30000);
@@ -51,15 +50,14 @@ export const CartProvider = ({ children }) => {
         clearInterval(interval);
       };
     }
-  }, [isOrdered, orderId]); 
+  }, [isOrdered, orderId]);
 
-  
   useEffect(() => {
     if (orderData) {
       console.log("Updated orderData:", orderData);
       checkOrderStatus();
     }
-  }, [orderData]); 
+  }, [orderData]);
 
   function pcsEdit(product, pcs) {
     const list = [...cartList];
@@ -112,7 +110,11 @@ export const CartProvider = ({ children }) => {
             sum += parseFloat(ingredient.current_price);
           });
         } else {
-          sum += parseFloat(item.current_price);
+          if (item.hasOwnProperty("pcs")) {
+            sum += parseFloat(item.current_price * item.pcs);
+          } else {
+            sum += parseFloat(item.current_price);
+          }
         }
       });
       setData(sum.toFixed(2));
@@ -186,7 +188,7 @@ export const CartProvider = ({ children }) => {
         isOrdered,
         orderId,
         orderData,
-        setIsOrdered
+        setIsOrdered,
       }}
     >
       {children}

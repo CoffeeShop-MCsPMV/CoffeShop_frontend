@@ -26,7 +26,7 @@ export default function NavGuest({ setShowModal }) {
           </li>
           <li className="navbar-item">
             <Link className="nav-link links" to="/products">
-              Products
+              Drinks
             </Link>
           </li>
           <li className="navbar-item">

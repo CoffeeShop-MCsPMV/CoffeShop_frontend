@@ -38,7 +38,7 @@ function Profile() {
 
   // Form validation
   function validateForm(updatedData) {
-    const isPasswordValid = updatedData.password === updatedData.confirmPassword && updatedData.password !== "";
+    const isPasswordValid = updatedData.password === updatedData.confirmPassword;
     const isEmailValid = updatedData.email !== "" && updatedData.name !== "";
     setIsFormValid(isPasswordValid && isEmailValid);
   }
