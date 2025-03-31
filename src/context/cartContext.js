@@ -10,10 +10,12 @@ export const CartProvider = ({ children }) => {
   const [total, setTotal] = useState(0);
   const [cartItemPcs, setCartItemPcs] = useState(0);
   const { user } = useAuthContext();
-  const { postData, getData } = useContext(ApiContext);
+  const { postData, getData, updateData } = useContext(ApiContext);
   const [isOrdered, setIsOrdered] = useState(false);
   const [orderId, setOrderId] = useState([]);
   const [orderData, setOrderData] = useState([]);
+  const [orderStatus, setOrderStatus]=useState([]);
+
 
   function addToCart(product) {
     const list = [...cartList];
@@ -35,6 +37,17 @@ export const CartProvider = ({ children }) => {
     setCartList([...list]);
     console.log("termék a kosárhoz adva");
   }
+
+  useEffect(() => {
+    if (isOrdered && user) {  // Ellenőrizd, hogy a user nem null!
+      console.log("Frissítés API hívás előtt: ", user);
+      console.log("Order Id: ", orderId.order_id)
+      
+      updateData(`/api/order/${orderId.order_id}`, user)
+    }
+  }, [user, isOrdered]);
+
+
   useEffect(() => {
     countTotal(cartList, setTotal);
     sumProductPcs();
@@ -173,6 +186,23 @@ export const CartProvider = ({ children }) => {
     }
   }
 
+  function SetStatusPhoto(){
+    const status=[
+      {icon:"",
+        description:""
+      }
+    ]
+    if(orderData.order_status in [ null, 'Received', 'Accepted','In Progress']){
+      status.icon="./images/coffee.gif"
+      status.description="Your order is being prepared! we'll have it ready soon."
+    }
+    else{
+      status.icon="./images/ready.gif"
+      status.description="Your order is ready! Come and pick it up."
+    }
+
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -189,6 +219,7 @@ export const CartProvider = ({ children }) => {
         orderId,
         orderData,
         setIsOrdered,
+        setOrderId
       }}
     >
       {children}
