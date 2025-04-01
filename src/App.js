@@ -19,15 +19,13 @@ import "./App.css";
 function App() {
   const { user, setShowModal, showModal } = useAuthContext();
 
-  // Modál bezárása
   const handleCloseModal = () => {
-    setShowModal(false); // Bezárja a modált
+    setShowModal(false);
   };
 
   return (
     <>
       <Routes>
-        {/* Vendég layout */}
         {!user && (
           <Route element={<GuestLayout />}>
             <Route path="/" element={<Main />} />
@@ -36,11 +34,9 @@ function App() {
               path="login"
               element={<Login show={showModal} onHide={handleCloseModal} />}
             />
-
             <Route path="/products" element={<Products />} />
             <Route path="/mixer" element={<Mixer />} />
             <Route path="/cart" element={<Cart />} />
-
             <Route
               path="register"
               element={
@@ -49,8 +45,7 @@ function App() {
             />
           </Route>
         )}
-
-        {/* Admin és User ugyanazon útvonalon */}
+        
         {user && (
           <Route
             path="/"

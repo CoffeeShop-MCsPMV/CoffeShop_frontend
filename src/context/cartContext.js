@@ -146,6 +146,7 @@ export const CartProvider = ({ children }) => {
     console.log(orderProductList);
     return orderProductList;
   }
+  
   function postOrder() {
     let orderData = {
       userId: user ? user.id : null,
