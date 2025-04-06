@@ -86,3 +86,9 @@
   color: green;
   font-style: italic;
 }
+
+@media screen and (max-width:768px){
+  .accordion{
+      width: 100%;
+  }
+}

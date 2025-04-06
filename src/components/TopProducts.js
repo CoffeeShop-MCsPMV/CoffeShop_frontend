@@ -3,9 +3,11 @@ import { useState, useEffect } from "react";
 import "../style/TopProducts.css";
 import { ApiContext } from "../context/apiContext";
 
-const TopProducts = () => {
+const TopProducts = (index) => {
   const { getData } = useContext(ApiContext);
   const [topProducts, setTopProducts] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
+
 
   useEffect(() => {
     // console.log("Fetching data...");
@@ -55,6 +57,20 @@ const TopProducts = () => {
     setPlaying((prev) => !prev);
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Inicializáláskor és minden ablakméret-változáskor ellenőrizzük
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Az inicializáláshoz az ablakméret ellenőrzése
+
+    return () => {
+      window.removeEventListener('resize', handleResize); // Cleanup
+    };
+  }, []);
+
   return (
     <div className="slider">
       <h3 id="top-title">
@@ -64,14 +80,14 @@ const TopProducts = () => {
           Check out all of our drinks ☕
         </a>
       </h3>
-      <div className="slider-container">
+      <div className={`slider-container ${isMobile ? 'mobile-slider-container' : ''}`} >
         {carouselData.slice(0, 5).map((item, index) => {
           return (
               <img
                 key={index}
                 src={`http://localhost:8000/${item.src}`}
                 alt={`Slide ${item.product_id}`}
-                className={`slider-item slider-item-${index + 1}`} 
+                className={`slider-item slider-item-${index + 1} ${isMobile ? 'mobile-slider' : ''}`} 
               />
           );
         })}

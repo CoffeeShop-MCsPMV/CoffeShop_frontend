@@ -25,3 +25,15 @@
   grid-template-columns: 1fr 2fr;
   background-color: var(--filter);
 }
+
+@media screen and (max-width:768px){
+  .info-container{
+      display: flex;
+      flex-direction: column;
+  }
+
+  .topic{
+    margin-inline: 0;
+    background: none;
+  }
+}
