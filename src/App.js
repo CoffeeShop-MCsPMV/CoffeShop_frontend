@@ -14,6 +14,8 @@ import Orders from "./pages/Orders";
 import Profile from "./pages/Profile";
 import Mixer from "./pages/Mixer";
 import "./App.css";
+import AdminProfile from "./pages/admin/AdminProfile";
+import AdminOrders from "./pages/admin/AdminOrders";
 
 
 function App() {
@@ -59,6 +61,8 @@ function App() {
             <Route path="/coming-soon" element={<ComingSoon />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/orders" element={<Orders />} />
+            <Route path="/admin-profile" element={<AdminProfile />} />
+            <Route path="/admin-orders" element={<AdminOrders />} />
             <Route index element={<Main />} />
             <Route
               path="register"
