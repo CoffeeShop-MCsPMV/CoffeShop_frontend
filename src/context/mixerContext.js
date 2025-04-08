@@ -10,6 +10,7 @@ export const MixerProvider = ({ children }) => {
   const [milkList, setMilkList] = useState([]);
   const [syrupList, setSyrupList] = useState([]);
   const [toppingList, setToppingList] = useState([]);
+  const [iceData, setIceData]=useState([]);
   const [ice, setIce] = useState(true);
   const [addedIngredientList, setAddedIngredientList]=useState([20013,20068,20055,20056]);
   const [mixerTotal, setMixerTotal]=useState(0);
@@ -24,13 +25,26 @@ export const MixerProvider = ({ children }) => {
     getData(`/api/by-category?category=MIL`, setMilkList);
     getData(`/api/by-category?category=SYR`, setSyrupList);
     getData(`/api/by-category?category=TOP`, setToppingList);
+    getData(`/api/by-category?category=ICE`, setIceData)
   },[]);
   useEffect(() => {
     console.log("baselist updated:", baseList);
   }, [baseList]); 
+
+  function iceAddToCup() {
+    const list = [...addedIngredientList];
+    console.log(iceData)
+  
+    if (ice&&iceData) {
+      list.push(iceData);
+    }
+  
+    setAddedIngredientList(list);
+  }
+  
   return (
     <MixerContext.Provider
-      value={{ baseList, milkList, syrupList, toppingList, ice, setIce, addedIngredientList, setAddedIngredientList, mixerTotal, setMixerTotal }}
+      value={{ baseList, milkList, syrupList, toppingList, ice, setIce, addedIngredientList, setAddedIngredientList, mixerTotal, setMixerTotal, iceAddToCup }}
     >
       {children}
     </MixerContext.Provider>

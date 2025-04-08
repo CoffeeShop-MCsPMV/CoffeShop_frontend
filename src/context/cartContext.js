@@ -57,6 +57,7 @@ export const CartProvider = ({ children }) => {
     if (isOrdered) {
       const interval = setInterval(() => {
         getOrderDatas();
+        setStatusPhoto();
       }, 30000);
 
       return () => {
@@ -186,13 +187,15 @@ export const CartProvider = ({ children }) => {
     }
   }
 
-  function SetStatusPhoto(){
+  function setStatusPhoto(){
     const status=[
       {icon:"",
         description:""
       }
     ]
-    if(orderData.order_status in [ null, 'Received', 'Accepted','In Progress']){
+    console.log("Az ORDERDAta:" ,orderData)
+    if (orderData.order_status === null || ['REC', 'ACC', 'PRO'].includes(orderData.order_status)) {
+
       status.icon="./images/coffee.gif"
       status.description="Your order is being prepared! we'll have it ready soon."
     }
@@ -200,6 +203,7 @@ export const CartProvider = ({ children }) => {
       status.icon="./images/ready.gif"
       status.description="Your order is ready! Come and pick it up."
     }
+    setOrderStatus(status)
 
   }
 
@@ -219,7 +223,8 @@ export const CartProvider = ({ children }) => {
         orderId,
         orderData,
         setIsOrdered,
-        setOrderId
+        setOrderId,
+        orderStatus
       }}
     >
       {children}

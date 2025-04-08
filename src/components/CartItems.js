@@ -4,7 +4,7 @@ import { CartContext } from "../context/cartContext";
 import "../style/Cart.css";
 
 function CartItems() {
-  const { cartList, total, postOrder, isOrdered, orderData } =
+  const { cartList, total, postOrder, isOrdered, orderData, orderStatus } =
     useContext(CartContext);
 
   return (
@@ -12,7 +12,8 @@ function CartItems() {
       {isOrdered && orderData ? (
         <div>
           <h2>Your order number is: {orderData.order_id}</h2>
-          <h4>Your order status: {orderData.order_status}</h4>
+          <h4>{orderStatus.descriprion}</h4>
+          <img src={orderStatus.icon} alt="" />
         </div>
       ) : cartList?.length === 0 ? (
         <div>
