@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
+import useAuthContext from "../../context/AuthContext";
 
-function NavGHam({ setShowModal }) {
+function NavGHam() {
+  const {setShowModal}=useAuthContext();
 
   const handleLoginClick = () => {
     setShowModal(true); 

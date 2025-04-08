@@ -1,0 +1,76 @@
+/* src/components/AdminOrderCard.css */
+
+/* Alap stílusok a kártya és az állapot blokk számára */
+.order-card {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .order-status {
+    text-align: center;
+    padding: 10px;
+    border-radius: 50px;
+    margin-bottom: 16px;
+    cursor: pointer;
+  }
+  
+  .order-status.Acc {
+    background-color: #fef3c7; /* sárga */
+  }
+  
+  .order-status.Rec {
+    background-color: #bfdbfe; /* kék */
+  }
+  
+  .order-status.Pro {
+    background-color: #d1fae5; /* zöld */
+  }
+  
+  .order-status.Com {
+    background-color: #fecaca; /* piros */
+  }
+  
+  .order-status.Pup {
+    background-color: #e9d5ff; /* lila */
+  }
+  
+  .order-status.Can {
+    background-color: #e5e7eb; /* szürke */
+  }
+  
+  .order-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .cup {
+    background-color: #f9fafb;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .cup-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
+  
+  .ingredients-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 0.875rem;
+  }
+  
+  .ingredients-list li {
+    margin-bottom: 4px;
+  }
+  
+  .status-text {
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+  
