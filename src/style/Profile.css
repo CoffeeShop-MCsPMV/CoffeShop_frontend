@@ -125,3 +125,8 @@
     color: white;
 }
 
+@media screen and (max-width:768px){
+    .profileForm{
+        width: 100%;
+    }
+}

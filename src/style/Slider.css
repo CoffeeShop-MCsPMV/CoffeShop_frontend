@@ -68,3 +68,9 @@
   font-size: 45px;
   font-weight:initial
 }
+
+@media screen and (max-width:768px){
+  .carousel.slide.carousel-fade{
+      display: none;
+  }
+}

@@ -15,13 +15,13 @@
   font-size: 24px;
 }
 
-#drink-link{
+#drink-link {
   color: var(--gold);
   text-decoration: none;
   font-size: 16px;
 }
 
-#drink-link:hover{
+#drink-link:hover {
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -86,7 +86,7 @@
 .tpBtn {
   margin: 5px;
   padding: 10px;
-  border:  solid 1px rgba(255, 255, 255, 0.7);
+  border: solid 1px rgba(255, 255, 255, 0.7);
   background-color: var(--filter);
   border-radius: 10px;
   color: rgba(255, 255, 255, 0.7);
@@ -97,4 +97,25 @@
 .tpBtn:hover {
   color: var(--filter);
   background-color: rgba(255, 255, 255, 0.7);
+}
+
+.slider-container.mobile-slider-container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* .slider-item.slider-item-1.mobile-slider, .slider-item.slider-item-2.mobile-slider, .slider-item.slider-item-3.mobile-slider, .slider-item.slider-item-4.mobile-slider, .slider-item.slider-item-5.mobile-slider {
+  width: 100%;
+  height: 100%;
+} */
+
+@media screen and (max-width: 768px) {
+  .tpBtn {
+    display: none;
+  }
+
+  .slider{
+    display: flex;
+    flex-direction: column;
+  }
 }

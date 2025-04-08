@@ -33,7 +33,7 @@ export default function Login({ show, onHide }) {
     onHide();  // Modal bezárása
     navigate("/") // Navigálás a főoldalra
   };
-  
+
   return (
     <>
       <Modal show={show} onHide={closeWindow}>

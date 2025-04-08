@@ -14,20 +14,20 @@ import Orders from "./pages/Orders";
 import Profile from "./pages/Profile";
 import Mixer from "./pages/Mixer";
 import "./App.css";
+import AdminProfile from "./pages/admin/AdminProfile";
+import AdminOrders from "./pages/admin/AdminOrders";
 
 
 function App() {
   const { user, setShowModal, showModal } = useAuthContext();
 
-  // Modál bezárása
   const handleCloseModal = () => {
-    setShowModal(false); // Bezárja a modált
+    setShowModal(false);
   };
 
   return (
     <>
       <Routes>
-        {/* Vendég layout */}
         {!user && (
           <Route element={<GuestLayout />}>
             <Route path="/" element={<Main />} />
@@ -36,11 +36,9 @@ function App() {
               path="login"
               element={<Login show={showModal} onHide={handleCloseModal} />}
             />
-
             <Route path="/products" element={<Products />} />
             <Route path="/mixer" element={<Mixer />} />
             <Route path="/cart" element={<Cart />} />
-
             <Route
               path="register"
               element={
@@ -49,8 +47,7 @@ function App() {
             />
           </Route>
         )}
-
-        {/* Admin és User ugyanazon útvonalon */}
+        
         {user && (
           <Route
             path="/"
@@ -64,6 +61,8 @@ function App() {
             <Route path="/coming-soon" element={<ComingSoon />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/orders" element={<Orders />} />
+            <Route path="/admin-profile" element={<AdminProfile />} />
+            <Route path="/admin-orders" element={<AdminOrders />} />
             <Route index element={<Main />} />
             <Route
               path="register"
