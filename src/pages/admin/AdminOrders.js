@@ -4,7 +4,7 @@ import '../../style/AdminOrder.css';
 
 function AdminOrders() {
   return (
-    <><AdminOrderCards/></>
+    <div className='admin-orders-page'><AdminOrderCards/></div>
   )
 }
 

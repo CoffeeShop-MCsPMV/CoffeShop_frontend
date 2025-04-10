@@ -57,8 +57,8 @@ export const CartProvider = ({ children }) => {
     if (isOrdered) {
       const interval = setInterval(() => {
         getOrderDatas();
-        setStatusPhoto();
-      }, 30000);
+        
+      }, 10000);
 
       return () => {
         clearInterval(interval);
@@ -70,6 +70,7 @@ export const CartProvider = ({ children }) => {
     if (orderData) {
       console.log("Updated orderData:", orderData);
       checkOrderStatus();
+      setStatusPhoto();
     }
   }, [orderData]);
 
@@ -188,25 +189,29 @@ export const CartProvider = ({ children }) => {
     }
   }
 
-  function setStatusPhoto(){
-    const status=[
-      {icon:"",
-        description:""
+  function setStatusPhoto() {
+    const status = {
+      icon: "",
+      description: ""
+    };
+    
+    console.log("Az ORDERData:", orderData);  // Ellenőrizd az orderData struktúráját
+    
+    if (orderData && orderData.order_status) {
+      if (orderData.order_status === null || ['REC', 'ACC', 'PRO'].includes(orderData.order_status)) {
+        status.icon = "./images/coffee.gif";
+        status.description = "Your order is being prepared! We'll have it ready soon.";
+      } else {
+        status.icon = "./images/ready_gold.gif";
+        status.description = "Your order is ready! Come and pick it up.";
       }
-    ]
-    console.log("Az ORDERDAta:" ,orderData)
-    if (orderData.order_status === null || ['REC', 'ACC', 'PRO'].includes(orderData.order_status)) {
-
-      status.icon="./images/coffee.gif"
-      status.description="Your order is being prepared! we'll have it ready soon."
+      
+      setOrderStatus(status);
+    } else {
+      console.error("Order data or order_status is missing!");
     }
-    else{
-      status.icon="./images/ready.gif"
-      status.description="Your order is ready! Come and pick it up."
-    }
-    setOrderStatus(status)
-
   }
+  
 
   return (
     <CartContext.Provider

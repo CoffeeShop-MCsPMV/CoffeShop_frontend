@@ -1,43 +1,69 @@
 /* src/components/AdminOrderCard.css */
+.admin-orders-page{
+  background-color: black;
+}
 
-/* Alap stílusok a kártya és az állapot blokk számára */
+.admin-orders {
+  margin: 25px;
+  column-width: 250px; /* próbálja tartani ezt a szélességet */
+  column-gap: 15px;
+  padding: 10px;
+}
+
+.admin-orders > .order-card {
+  break-inside: avoid;
+  margin-bottom: 15px;
+  width: 100%;
+  display: inline-block;
+}
+
+
+
 .order-card {
-    background-color: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-  }
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  height: min-content;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-card:hover {
+  transform: scale(1.05); /* 5%-kal nagyobb lesz */
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* erősebb árnyék */
+}
+
+
   
   .order-status {
     text-align: center;
     padding: 10px;
-    border-radius: 50px;
     margin-bottom: 16px;
     cursor: pointer;
   }
   
-  .order-status.Acc {
-    background-color: #fef3c7; /* sárga */
+  .order-status.ACC {
+    background-color:var(--nav); /* sárga */
   }
   
-  .order-status.Rec {
-    background-color: #bfdbfe; /* kék */
+  .order-status.REC {
+    background-color:var(--nav); /* kék */
   }
   
-  .order-status.Pro {
-    background-color: #d1fae5; /* zöld */
+  .order-status.PRO {
+    background-color:var(--brown4); /* zöld */
   }
   
-  .order-status.Com {
-    background-color: #fecaca; /* piros */
+  .order-status.COM {
+    background-color: var(--gold); /* piros */
   }
   
-  .order-status.Pup {
+  .order-status.PUP {
     background-color: #e9d5ff; /* lila */
   }
   
-  .order-status.Can {
+  .order-status.CAN {
     background-color: #e5e7eb; /* szürke */
   }
   
@@ -48,10 +74,16 @@
   }
   
   .cup {
-    background-color: #f9fafb;
+    /* background-color: #f9fafb; */
     border-radius: 10px;
     padding: 12px;
     margin-bottom: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.8); /* Üveghatás */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: black
   }
   
   .cup-title {
