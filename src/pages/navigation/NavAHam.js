@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import useAuthContext from "../../context/AuthContext";
 import { CartContext } from "../../context/cartContext";
+import { Link } from "react-router-dom";
 
 function NavAHam() {
   const { logout } = useAuthContext();
@@ -21,14 +22,35 @@ function NavAHam() {
         />
       </Dropdown.Toggle>
       <Dropdown.Menu>
-        <Dropdown.Item href="/">Main</Dropdown.Item>
-        <Dropdown.Item href="/products">Drinks</Dropdown.Item>
-        <Dropdown.Item href="/mixer">Mixer</Dropdown.Item>
+        <Dropdown.Item>
+          {" "}
+          <Link className="nav-link links" to="/">
+            Main
+          </Link>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <Link className="nav-link links" to="/products">
+            Drinks
+          </Link>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <Link className="nav-link links" to="/mixer">
+            Mixer
+          </Link>
+        </Dropdown.Item>
         <Dropdown.Item href="/profile">Own profile</Dropdown.Item>
         <Dropdown.Item href="/orders">Own orders</Dropdown.Item>
         <Dropdown.Divider />
-        <Dropdown.Item href="/admin-profile">Admin - Profile</Dropdown.Item>
-        <Dropdown.Item href="/admin-orders">Admin - Orders</Dropdown.Item>
+        <Dropdown.Item>
+          <Link className="nav-link links" to="/admin-profile">
+            Admin-Profile
+          </Link>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <Link className="nav-link links" to="/admin-orders">
+            Admin-Orders
+          </Link>
+        </Dropdown.Item>
         <Dropdown.Divider />
         <Dropdown.Item
           onClick={() => {

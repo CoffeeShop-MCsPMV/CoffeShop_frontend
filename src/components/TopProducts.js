@@ -4,9 +4,9 @@ import "../style/TopProducts.css";
 import { ApiContext } from "../context/apiContext";
 
 const TopProducts = (index) => {
-  const { getData } = useContext(ApiContext);
+  const { getData, isMobile } = useContext(ApiContext);
   const [topProducts, setTopProducts] = useState([]);
-  const [isMobile, setIsMobile] = useState(false);
+
 
 
   useEffect(() => {
@@ -63,19 +63,7 @@ const TopProducts = (index) => {
     setPlaying((prev) => !prev);
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
 
-    // Inicializáláskor és minden ablakméret-változáskor ellenőrizzük
-    window.addEventListener('resize', handleResize);
-    handleResize(); // Az inicializáláshoz az ablakméret ellenőrzése
-
-    return () => {
-      window.removeEventListener('resize', handleResize); // Cleanup
-    };
-  }, []);
 
   return (
     <div className="slider">

@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import useAuthContext from "../../context/AuthContext";
 import { CartContext } from "../../context/cartContext";
+import ProductCartIcon from "../../components/ProductCartIcon";
+import { Link } from "react-router-dom";
 
 function NavUHam() {
   const { logout } = useAuthContext();
@@ -21,9 +23,25 @@ function NavUHam() {
         />
       </Dropdown.Toggle>
       <Dropdown.Menu>
-        <Dropdown.Item href="/">Main</Dropdown.Item>
-        <Dropdown.Item href="/products">Drinks</Dropdown.Item>
-        <Dropdown.Item href="/mixer">Mixer</Dropdown.Item>
+        <Dropdown.Item>
+          {" "}
+          <Link className="nav-link links" to="/">
+            Main
+          </Link>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <Link className="nav-link links" to="/products">
+            Drinks
+          </Link>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <Link className="nav-link links" to="/mixer">
+            Mixer
+          </Link>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <ProductCartIcon />
+        </Dropdown.Item>
         <Dropdown.Item href="/profile">Own profile</Dropdown.Item>
         <Dropdown.Item href="/orders">Own orders</Dropdown.Item>
         <Dropdown.Divider />

@@ -2,12 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../style/Nav.css";
 import ProductCartIcon from "../../components/ProductCartIcon";
+import LoginRegIcon from "../../components/LoginRegIcon";
 
 export default function NavGuest({ setShowModal }) {
   // Ha a felhasználó rákattint a Login linkre, megjelenítjük a modált
-  const handleLoginClick = () => {
-    setShowModal(true); // A modális ablakot megjelenítjük
-  };
+  
 
   return (
     <nav className="navbar navbar-expand-sm bg-light">
@@ -37,24 +36,8 @@ export default function NavGuest({ setShowModal }) {
         </ul>
         <div className="navCartAndUser">
         <ProductCartIcon/>
-          <ul className="navbar-nav">
-            <li className="navbar-item nav-login-register">
-              <Link
-                className="nav-link btn"
-                to="/login"
-                onClick={handleLoginClick}
-              >
-                Login
-              </Link>
-              <Link
-                className="nav-link btn"
-                to="/register"
-                onClick={handleLoginClick}
-              >
-                Registration
-              </Link>
-            </li>
-          </ul>
+        <LoginRegIcon/>
+          
         </div>
       </div>
     </nav>

@@ -7,6 +7,22 @@ export const ApiProvider = ({ children }) => {
   const [dataList, setDataList] = useState([]);
   const [productList, setProductList] = useState([]);
   const [postedList, setPostedList]=useState([]);
+  const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 768);
+      };
+  
+      // Inicializáláskor és minden ablakméret-változáskor ellenőrizzük
+      window.addEventListener('resize', handleResize);
+      handleResize(); // Az inicializáláshoz az ablakméret ellenőrzése
+  
+      return () => {
+        window.removeEventListener('resize', handleResize); // Cleanup
+      };
+    }, []);
+
 
   function getData(endpoint, setlist) {
     MyAxios
@@ -65,7 +81,7 @@ export const ApiProvider = ({ children }) => {
 
   return (
     <ApiContext.Provider
-      value={{ dataList,productList, setProductList, getData, postData, updateData, deleteData, postedList }}
+      value={{ dataList,productList, setProductList, getData, postData, updateData, deleteData, postedList, isMobile }}
     >
       {children}
     </ApiContext.Provider>

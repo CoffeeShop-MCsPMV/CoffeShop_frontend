@@ -84,3 +84,59 @@
 #hamburgerBtn:hover{
   transform: none;
 }
+.dropdown-toggle{
+  background-color: var(--nav);
+}
+.cart-icon p{
+  display: none;
+}
+.cart-icon.mobile img{
+  display: none;
+}
+.cart-icon.mobile p{
+  display:inline-block;
+  color: var(--gold);
+}
+
+.cart-icon.mobile, .login-reg-icon.mobile{
+  border: none;
+}
+.login-reg-icon.mobile .navbar-nav {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.login-reg-icon.mobile .nav-login-register {
+  flex-direction: column;
+  border: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+}
+
+.login-reg-icon.mobile .nav-link {
+  all: unset;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+  width: 100%;
+  display: block;
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-decoration: none;
+}
+
+/* .login-reg-icon.mobile .nav-link::after {
+  display: none !important;
+  content: none !important;
+}
+
+.login-reg-icon.mobile .nav-link:hover {
+  text-decoration: underline;
+  transform: none;
+} */
+
+
+
