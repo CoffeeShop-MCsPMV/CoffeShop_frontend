@@ -6,15 +6,23 @@ import ProductFilterCard from "./ProductFilterCard";
 import ProductCartIcon from "./ProductCartIcon";
 
 function ProductFilter() {
-
-
   const filterOptions = [
-    { id: 1, code: "COF", title: "Coffee", src:"./images/filter/COF.png" },
-    { id: 2, code: "ICF", title: "Iced Coffee", src:"./images/filter/ICF.png" },
-    { id: 3, code: "TEA", title: "Tea", src:"./images/filter/TEA.png" },
-    { id: 4, code: "ICT", title: "Iced Tea", src:"./images/filter/ICT.png" },
-    { id: 5, code: "HOD", title: "Hot Drinks", src:"./images/filter/HDR.png" },
-    { id: 6, code: "IDR", title: "Iced Drinks", src:"./images/filter/IDR.png" },
+    { id: 1, code: "COF", title: "Coffee", src: "./images/filter/COF.png" },
+    {
+      id: 2,
+      code: "ICF",
+      title: "Iced Coffee",
+      src: "./images/filter/ICF.png",
+    },
+    { id: 3, code: "TEA", title: "Tea", src: "./images/filter/TEA.png" },
+    { id: 4, code: "ICT", title: "Iced Tea", src: "./images/filter/ICT.png" },
+    { id: 5, code: "HOD", title: "Hot Drinks", src: "./images/filter/HDR.png" },
+    {
+      id: 6,
+      code: "IDR",
+      title: "Iced Drinks",
+      src: "./images/filter/IDR.png",
+    },
   ];
 
   const { setProductList, getData } = useContext(ApiContext);
@@ -27,21 +35,19 @@ function ProductFilter() {
     }
   }
 
-
-
   return (
     <div className="filter-and-cart">
       <div className="filter-cards">
-      {filterOptions.map((category, i) => (
-        <ProductFilterCard category={category} onClick={() => getFilteredData(category.id)} key={i} />
-      ))}
-      </div>
-      <div className="cart">
-      {/* <ProductCartIcon/> */}
+        {filterOptions.map((category, i) => (
+          <ProductFilterCard
+            category={category}
+            onClick={() => getFilteredData(category.id)}
+            key={i}
+          />
+        ))}
       </div>
     </div>
   );
-  
 }
 
 export default ProductFilter;

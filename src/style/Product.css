@@ -8,14 +8,14 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 10px; /* Opcionális: távolság az elemek között */
+  gap: 10px; 
   justify-content: center;
   background-image: url(../../public/images/coffee-beans-top-view-background.jpg);
 }
 
 .product-card {
   position: relative;
-  width: 380px; /* Kicsit nagyobb méret */
+  width: 380px; 
   height: 250px;
   overflow: hidden;
   display: flex;
@@ -23,11 +23,11 @@
   cursor: pointer;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.1); /* Üveghatás */
+  background: rgba(255, 255, 255, 0.1); 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  color: rgba(255, 255, 255, 0.7); /* Halványabb fehér szöveg */
+  color: rgba(255, 255, 255, 0.7); 
 }
 
 
@@ -46,13 +46,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* -webkit-mask-image: linear-gradient(to right, transparent, black 30%);
-  mask-image: linear-gradient(to right, transparent, black 30%); */
+ 
 }
 
 .info {
   position: absolute;
-  width: 40%; /* Szöveg helyet kap jobbra */
+  width: 40%; 
   height: 100%;
   right: 0;
   background: none;
@@ -72,7 +71,7 @@
 .product-card:hover .image-container {
   transform: translateX(
     -35%
-  ); /* A kép enyhén balra csúszik, de teljesen látszik */
+  ); 
 }
 
 .product-card:hover .info {
@@ -150,4 +149,27 @@
   transform: translateX(-50%);
   z-index: 10; 
   pointer-events: none;
+  color: var(--nav);
+}
+
+
+@media screen and (max-width:768px){
+  .filter-and-cart{
+    display: none;
+  }
+  .product-card{
+  width: 93%;
+  }
+  .image-container{
+    margin-left: -5px;
+  }
+  .product-card .image-container {
+  
+    transform: translateX(-35%);
+  }
+
+  .product-card .info {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

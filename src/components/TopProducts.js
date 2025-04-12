@@ -17,6 +17,12 @@ const TopProducts = (index) => {
     });
   }, []);
 
+  useEffect(()=>{
+    if(isMobile){
+      setPlaying(true);
+    }
+  }, [isMobile])
+
   const [carouselData, setCarouselData] = useState(topProducts);
   //carouselData frissül, ha megjönnek az API adatok
   useEffect(() => {
@@ -98,6 +104,7 @@ const TopProducts = (index) => {
         <button className="tpBtn" onClick={next}>Next</button>
       </div>
     </div>
+   
   );
 };
 

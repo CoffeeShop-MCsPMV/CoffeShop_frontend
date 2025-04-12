@@ -115,3 +115,10 @@
 .chooseBtn:hover{
   color: var(--gold);
 }
+
+@media (max-width: 768px) {
+.chooser{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}}

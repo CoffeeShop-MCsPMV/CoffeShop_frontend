@@ -101,8 +101,13 @@
 
 .slider-container.mobile-slider-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  position: static;
 }
+
 
 /* .slider-item.slider-item-1.mobile-slider, .slider-item.slider-item-2.mobile-slider, .slider-item.slider-item-3.mobile-slider, .slider-item.slider-item-4.mobile-slider, .slider-item.slider-item-5.mobile-slider {
   width: 100%;

@@ -126,3 +126,68 @@
 button.btn-close{
   --bs-btn-close-bg: url(../../public/images/x-button.png);
 }
+
+@media (max-width: 768px) {
+  .cart-page h1, 
+  .total {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .cart-page h2 {
+    font-size: 18px;
+    margin: 15px 0;
+  }
+
+  .cart-items {
+    padding: 10px;
+  }
+
+  .cart-item, .order-div {
+    width: 90%;
+    margin-left: 5px;
+    margin-right: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .cart-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+
+  .cart-item h5 {
+    width: auto;
+    font-size: 16px;
+  }
+
+  .cart-item p {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .counter {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .total {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .total button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  button.btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
