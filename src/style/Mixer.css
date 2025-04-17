@@ -1,3 +1,17 @@
+.mixer-page {
+width: 100%;
+height: 100%; 
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px; 
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center; 
+  background-image: url(../../public/images/coffee-beans-top-view-background.jpg);
+}
+
 .chooser {
   display: flex;
   flex-direction: row;
@@ -11,11 +25,11 @@
     255,
     255,
     0.15
-  ); /* Kicsit erősebb fehér, hogy jobban látszódjon */
-  backdrop-filter: blur(15px) saturate(180%); /* Erősebb elmosás + színtelítettség */
+  ); 
+  backdrop-filter: blur(15px) saturate(180%); 
   -webkit-backdrop-filter: blur(15px) saturate(180%);
-  border-radius: 20px; /* Kerekebb sarkak */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Nagyobb és elmosottabb árnyék */
+  border-radius: 20px; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
 }
@@ -116,9 +130,32 @@
   color: var(--gold);
 }
 
+.mixer-img{
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7); 
+}
+
 @media (max-width: 768px) {
 .chooser{
   display: flex;
   flex-direction: column;
   margin-top: 10px;
-}}
+  height:min-content;
+}
+.Ingredient-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+.mixer-img{
+  display: none;
+}
+}

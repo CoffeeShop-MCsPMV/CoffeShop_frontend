@@ -21,7 +21,9 @@ function IngredientCard(props) {
   }, [addedIngredientList]);
 
   if (!props.list || props.list.length === 0) {
-    return <p>Nincs elérhető összetevő.</p>;
+    return <div className="spinner-grow" role="status">
+    <span className="visually-hidden">Loading...</span>
+  </div>;
   }
 
   const handlePrev = () => {
