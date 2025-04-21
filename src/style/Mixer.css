@@ -139,6 +139,32 @@ height: 100%;
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: rgba(255, 255, 255, 0.7); 
+  
+}
+.mixer-img img{
+  position: relative;
+}
+.milk {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; 
+}
+.milk img{
+  width: 50px;
+}
+
+.ice{
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; 
+}
+
+.ice img{
+  max-width: 50px;
 }
 
 @media (max-width: 768px) {
