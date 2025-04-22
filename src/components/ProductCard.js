@@ -8,14 +8,19 @@ import AddedToast from "./AddedToast";
 function ProductCard(props) {
   const [show, setShow] = useState(false);
 
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, isOrdered } = useContext(CartContext);
+
+  const handleClick = () => {
+    if (!isOrdered) {
+      addToCart(props.product);
+      setShow(true);
+    }
+  };
+
   return (
-    <div
-      onClick={() => {
-        addToCart(props.product);setShow(true);
-      }}
-      className="product-card"
-    >
+    <div onClick={handleClick}
+    style={{ cursor: isOrdered ? "default" : "pointer" }}
+     className="product-card">
       <AddedToast show={show} setShow={setShow} />
       <div className="image-container">
         <Card.Img

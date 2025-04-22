@@ -4,10 +4,15 @@ import { MixerContext } from "../context/mixerContext";
 import "../style/Mixer.css";
 
 function MixerPrice() {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, isOrdered } = useContext(CartContext);
   const { addedIngredientList, mixerTotal, iceAddToCup, readyTodAdd, setReadyToAdd} = useContext(MixerContext);
 
  
+  const handleClick = () => {
+    if (!isOrdered) {
+      iceAddToCup()
+    }
+  };
 
 
   useEffect(() => {
@@ -31,10 +36,9 @@ function MixerPrice() {
       <h1>{mixerTotal}€</h1>
       <button
         className="addToCartBtn"
-      onClick={()=>iceAddToCup()}
-      >
-        Add to cart
-      </button>
+        onClick={handleClick}
+        disabled={isOrdered}
+      >Add to cart</button>
     </div>
   );
 }

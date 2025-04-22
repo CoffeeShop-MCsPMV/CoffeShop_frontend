@@ -12,8 +12,8 @@ function Chooser() {
     <>
       <IngredientCard list={baseList} id={0}/>
       <IngredientCard list={milkList} id={1} />
-      <IngredientCard list={syrupList} id={2} />
       <IngredientCard list={toppingList} id={3} />
+      <IngredientCard list={syrupList} id={2} />
 
       <div className="form-check form-switch">
         <input
