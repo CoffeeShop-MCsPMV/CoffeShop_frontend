@@ -1,11 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../context/cartContext";
 import { MixerContext } from "../context/mixerContext";
 import "../style/Mixer.css";
 
 function MixerPrice() {
   const { addToCart } = useContext(CartContext);
-  const { addedIngredientList, mixerTotal } = useContext(MixerContext);
+  const { addedIngredientList, mixerTotal, iceAddToCup, readyTodAdd, setReadyToAdd} = useContext(MixerContext);
+
+ 
+
+
+  useEffect(() => {
+    if(readyTodAdd){
+      addToCart(addedIngredientList);
+    setReadyToAdd(false)}
+    
+  }, [addedIngredientList, readyTodAdd]);
+
+
   if (mixerTotal === 0 || isNaN(mixerTotal)) {
     return (
       <div className="spinner-border" role="status">
@@ -19,7 +31,7 @@ function MixerPrice() {
       <h1>{mixerTotal}€</h1>
       <button
         className="addToCartBtn"
-        onClick={() => addToCart(addedIngredientList)}
+      onClick={()=>iceAddToCup()}
       >
         Add to cart
       </button>
