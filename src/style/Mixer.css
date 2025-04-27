@@ -1,3 +1,17 @@
+.mixer-page {
+width: 100%;
+height: 100%; 
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px; 
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center; 
+  background-image: url(../../public/images/coffee-beans-top-view-background.jpg);
+}
+
 .chooser {
   display: flex;
   flex-direction: row;
@@ -11,13 +25,14 @@
     255,
     255,
     0.15
-  ); /* Kicsit erősebb fehér, hogy jobban látszódjon */
-  backdrop-filter: blur(15px) saturate(180%); /* Erősebb elmosás + színtelítettség */
+  ); 
+  backdrop-filter: blur(15px) saturate(180%); 
   -webkit-backdrop-filter: blur(15px) saturate(180%);
-  border-radius: 20px; /* Kerekebb sarkak */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Nagyobb és elmosottabb árnyék */
+  border-radius: 20px; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
+  margin-bottom: 10px;
 }
 .Ingredient-card {
   display: flex;
@@ -26,11 +41,11 @@
   justify-content: center;
   width: 150px;
   padding: 10px;
-  background: rgba(255, 255, 255, 0.15); /* Üveghatás */
+  background: rgba(255, 255, 255, 0.15); 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  color: rgba(255, 255, 255, 0.7); /* Halványabb fehér szöveg */
+  color: rgba(255, 255, 255, 0.7); 
   text-align: center;
   border-radius: 20px; 
 }
@@ -76,6 +91,7 @@
   position: relative;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+ 
 }
 
 /* Kikapcsolt állapotban a kis kör */
@@ -108,12 +124,58 @@
 }
 
 .addToCartBtn:hover {
-  background: var(--filter); 
+  background: var(--nav); 
   color: white;
+}
+
+.addToCartBtn:disabled{
+  background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7); 
 }
 
 .chooseBtn:hover{
   color: var(--gold);
+}
+
+.mixer-img{
+  margin-top: 10px;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7); 
+  
+}
+.mixer-img img{
+  position: relative;
+}
+.milk {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; 
+}
+.milk img{
+  width: 50px;
+}
+
+.ice{
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; 
+}
+
+.ice img{
+  max-width: 50px;
 }
 
 @media (max-width: 768px) {
@@ -121,4 +183,16 @@
   display: flex;
   flex-direction: column;
   margin-top: 10px;
-}}
+  height:min-content;
+}
+.Ingredient-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+.mixer-img{
+  display: none;
+}
+}
