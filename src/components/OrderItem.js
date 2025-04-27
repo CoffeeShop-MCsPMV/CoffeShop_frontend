@@ -26,6 +26,7 @@ function OrderItem() {
         <Accordion.Item eventKey={orderId} key={orderId} className="order-item">
           <Accordion.Header>
             <p>Order number: {orderId}</p>
+            <p>Total: {items[0].total_cost}€</p>
           </Accordion.Header>
           <Accordion.Body>
             {items.map((item) => (
