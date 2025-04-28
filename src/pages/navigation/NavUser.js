@@ -5,10 +5,10 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { CartContext } from "../../context/cartContext";
 import ProductCartIcon from "../../components/ProductCartIcon";
 
-
 export default function NavUser() {
   const { logout } = useAuthContext();
-  const {setCartListEmpty, setIsOrdered, setOrderId}=useContext(CartContext);
+  const { setCartListEmpty, setIsOrdered, setOrderId } =
+    useContext(CartContext);
 
   return (
     <nav className="navbar navbar-expand-sm bg-light">
@@ -37,7 +37,7 @@ export default function NavUser() {
           </li>
         </ul>
         <div className="navCartAndUser">
-          <ProductCartIcon/>
+          <ProductCartIcon />
           <Dropdown>
             <Dropdown.Toggle
               as="div"
@@ -57,9 +57,9 @@ export default function NavUser() {
               <Dropdown.Item
                 onClick={() => {
                   logout();
-                  setCartListEmpty()
-                  setIsOrdered(false)
-                  setOrderId(null)
+                  setCartListEmpty();
+                  setIsOrdered(false);
+                  setOrderId(null);
                 }}
               >
                 Sign out

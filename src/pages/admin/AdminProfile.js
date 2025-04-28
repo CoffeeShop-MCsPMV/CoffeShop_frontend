@@ -28,8 +28,8 @@ function AdminProfile() {
   const selectUser = (user) => {
     setSelectedUser(user);
     setSearchValue(user.name);
-    setMatchedUsers([]); 
-    setSelectedProfilTipus(user.profile_type); 
+    setMatchedUsers([]);
+    setSelectedProfilTipus(user.profile_type);
   };
 
   const handleProfilChange = (userId, newType) => {
@@ -71,7 +71,7 @@ function AdminProfile() {
 
       {selectedUser ? (
         <div>
-          <h5 style={{color: "white"}}>{selectedUser.name}</h5>
+          <h5 style={{ color: "white" }}>{selectedUser.name}</h5>
           <Form.Select
             value={selectedProfilTipus}
             onChange={(e) => setSelectedProfilTipus(e.target.value)}

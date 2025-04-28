@@ -6,24 +6,24 @@ import Footer from "../components/Footer";
 import "../style/ComingSoon.css";
 
 function UserLayout() {
-   const [isMobile, setIsMobile] = useState(false);
-  
-    useEffect(() => {
-      const handleResize = () => {
-        setIsMobile(window.innerWidth < 768);
-      };
-  
-      window.addEventListener("resize", handleResize);
-      handleResize();
-  
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }, []);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className="layout">
-        {isMobile ? <NavUHam /> : <NavUser />}
+      {isMobile ? <NavUHam /> : <NavUser />}
       <main className="content">
         <Outlet />
       </main>

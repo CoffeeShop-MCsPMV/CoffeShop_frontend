@@ -3,7 +3,6 @@ import { ApiContext } from "../context/apiContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import ProductFilterCard from "./ProductFilterCard";
-import ProductCartIcon from "./ProductCartIcon";
 
 function ProductFilter() {
   const filterOptions = [

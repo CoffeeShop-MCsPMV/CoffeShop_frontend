@@ -1,27 +1,30 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { CartContext } from "../context/cartContext";
 import { MixerContext } from "../context/mixerContext";
 import "../style/Mixer.css";
 
 function MixerPrice() {
   const { addToCart, isOrdered } = useContext(CartContext);
-  const { addedIngredientList, mixerTotal, iceAddToCup, readyTodAdd, setReadyToAdd} = useContext(MixerContext);
+  const {
+    addedIngredientList,
+    mixerTotal,
+    iceAddToCup,
+    readyTodAdd,
+    setReadyToAdd,
+  } = useContext(MixerContext);
 
- 
   const handleClick = () => {
     if (!isOrdered) {
-      iceAddToCup()
+      iceAddToCup();
     }
   };
 
-
   useEffect(() => {
-    if(readyTodAdd){
+    if (readyTodAdd) {
       addToCart(addedIngredientList);
-    setReadyToAdd(false)}
-    
+      setReadyToAdd(false);
+    }
   }, [addedIngredientList, readyTodAdd]);
-
 
   if (mixerTotal === 0 || isNaN(mixerTotal)) {
     return (
@@ -30,7 +33,7 @@ function MixerPrice() {
       </div>
     );
   }
-  
+
   return (
     <div>
       <h1>{mixerTotal}€</h1>
@@ -38,7 +41,9 @@ function MixerPrice() {
         className="addToCartBtn"
         onClick={handleClick}
         disabled={isOrdered}
-      >Add to cart</button>
+      >
+        Add to cart
+      </button>
     </div>
   );
 }

@@ -11,11 +11,11 @@
     width: 50%;
     margin: auto;
     padding: 25px;
-    background: rgba(255, 255, 255, 0.15); /* Kicsit erősebb fehér, hogy jobban látszódjon */
-    backdrop-filter: blur(15px) saturate(180%); /* Erősebb elmosás + színtelítettség */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px) saturate(180%); 
     -webkit-backdrop-filter: blur(15px) saturate(180%);
-    border-radius: 20px; /* Kerekebb sarkak */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Nagyobb és elmosottabb árnyék */
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
     border: 1px solid rgba(255, 255, 255, 0.1);  
     color: white;
     z-index: 1;
@@ -25,21 +25,20 @@
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    background: white; /* Fehér háttér */
-    border: 1px solid rgba(0, 0, 0, 0.3); /* Sötétebb határ */
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 8px;
-    color: black; /* Fekete szöveg */
+    color: black; 
     outline: none;
     transition: all 0.3s ease;
 }
 
-/* Amikor az inputok disabled állapotúak - üvegszerű háttér */
 .profileForm input:disabled {
-    background: rgba(255, 255, 255, 0.15); /* Üveghatás */
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    color: rgba(255, 255, 255, 0.7); /* Halványabb fehér szöveg */
+    color: rgba(255, 255, 255, 0.7); 
     cursor: not-allowed;
 }
 
@@ -57,20 +56,18 @@
     border: none;
     border-radius: 8px;
     color: white;
-    /* font-weight: bold; */
     cursor: pointer;
     transition: all 0.5s ease;
 }
 
-/* Gomb hover effekt */
 .profileForm button:hover {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
 
 .profileForm button[type="submit"] {
-    background: var(--gold); /* Arany szín */
-    color: black; /* Fekete szöveg, hogy jól látszódjon */
+    background: var(--gold);
+    color: black;
     font-weight: bold;
     border: none;
     transition: all 0.3s ease;
@@ -99,7 +96,6 @@
     cursor: pointer;
 }
 
-/* Kikapcsolt állapotban a kis kör */
 .profileForm .form-check-input::before {
     content: "";
     position: absolute;
@@ -112,14 +108,11 @@
     transition: all 0.3s ease-in-out;
 }
 
-/* Bekapcsolt állapotban a kis kör jobbra csúszik */
 .profileForm .form-check-input:checked::before {
     left: 25px;
     background: var(--filter);
 }
 
-
-/* Sikeres üzenet stílusa */
 .alert {
     background: none;
     color: white;

@@ -4,7 +4,6 @@
   margin-inline: 10px;
   margin-block: auto;
   padding: 25px;
-  /* height: fit-content; */
   justify-content: center;
   text-align: justify;
   border-radius: 10px;
@@ -13,11 +12,10 @@
     255,
     255,
     0.15
-  ); /* Kicsit erősebb fehér, hogy jobban látszódjon */
-  backdrop-filter: blur(15px) saturate(180%); /* Erősebb elmosás + színtelítettség */
+  );
+  backdrop-filter: blur(15px) saturate(180%); 
   -webkit-backdrop-filter: blur(15px) saturate(180%);
-  /* border: 1px solid rgba(255, 255, 255, 0.3); */
-  color: rgba(255, 255, 255, 0.7); /* Halványabb fehér szöveg */
+  color: rgba(255, 255, 255, 0.7); 
 }
 
 .info-container {

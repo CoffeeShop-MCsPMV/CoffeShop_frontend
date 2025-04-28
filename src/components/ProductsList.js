@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import ProductCard from "./ProductCard";
-import { ApiContext, productList } from "../context/apiContext";
+import { ApiContext } from "../context/apiContext";
 
 function ProductsList() {
   const { productList, setProductList, getData } = useContext(ApiContext);

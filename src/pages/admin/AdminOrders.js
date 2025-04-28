@@ -1,11 +1,13 @@
-import React from 'react'
-import AdminOrderCards from '../../components/AdminOrderCards'
-import '../../style/AdminOrder.css';
+import React from "react";
+import AdminOrderCards from "../../components/AdminOrderCards";
+import "../../style/AdminOrder.css";
 
 function AdminOrders() {
   return (
-    <div className='admin-orders-page'><AdminOrderCards/></div>
-  )
+    <div className="admin-orders-page">
+      <AdminOrderCards />
+    </div>
+  );
 }
 
-export default AdminOrders
+export default AdminOrders;

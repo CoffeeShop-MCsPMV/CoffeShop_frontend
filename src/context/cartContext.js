@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import useAuthContext from "./AuthContext";
 import { ApiContext } from "./apiContext";
-import { Await } from "react-router-dom";
 
 export const CartContext = createContext("");
 
@@ -14,8 +13,7 @@ export const CartProvider = ({ children }) => {
   const [isOrdered, setIsOrdered] = useState(false);
   const [orderId, setOrderId] = useState([]);
   const [orderData, setOrderData] = useState([]);
-  const [orderStatus, setOrderStatus]=useState([]);
-
+  const [orderStatus, setOrderStatus] = useState([]);
 
   function addToCart(product) {
     const list = [...cartList];
@@ -39,14 +37,13 @@ export const CartProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    if (isOrdered && user) {  // Ellenőrizd, hogy a user nem null!
+    if (isOrdered && user) {
       console.log("Frissítés API hívás előtt: ", user);
-      console.log("Order Id: ", orderId.order_id)
-      
-      updateData(`/api/order/${orderId.order_id}`, user)
+      console.log("Order Id: ", orderId.order_id);
+
+      updateData(`/api/order/${orderId.order_id}`, user);
     }
   }, [user, isOrdered]);
-
 
   useEffect(() => {
     countTotal(cartList, setTotal);
@@ -57,7 +54,6 @@ export const CartProvider = ({ children }) => {
     if (isOrdered) {
       const interval = setInterval(() => {
         getOrderDatas();
-        
       }, 10000);
 
       return () => {
@@ -161,7 +157,7 @@ export const CartProvider = ({ children }) => {
     console.log(orderProductList);
     return orderProductList;
   }
-  
+
   function postOrder() {
     let orderData = {
       userId: user ? user.id : null,
@@ -192,26 +188,29 @@ export const CartProvider = ({ children }) => {
   function setStatusPhoto() {
     const status = {
       icon: "",
-      description: ""
+      description: "",
     };
-    
-    console.log("Az ORDERData:", orderData);  // Ellenőrizd az orderData struktúráját
-    
+
+    console.log("Az ORDERData:", orderData);
+
     if (orderData && orderData.order_status) {
-      if (orderData.order_status === null || ['REC', 'ACC', 'PRO'].includes(orderData.order_status)) {
+      if (
+        orderData.order_status === null ||
+        ["REC", "ACC", "PRO"].includes(orderData.order_status)
+      ) {
         status.icon = "./images/coffee.gif";
-        status.description = "Your order is being prepared! We'll have it ready soon.";
+        status.description =
+          "Your order is being prepared! We'll have it ready soon.";
       } else {
         status.icon = "./images/ready_gold.gif";
         status.description = "Your order is ready! Come and pick it up.";
       }
-      
+
       setOrderStatus(status);
     } else {
       console.error("Order data or order_status is missing!");
     }
   }
-  
 
   return (
     <CartContext.Provider
@@ -230,7 +229,7 @@ export const CartProvider = ({ children }) => {
         orderData,
         setIsOrdered,
         setOrderId,
-        orderStatus
+        orderStatus,
       }}
     >
       {children}

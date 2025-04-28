@@ -1,32 +1,30 @@
-// src/components/AdminOrderCards.js
+import React, { useContext, useEffect, useState } from "react";
+import { ApiContext } from "../context/apiContext";
 
-import React, { useContext, useEffect, useState } from 'react';
-import axios from 'axios';
-import { ApiContext } from '../context/apiContext';
-
-import AdminOrderCard from './AdminOrderCard';
+import AdminOrderCard from "./AdminOrderCard";
 
 const AdminOrderCards = () => {
   const { getData, updateData } = useContext(ApiContext);
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    getData('/api/active-contents', setOrders);
+    getData("/api/active-contents", setOrders);
   }, []);
 
-  // Státuszok sorrendje
   const updateOrderStatus = (orderId, currentStatus) => {
-    // Csak a jelenlegi státuszt küldjük el a backendnek
     console.log(orderId, currentStatus);
     updateData(`/api/orders/${orderId}/status`, { status: currentStatus });
-    getData('/api/active-contents', setOrders);
-};
-
+    getData("/api/active-contents", setOrders);
+  };
 
   return (
     <div className="admin-orders">
-      {orders.map(order => (
-        <AdminOrderCard key={order.order_id} order={order} updateOrderStatus={updateOrderStatus} />
+      {orders.map((order) => (
+        <AdminOrderCard
+          key={order.order_id}
+          order={order}
+          updateOrderStatus={updateOrderStatus}
+        />
       ))}
     </div>
   );

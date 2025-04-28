@@ -8,7 +8,7 @@ function LoginRegIcon() {
   const { isMobile } = useContext(ApiContext);
   const { setShowModal } = useAuthContext();
   const handleLoginClick = () => {
-    setShowModal(true); // A modális ablakot megjelenítjük
+    setShowModal(true);
   };
   return (
     <div className={`login-reg-icon ${isMobile ? " mobile" : ""}`}>

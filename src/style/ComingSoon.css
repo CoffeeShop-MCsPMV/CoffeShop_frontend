@@ -1,31 +1,32 @@
 @import url(variables.css);
 
-.content{
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url(../../public/images/coffee-beans-top-view-background.jpg);
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../../public/images/coffee-beans-top-view-background.jpg);
 }
 
-.comingSoon{
-    background-color: black;
-    width: 100%;
-    padding: 20px;
+.comingSoon {
+  background-color: black;
+  width: 100%;
+  padding: 20px;
 }
 
-.content h2{
-    font-weight: bold;
-    font-style: italic;
-    color: white;
+.content h2 {
+  font-weight: bold;
+  font-style: italic;
+  color: white;
 }
 
-html, body, #root, .layout{
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-} 
-
-
+html,
+body,
+#root,
+.layout {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}

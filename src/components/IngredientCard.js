@@ -4,9 +4,10 @@ import { CartContext } from "../context/cartContext";
 import "../style/Mixer.css";
 
 function IngredientCard(props) {
-  const { setAddedIngredientList, addedIngredientList, setMixerTotal } = useContext(MixerContext);
+  const { setAddedIngredientList, addedIngredientList, setMixerTotal } =
+    useContext(MixerContext);
   const [index, setIndex] = useState(0);
-  const {countTotal}=useContext(CartContext)
+  const { countTotal } = useContext(CartContext);
 
   const product = props.list && props.list[index];
 
@@ -14,16 +15,18 @@ function IngredientCard(props) {
     if (product) {
       addIngredient();
     }
-  }, [product]); 
+  }, [product]);
 
   useEffect(() => {
-    countTotal(addedIngredientList, setMixerTotal)
+    countTotal(addedIngredientList, setMixerTotal);
   }, [addedIngredientList]);
 
   if (!props.list || props.list.length === 0) {
-    return <div className="spinner-grow" role="status">
-    <span className="visually-hidden">Loading...</span>
-  </div>;
+    return (
+      <div className="spinner-grow" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </div>
+    );
   }
 
   const handlePrev = () => {
@@ -54,13 +57,16 @@ function IngredientCard(props) {
           <p>{product?.name}</p>
         </div>
         <div className="ingredient-photo">
-          <button className="chooseBtn" onClick={handlePrev}>ᐊ</button>
+          <button className="chooseBtn" onClick={handlePrev}>
+            ᐊ
+          </button>
           <img
             src={`http://localhost:8000/${product?.src}`}
             alt={product?.name}
           />
-          <button 
-         className="chooseBtn" onClick={handleNext}>ᐅ</button>
+          <button className="chooseBtn" onClick={handleNext}>
+            ᐅ
+          </button>
         </div>
       </div>
     </>

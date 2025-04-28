@@ -14,8 +14,6 @@ export default function Login({ show, onHide }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-   
-    //Összegyűjtjük egyetlen objektumban az űrlap adatokat
     const adat = {
       email: email,
       password: password,
@@ -24,14 +22,14 @@ export default function Login({ show, onHide }) {
 
     loginReg(adat, "/login").then((response) => {
       if (response && response.success) {
-        onHide(); //modál bezárása
+        onHide();
       }
     });
   };
 
   const closeWindow = () => {
-    onHide();  // Modal bezárása
-    navigate("/") // Navigálás a főoldalra
+    onHide(); 
+    navigate("/"); 
   };
 
   return (

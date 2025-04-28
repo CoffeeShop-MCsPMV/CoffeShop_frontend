@@ -30,13 +30,13 @@ td {
   padding-block: 5px;
 }
 
-th{
-    padding-block: 10px;
-    text-transform: uppercase;
+th {
+  padding-block: 10px;
+  text-transform: uppercase;
 }
 
-@media screen and (max-width:768px){
-  .footer{
-      display: none;
+@media screen and (max-width: 768px) {
+  .footer {
+    display: none;
   }
 }

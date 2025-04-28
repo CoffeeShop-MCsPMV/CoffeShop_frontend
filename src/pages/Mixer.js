@@ -7,11 +7,11 @@ import MixerImg from "../components/MixerImg";
 function Mixer() {
   return (
     <div className="mixer-page">
-    <MixerImg/>
-    <div className="chooser">
-      <Chooser />
-      <MixerPrice />
-    </div>
+      <MixerImg />
+      <div className="chooser">
+        <Chooser />
+        <MixerPrice />
+      </div>
     </div>
   );
 }

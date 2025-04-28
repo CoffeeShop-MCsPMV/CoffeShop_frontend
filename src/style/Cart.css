@@ -5,9 +5,6 @@
   background-image: url(../../public/images/coffee-beans-top-view-background.jpg);
 }
 
-
-
-
 .cart-items{
   display: flex;
   flex-direction: column;
@@ -38,7 +35,7 @@
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  background: rgba(255, 255, 255, 0.1); /* Üveghatás */
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -50,12 +47,10 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-   /* Halványabb fehér szöveg */
 }
 
 .order-div img{margin: auto;
   display: block;
-
 }
 
 .cart-image {
@@ -76,9 +71,6 @@
   padding: 0;
   margin: 0;
 }
-
-
-
 
 .counter {
   display: flex;
@@ -101,8 +93,8 @@
 .total {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Az alsó részre igazít */
-  align-items: flex-end; /* Jobbra igazítja az elemeket */
+  justify-content: flex-end; 
+  align-items: flex-end; 
   padding: 50px 70px;
 }
 
@@ -116,7 +108,6 @@
   border: none; 
   cursor: pointer; 
   transition: all 0.3s ease-in-out; 
-  
 }
 
 .total button:hover{
@@ -134,21 +125,17 @@ button.btn-close{
     text-align: center;
   }
 
- 
   .cart-page h2 {
     font-size: 18px;
     margin: 15px 0;
- 
   }
 
   .cart-items {
     padding: 10px;
-   
   }
 
   .cart-item, .order-div {
     width: 90%;
-  
     margin: auto;
     margin-top: 5px;
     flex-direction: column;
