@@ -101,7 +101,7 @@ function AdminProfile() {
               handleProfilChange(selectedUser.id, selectedProfilTipus)
             }
           >
-            Save
+            Save profile change
           </Button>
         </div>
       ) : (
