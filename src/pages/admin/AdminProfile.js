@@ -76,8 +76,8 @@ function AdminProfile() {
             value={selectedProfilTipus}
             onChange={(e) => setSelectedProfilTipus(e.target.value)}
           >
-            <option value="admin">Admin</option>
-            <option value="user">User</option>
+            <option value="A">Admin</option>
+            <option value="U">User</option>
           </Form.Select>
           <Button
             variant="primary"
