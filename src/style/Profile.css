@@ -1,125 +1,126 @@
 .profile {
-    background-image: url(../../public/images/coffee-beans-top-view-background.jpg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 25px 0;  
-    width: 100%;
+  background-image: url(../../public/images/coffee-beans-top-view-background.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 0;
+  width: 100%;
 }
 
 .profileForm {
-    width: 50%;
-    margin: auto;
-    padding: 25px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(15px) saturate(180%); 
-    -webkit-backdrop-filter: blur(15px) saturate(180%);
-    border-radius: 20px; 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
-    border: 1px solid rgba(255, 255, 255, 0.1);  
-    color: white;
-    z-index: 1;
+  width: 50%;
+  margin: auto;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  z-index: 1;
 }
 
 .profileForm input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    background: white;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    color: black; 
-    outline: none;
-    transition: all 0.3s ease;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  color: black;
+  outline: none;
+  transition: all 0.3s ease;
 }
 
 .profileForm input:disabled {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: rgba(255, 255, 255, 0.7); 
-    cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: not-allowed;
 }
 
 .profileForm input:focus {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 .profileForm button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background: var(--filter);
-    border: none;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-    transition: all 0.5s ease;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: var(--filter);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s ease;
 }
 
 .profileForm button:hover {
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .profileForm button[type="submit"] {
-    background: var(--gold);
-    color: black;
-    font-weight: bold;
-    border: none;
-    transition: all 0.3s ease;
+  background: var(--gold);
+  color: black;
+  font-weight: bold;
+  border: none;
+  transition: all 0.3s ease;
 }
 
 .profileForm button[type="submit"]:hover {
-    background: var(--filter); 
-    color: white;
+  background: var(--filter);
+  color: white;
 }
 
-.form-check.form-switch{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
+.form-check.form-switch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
 
 .profileForm .form-check-input {
-    width: 50px;
-    height: 25px;
-    background: rgba(255, 255, 255, 0.2); 
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 50px;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
+  width: 50px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .profileForm .form-check-input::before {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
-    top: 2px;
-    left: 3px;
-    transition: all 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 3px;
+  transition: all 0.3s ease-in-out;
 }
 
 .profileForm .form-check-input:checked::before {
-    left: 25px;
-    background: var(--filter);
+  left: 25px;
+  background: var(--filter);
 }
 
 .alert {
-    background: none;
-    color: white;
+  background: none;
+  color: white;
 }
 
-@media screen and (max-width:768px){
-    .profileForm{
-        width: 100%;
-    }
+@media screen and (max-width: 768px) {
+  .profileForm {
+    width: 100%;
+  }
+
 }

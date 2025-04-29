@@ -23,19 +23,19 @@ function NavGHam() {
         <Dropdown.Menu>
           <Dropdown.Item>
             {" "}
-            <Link className="nav-link links" to="/">
+            <Link className="nav-link" to="/">
               Main
             </Link>
           </Dropdown.Item>
           <Dropdown.Item>
             {" "}
-            <Link className="nav-link links" to="/products">
+            <Link className="nav-link" to="/products">
               Drinks
             </Link>
           </Dropdown.Item>
           <Dropdown.Item>
             {" "}
-            <Link className="nav-link links" to="/mixer">
+            <Link className="nav-link" to="/mixer">
               Mixer
             </Link>
           </Dropdown.Item>

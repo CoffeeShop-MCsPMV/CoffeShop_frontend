@@ -24,17 +24,17 @@ function NavAHam() {
       <Dropdown.Menu>
         <Dropdown.Item>
           {" "}
-          <Link className="nav-link links" to="/">
+          <Link className="nav-link" to="/">
             Main
           </Link>
         </Dropdown.Item>
         <Dropdown.Item>
-          <Link className="nav-link links" to="/products">
+          <Link className="nav-link" to="/products">
             Drinks
           </Link>
         </Dropdown.Item>
         <Dropdown.Item>
-          <Link className="nav-link links" to="/mixer">
+          <Link className="nav-link" to="/mixer">
             Mixer
           </Link>
         </Dropdown.Item>
@@ -42,12 +42,12 @@ function NavAHam() {
         <Dropdown.Item href="/orders">Own orders</Dropdown.Item>
         <Dropdown.Divider />
         <Dropdown.Item>
-          <Link className="nav-link links" to="/admin-profile">
+          <Link className="nav-link" to="/admin-profile">
             Admin-Profile
           </Link>
         </Dropdown.Item>
         <Dropdown.Item>
-          <Link className="nav-link links" to="/admin-orders">
+          <Link className="nav-link" to="/admin-orders">
             Admin-Orders
           </Link>
         </Dropdown.Item>

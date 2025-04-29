@@ -131,3 +131,13 @@
   box-shadow: none !important;
   text-decoration: none;
 }
+
+@media screen and (max-width:768px){
+  .dropdown-menu.show a, .dropdown-menu.show p{
+    color: var(--gold) !important;
+}
+
+  .dropdown-menu.show a:hover, .dropdown-menu.show p:hover{
+      color: var(--nav) !important;
+  }
+}

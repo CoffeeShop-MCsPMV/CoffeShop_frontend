@@ -24,6 +24,16 @@
   background-color: var(--filter);
 }
 
+.dropdown-menu.show a,
+.dropdown-menu.show p {
+  color: var(--gold) !important;
+}
+
+.dropdown-menu.show a:hover,
+.dropdown-menu.show p:hover {
+  color: var(--nav) !important;
+}
+
 @media screen and (max-width:768px){
   .info-container{
       display: flex;
@@ -35,3 +45,4 @@
     background: none;
   }
 }
+
