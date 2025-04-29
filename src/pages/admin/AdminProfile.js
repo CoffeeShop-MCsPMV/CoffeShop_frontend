@@ -96,7 +96,7 @@ function AdminProfile() {
           </Form.Select>
           <Button
             variant="primary"
-            className="mt-2"
+            className="mt-2 addToCartBtn"
             onClick={() =>
               handleProfilChange(selectedUser.id, selectedProfilTipus)
             }
