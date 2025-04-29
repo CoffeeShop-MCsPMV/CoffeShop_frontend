@@ -4,6 +4,7 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import ListGroup from "react-bootstrap/ListGroup";
+import Alert from "react-bootstrap/Alert"; 
 
 function AdminProfile() {
   const { getData, updateData } = useContext(ApiContext);
@@ -12,6 +13,7 @@ function AdminProfile() {
   const [matchedUsers, setMatchedUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
   const [selectedProfilTipus, setSelectedProfilTipus] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   useEffect(() => {
     getData("/api/users", setUsersList);
@@ -43,10 +45,23 @@ function AdminProfile() {
     if (selectedUser && selectedUser.id === userId) {
       setSelectedUser({ ...selectedUser, profile_type: newType });
     }
+
+    
+    setSuccessMessage("Profile updated successfully!");
+
+    setTimeout(() => {
+      setSuccessMessage("");
+    }, 3000);
   };
 
   return (
     <>
+      {successMessage && (
+        <Alert variant="success" className="mt-3">
+          {successMessage}
+        </Alert>
+      )}
+
       <FloatingLabel controlId="floatingInput" label="Search" className="mb-3">
         <Form.Control
           type="search"
