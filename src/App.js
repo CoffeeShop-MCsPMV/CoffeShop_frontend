@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import useAuthContext from "./context/AuthContext";
 import Main from "./pages/Main";
 import Login from "./pages/Login";
@@ -16,7 +16,6 @@ import Mixer from "./pages/Mixer";
 import "./App.css";
 import AdminProfile from "./pages/admin/AdminProfile";
 import AdminOrders from "./pages/admin/AdminOrders";
-
 
 function App() {
   const { user, setShowModal, showModal } = useAuthContext();
@@ -47,7 +46,7 @@ function App() {
             />
           </Route>
         )}
-        
+
         {user && (
           <Route
             path="/"

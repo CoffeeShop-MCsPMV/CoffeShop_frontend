@@ -4,10 +4,7 @@ import "../../style/Nav.css";
 import ProductCartIcon from "../../components/ProductCartIcon";
 import LoginRegIcon from "../../components/LoginRegIcon";
 
-export default function NavGuest({ setShowModal }) {
-  // Ha a felhasználó rákattint a Login linkre, megjelenítjük a modált
-  
-
+export default function NavGuest() {
   return (
     <nav className="navbar navbar-expand-sm bg-light">
       <div className="container-fluid">
@@ -35,9 +32,8 @@ export default function NavGuest({ setShowModal }) {
           </li>
         </ul>
         <div className="navCartAndUser">
-        <ProductCartIcon/>
-        <LoginRegIcon/>
-          
+          <ProductCartIcon />
+          <LoginRegIcon />
         </div>
       </div>
     </nav>

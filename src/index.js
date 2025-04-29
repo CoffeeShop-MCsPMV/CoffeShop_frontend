@@ -17,8 +17,8 @@ root.render(
         <ApiProvider>
           <CartProvider>
             <MixerProvider>
-          <App />
-          </MixerProvider>
+              <App />
+            </MixerProvider>
           </CartProvider>
         </ApiProvider>
       </AuthProvider>

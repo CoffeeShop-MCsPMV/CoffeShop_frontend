@@ -4,16 +4,15 @@ import TopProducts from "../components/TopProducts";
 import "../style/Main.css";
 
 function Main() {
-  // const { user } = useAuthContext();
-  //   console.log(user)
-
   return (
     <>
       <section>
         <Slider />
         <section className="info-container">
           <div className="topic">
-            <p><b>Welcome to The Roasted Rebel – Where Coffee Meets Passion</b></p>
+            <p>
+              <b>Welcome to The Roasted Rebel – Where Coffee Meets Passion</b>
+            </p>
             <p>
               At The Roasted Rebel, we believe that every cup of coffee tells a
               story. Whether you're a seasoned barista or just beginning your
@@ -28,10 +27,6 @@ function Main() {
           <TopProducts />
         </section>
       </section>
-      {/* <div style={{backgroundColor: "blue"}}>
-            <h1>Kezdőlap</h1>
-            <p>Bejelentkezett felhasználó: { user==null?"Nincs bejelentkezett felhasználó!":user.name }</p>     
-        </div> */}
     </>
   );
 }

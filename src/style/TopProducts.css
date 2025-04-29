@@ -108,18 +108,12 @@
   position: static;
 }
 
-
-/* .slider-item.slider-item-1.mobile-slider, .slider-item.slider-item-2.mobile-slider, .slider-item.slider-item-3.mobile-slider, .slider-item.slider-item-4.mobile-slider, .slider-item.slider-item-5.mobile-slider {
-  width: 100%;
-  height: 100%;
-} */
-
 @media screen and (max-width: 768px) {
   .tpBtn {
     display: none;
   }
 
-  .slider{
+  .slider {
     display: flex;
     flex-direction: column;
   }

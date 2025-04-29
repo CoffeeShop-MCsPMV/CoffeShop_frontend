@@ -1,7 +1,5 @@
 import React, { useContext, useState } from "react";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { ApiContext } from "../context/apiContext";
 import { CartContext } from "../context/cartContext";
 import AddedToast from "./AddedToast";
 
@@ -18,9 +16,11 @@ function ProductCard(props) {
   };
 
   return (
-    <div onClick={handleClick}
-    style={{ cursor: isOrdered ? "default" : "pointer" }}
-     className="product-card">
+    <div
+      onClick={handleClick}
+      style={{ cursor: isOrdered ? "default" : "pointer" }}
+      className="product-card"
+    >
       <AddedToast show={show} setShow={setShow} />
       <div className="image-container">
         <Card.Img

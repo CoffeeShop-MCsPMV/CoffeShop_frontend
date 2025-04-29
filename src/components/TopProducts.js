@@ -7,24 +7,21 @@ const TopProducts = (index) => {
   const { getData, isMobile } = useContext(ApiContext);
   const [topProducts, setTopProducts] = useState([]);
 
-
-
   useEffect(() => {
-    // console.log("Fetching data...");
     getData("/api/top-products", (data) => {
       console.log("Top products:", data);
       setTopProducts(data);
     });
   }, []);
 
-  useEffect(()=>{
-    if(isMobile){
+  useEffect(() => {
+    if (isMobile) {
       setPlaying(true);
     }
-  }, [isMobile])
+  }, [isMobile]);
 
   const [carouselData, setCarouselData] = useState(topProducts);
-  //carouselData frissül, ha megjönnek az API adatok
+
   useEffect(() => {
     console.log("Updated topProducts:", topProducts);
     if (topProducts.length > 0) {
@@ -32,7 +29,6 @@ const TopProducts = (index) => {
     }
   }, [topProducts]);
 
-  //automatikus lejátszás kezelése
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
@@ -63,8 +59,6 @@ const TopProducts = (index) => {
     setPlaying((prev) => !prev);
   };
 
-
-
   return (
     <div className="slider">
       <h3 id="top-title">
@@ -74,25 +68,36 @@ const TopProducts = (index) => {
           Check out all of our drinks ☕
         </a>
       </h3>
-      <div className={`slider-container ${isMobile ? 'mobile-slider-container' : ''}`} >
+      <div
+        className={`slider-container ${
+          isMobile ? "mobile-slider-container" : ""
+        }`}
+      >
         {carouselData.slice(0, 5).map((item, index) => {
           return (
-              <img
-                key={index}
-                src={`http://localhost:8000/${item.src}`}
-                alt={`Slide ${item.product_id}`}
-                className={`slider-item slider-item-${index + 1} ${isMobile ? 'mobile-slider' : ''}`} 
-              />
+            <img
+              key={index}
+              src={`http://localhost:8000/${item.src}`}
+              alt={`Slide ${item.product_id}`}
+              className={`slider-item slider-item-${index + 1} ${
+                isMobile ? "mobile-slider" : ""
+              }`}
+            />
           );
         })}
       </div>
       <div className="slider-controls">
-        <button className="tpBtn" onClick={previous}>Previous</button>
-        <button className="tpBtn" onClick={play}>{playing ? "Pause" : "Play"}</button>
-        <button className="tpBtn" onClick={next}>Next</button>
+        <button className="tpBtn" onClick={previous}>
+          Previous
+        </button>
+        <button className="tpBtn" onClick={play}>
+          {playing ? "Pause" : "Play"}
+        </button>
+        <button className="tpBtn" onClick={next}>
+          Next
+        </button>
       </div>
     </div>
-   
   );
 };
 

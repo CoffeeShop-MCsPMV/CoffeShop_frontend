@@ -13,8 +13,8 @@
   margin: auto;
   border-radius: 10px;
   padding: 25px;
-  background: rgba(255, 255, 255, 0.15); /* Kicsit erősebb fehér, hogy jobban látszódjon */
-  backdrop-filter: blur(15px) saturate(180%); /* Erősebb elmosás + színtelítettség */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px) saturate(180%); 
   -webkit-backdrop-filter: blur(15px) saturate(180%);
 }
 
@@ -25,9 +25,9 @@
 }
 
 .accordion-item {
-  border: none; /* Nincs border az egyes elemek körül */
+  border: none;
   margin-bottom: 10px;
-  background: transparent; /* Átlátszó háttér, ha nem akarod kiemelni */
+  background: transparent; 
 }
 
 .accordion-header {
@@ -52,8 +52,8 @@
 }
 
 .accordion-button:not(.collapsed) {
-    background: rgba(255, 255, 255, 0.2) !important;  /* Módosítja a lenyitott állapot színét */
-    color: white !important;  /* A szöveg színét is megváltoztathatod */
+    background: rgba(255, 255, 255, 0.2) !important; 
+    color: white !important;  
   }
 
 .accordion-header:hover {
@@ -62,11 +62,9 @@
 
 .accordion-body {
   padding: 15px;
-  /* background: rgba(255, 255, 255, 0.1); */
 }
 
 .order-item {
-  /* padding: 10px; */
   background: rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   margin-bottom: 5px;

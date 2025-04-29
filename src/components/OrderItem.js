@@ -15,7 +15,7 @@ function OrderItem() {
 
   const groupedOrders = orderItems.reduce((acc, item) => {
     if (!acc[item.order_id]) acc[item.order_id] = [];
-    acc[item.order_id].push(item); 
+    acc[item.order_id].push(item);
     return acc;
   }, {});
 

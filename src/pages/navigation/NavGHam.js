@@ -1,17 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { Link } from "react-router-dom";
-import useAuthContext from "../../context/AuthContext";
 import ProductCartIcon from "../../components/ProductCartIcon";
 import LoginRegIcon from "../../components/LoginRegIcon";
 
 function NavGHam() {
-  const { setShowModal } = useAuthContext();
-
-  const handleLoginClick = () => {
-    setShowModal(true);
-  };
-
   return (
     <>
       <Dropdown>
@@ -30,19 +23,19 @@ function NavGHam() {
         <Dropdown.Menu>
           <Dropdown.Item>
             {" "}
-            <Link className="nav-link links" to="/">
+            <Link className="nav-link" to="/">
               Main
             </Link>
           </Dropdown.Item>
           <Dropdown.Item>
             {" "}
-            <Link className="nav-link links" to="/products">
+            <Link className="nav-link" to="/products">
               Drinks
             </Link>
           </Dropdown.Item>
           <Dropdown.Item>
             {" "}
-            <Link className="nav-link links" to="/mixer">
+            <Link className="nav-link" to="/mixer">
               Mixer
             </Link>
           </Dropdown.Item>
@@ -54,20 +47,6 @@ function NavGHam() {
           </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
-      {/* <ul className="navbar-nav">
-        <li className="navbar-item nav-login-register">
-          <Link className="nav-link btn" to="/login" onClick={handleLoginClick}>
-            Login
-          </Link>
-          <Link
-            className="nav-link btn"
-            to="/register"
-            onClick={handleLoginClick}
-          >
-            Registration
-          </Link>
-        </li>
-      </ul> */}
     </>
   );
 }

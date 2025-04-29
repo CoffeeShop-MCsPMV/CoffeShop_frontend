@@ -1,11 +1,10 @@
-/* src/components/AdminOrderCard.css */
-.admin-orders-page{
+.admin-orders-page {
   background-color: black;
 }
 
 .admin-orders {
   margin: 25px;
-  column-width: 250px; /* próbálja tartani ezt a szélességet */
+  column-width: 250px;
   column-gap: 15px;
   padding: 10px;
 }
@@ -16,8 +15,6 @@
   width: 100%;
   display: inline-block;
 }
-
-
 
 .order-card {
   background-color: white;
@@ -30,79 +27,75 @@
 }
 
 .order-card:hover {
-  transform: scale(1.05); /* 5%-kal nagyobb lesz */
-  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* erősebb árnyék */
+  transform: scale(1.05);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
 }
 
+.order-status {
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
 
-  
-  .order-status {
-    text-align: center;
-    padding: 10px;
-    margin-bottom: 16px;
-    cursor: pointer;
-  }
-  
-  .order-status.ACC {
-    background-color:var(--nav); /* sárga */
-  }
-  
-  .order-status.REC {
-    background-color:var(--nav); /* kék */
-  }
-  
-  .order-status.PRO {
-    background-color:var(--brown4); /* zöld */
-  }
-  
-  .order-status.COM {
-    background-color: var(--gold); /* piros */
-  }
-  
-  .order-status.PUP {
-    background-color: #e9d5ff; /* lila */
-  }
-  
-  .order-status.CAN {
-    background-color: #e5e7eb; /* szürke */
-  }
-  
-  .order-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-  
-  .cup {
-    /* background-color: #f9fafb; */
-    border-radius: 10px;
-    padding: 12px;
-    margin-bottom: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    background: rgba(255, 255, 255, 0.8); /* Üveghatás */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: black
-  }
-  
-  .cup-title {
-    font-size: 1.125rem;
-    font-weight: 500;
-  }
-  
-  .ingredients-list {
-    list-style-type: disc;
-    padding-left: 20px;
-    font-size: 0.875rem;
-  }
-  
-  .ingredients-list li {
-    margin-bottom: 4px;
-  }
-  
-  .status-text {
-    font-size: 0.875rem;
-    color: #6b7280;
-  }
-  
+.order-status.ACC {
+  background-color: var(--nav);
+}
+
+.order-status.REC {
+  background-color: var(--nav);
+}
+
+.order-status.PRO {
+  background-color: var(--brown4); 
+}
+
+.order-status.COM {
+  background-color: var(--gold); 
+}
+
+.order-status.PUP {
+  background-color: #e9d5ff; 
+}
+
+.order-status.CAN {
+  background-color: #e5e7eb; 
+}
+
+.order-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.cup {
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.8); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: black;
+}
+
+.cup-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.ingredients-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 0.875rem;
+}
+
+.ingredients-list li {
+  margin-bottom: 4px;
+}
+
+.status-text {
+  font-size: 0.875rem;
+  color: #6b7280;
+}

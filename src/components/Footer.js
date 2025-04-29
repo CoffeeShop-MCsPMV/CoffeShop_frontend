@@ -4,46 +4,29 @@ import "../style/Footer.css";
 function Footer() {
   return (
     <div className="footer">
-      <a href="/">
-        {" "}
-        <img src="./images/logo.png" width="75px" alt="" />
+      <a href="/" className="footer-logo">
+        <img src="./images/logo.png" width="75px" alt="Logo" />
       </a>
-      <table>
-        <thead>
-        <tr>
-          <th>About us</th>
-          <th>Contact us</th>
-          <th>Social impact</th>
-          <th>Allergens</th>
-        </tr>
-        </thead>
-       <tbody>
-       <tr>
-          <td>
-            <a href="/coming-soon">About us</a>
-          </td>
-          <td>
-            <a href="/coming-soon">Contact us</a>
-          </td>
-          <td>
-            <a href="/coming-soon">Resposibility</a>
-          </td>
-          <td>
-            <a href="/coming-soon">Allergens</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a href="/products">Our coffees</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a href="/coming-soon">Stories & News</a>
-          </td>
-        </tr>
-       </tbody>
-      </table>
+      <div className="footer-links">
+        <div className="footer-column">
+          <h3>About us</h3>
+          <a href="/coming-soon">About us</a>
+          <a href="/products">Our coffees</a>
+          <a href="/coming-soon">Stories & News</a>
+        </div>
+        <div className="footer-column">
+          <h3>Contact us</h3>
+          <a href="/coming-soon">Contact us</a>
+        </div>
+        <div className="footer-column">
+          <h3>Social impact</h3>
+          <a href="/coming-soon">Responsibility</a>
+        </div>
+        <div className="footer-column">
+          <h3>Allergens</h3>
+          <a href="/coming-soon">Allergens</a>
+        </div>
+      </div>
     </div>
   );
 }

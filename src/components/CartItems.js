@@ -4,8 +4,15 @@ import { CartContext } from "../context/cartContext";
 import "../style/Cart.css";
 
 function CartItems() {
-  const { cartList, total, postOrder, isOrdered, orderData, orderStatus, orderId } =
-    useContext(CartContext);
+  const {
+    cartList,
+    total,
+    postOrder,
+    isOrdered,
+    orderData,
+    orderStatus,
+    orderId,
+  } = useContext(CartContext);
 
   return (
     <div className="cart-items">
@@ -18,7 +25,6 @@ function CartItems() {
       ) : cartList?.length === 0 ? (
         <div>
           <h2>Your cart is empty</h2>
-          
         </div>
       ) : (
         <>

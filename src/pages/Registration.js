@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import "../style/Modal.css";
-
-//import { useNavigate } from "react-router-dom";
 import useAuthContext from "../context/AuthContext";
 
 export default function Registration({ show, onHide }) {
@@ -24,7 +22,6 @@ export default function Registration({ show, onHide }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    //Összegyűjtjük egyetlen objektumban az űrlap adatokat
     const adat = {
       name: name,
       email: email,
@@ -41,8 +38,8 @@ export default function Registration({ show, onHide }) {
   };
 
   const closeWindow = () => {
-    onHide(); // Modal bezárása
-    navigate("/"); // Navigálás a főoldalra
+    onHide();
+    navigate("/");
   };
 
   return (
