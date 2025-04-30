@@ -174,7 +174,7 @@ export const CartProvider = ({ children }) => {
   }
 
   function getOrderDatas() {
-    getData(`api/orders/${orderId.order_id}`, setOrderData);
+    getData(`/api/orders/${orderId.order_id}`, setOrderData);
   }
 
   function checkOrderStatus() {
