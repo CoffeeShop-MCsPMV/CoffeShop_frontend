@@ -17,7 +17,7 @@ function MixerImg() {
       </div>
       {ice && (
         <div className="ice">
-          <img src="/images/mixer/ice.png" alt="Ice" />
+          <img src="/images/Mixer/ice.png" alt="Ice" />
         </div>
       )}
     </div>
