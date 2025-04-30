@@ -6,12 +6,12 @@ function MixerImg() {
   return (
     <div className="mixer-img">
       <img
-        src={`${process.env.PUBLIC_URL}/images/mixer/${addedIngredientList[0].product_id}_${addedIngredientList[3].product_id}_${addedIngredientList[2].product_id}.svg`}
+        src={`${process.env.PUBLIC_URL}/images/Mixer/${addedIngredientList[0].product_id}_${addedIngredientList[3].product_id}_${addedIngredientList[2].product_id}.svg`}
         alt="Mixed Drink"
       />
       <div className="milk">
         <img
-          src={`${process.env.PUBLIC_URL}/images/mixer/${addedIngredientList[1].product_id}.png`}
+          src={`${process.env.PUBLIC_URL}/images/Mixer/${addedIngredientList[1].product_id}.png`}
           alt=""
         />
       </div>
